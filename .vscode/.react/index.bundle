@@ -83673,43 +83673,25 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
 
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
 
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
 
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../node_modules/react-transform-hmr/lib/index.js"));
+  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react-native-voice"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+  var _OptionView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./OptionView"));
 
-  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "react-native-voice"));
+  var _ScrollableTextView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ScrollableTextView"));
 
-  var _jsxFileName = "/Users/neeraj/Desktop/TextToSpeech/src/components/RecordingTab.js";
-  var _components = {
-    RecordingTab: {
-      displayName: "RecordingTab"
-    }
-  };
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/RecordingTab.js";
 
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Desktop/TextToSpeech/src/components/RecordingTab.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var RecordingTab = _wrapComponent("RecordingTab")(function (_Component) {
+  var RecordingTab = function (_Component) {
     (0, _inherits2.default)(RecordingTab, _Component);
 
     function RecordingTab(props) {
@@ -83761,35 +83743,25 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         _reactNativeVoice.default.onSpeechError = _this.onSpeechError;
       };
 
-      _this.renderOptionsView = function () {
+      _this.render = function () {
         return _react.default.createElement(_reactNative.View, {
-          style: styles.optionsContainer,
+          style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 47
           }
-        });
-      };
-
-      _this.renderVoiceToTextView = function () {
-        return _react.default.createElement(_reactNative.View, {
-          style: styles.voiceToTextContainer,
+        }, _react.default.createElement(_OptionView.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 48
           }
-        }, _react.default.createElement(_reactNative.ScrollView, {
-          style: styles.textView,
+        }), _react.default.createElement(_ScrollableTextView.default, {
+          text: "Hello Raja Babu",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 49
           }
-        }, _react.default.createElement(_reactNative.Text, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 77
-          }
-        }, "'BUILD SUCCESSFULBUILD '")));
+        }));
       };
 
       _this.state = {
@@ -83799,44 +83771,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _this;
     }
 
-    (0, _createClass2.default)(RecordingTab, [{
-      key: "render",
-      value: function render() {
-        return _react.default.createElement(_reactNative.View, {
-          style: styles.container,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 45
-          }
-        }, this.renderOptionsView(), this.renderVoiceToTextView());
-      }
-    }]);
     return RecordingTab;
-  }(_react.Component));
+  }(_react.Component);
 
-  var _default2 = RecordingTab;
-  exports.default = _default2;
+  exports.default = RecordingTab;
 
   var styles = _reactNative.StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'green'
-    },
-    optionsContainer: {
-      flex: .3,
-      backgroundColor: 'yellow'
-    },
-    voiceToTextContainer: {
-      flex: .7,
-      backgroundColor: 'red',
-      borderTopLeftRadius: 20,
-      borderTopRightRadius: 20
-    },
-    textView: {
-      padding: 15
+      backgroundColor: '#3d2e48'
     }
   });
-},549,[1,539,19,20,27,30,33,46,181,2,541],"src/components/RecordingTab.js");
+},549,[1,539,19,27,30,33,46,2,541,557,558],"src/components/RecordingTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -83879,6 +83825,150 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "displayName": "TextToSpeech"
 };
 },553,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/OptionView.js";
+
+  var _default = OptionView = function OptionView(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.optionsContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: styles.buttonContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }, _react.default.createElement(_reactNative.TouchableOpacity, {
+      style: styles.buttons,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.buttonTextStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      }
+    }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
+      style: styles.buttons,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.buttonTextStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      }
+    }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
+      style: styles.buttons,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.buttonTextStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      }
+    }, "SHARE"))));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    optionsContainer: {
+      flex: .3,
+      backgroundColor: '#3d2e48',
+      justifyContent: 'flex-end'
+    },
+    buttonContainer: {
+      height: 50,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginLeft: 50,
+      marginRight: 50
+    },
+    buttonTextStyle: {
+      color: 'white',
+      marginLeft: 20,
+      marginRight: 20,
+      marginTop: 5,
+      marginBottom: 5
+    },
+    buttons: {
+      alignSelf: 'center',
+      borderRadius: 15,
+      backgroundColor: '#5d5268'
+    }
+  });
+},557,[1,46,2],"src/components/OptionView.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/ScrollableTextView.js";
+
+  var _default = ScrollableTextView = function ScrollableTextView(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.voiceToTextContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5
+      }
+    }, _react.default.createElement(_reactNative.ScrollView, {
+      style: styles.textView,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      }
+    }, props.text)));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    voiceToTextContainer: {
+      flex: .7,
+      backgroundColor: 'white',
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20
+    },
+    textView: {
+      padding: 15
+    }
+  });
+},558,[1,46,2],"src/components/ScrollableTextView.js");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map
