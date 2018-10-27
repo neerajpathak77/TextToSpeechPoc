@@ -10,8 +10,12 @@
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.3",
     "react-native-voice": "^0.2.6",
-    "rn-viewpager": "^1.2.9",
-    "react-native-wave-view": "github:shubham56/react-native-wave-view"
+    "react-native-wave-view": "github:shubham56/react-native-wave-view",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.6.0",
+    "rn-viewpager": "^1.2.9"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

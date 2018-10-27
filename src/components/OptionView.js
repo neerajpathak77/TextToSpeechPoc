@@ -1,27 +1,56 @@
-import React from 'react';
-import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
+import React, {Component } from 'react'
+import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
+import {copy} from '../actions/globalActions'
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+class RecordingTab extends Component {
 
-export default OptionView = props => (
-    <View>
-        <View style = {styles.buttonContainer}>
-            <TouchableOpacity 
-                //onPress={this.openMic}
-                style = {styles.buttons}>
-                <Text style = {styles.buttonTextStyle}>COPY</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                //onPress={this.openMic} 
-                style = {styles.buttons}>
-                <Text style = {styles.buttonTextStyle}>SAVE</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                //onPress={this.openMic}
-                style = {styles.buttons}>
-                <Text style = {styles.buttonTextStyle}>SHARE</Text>
-            </TouchableOpacity>
+    copy = () => {
+
+        this.props.copy('chooot')
+
+        alert('fvevw')
+    }
+
+    render = () => (
+        <View>
+            <View style = {styles.buttonContainer}>
+                <TouchableOpacity 
+                    onPress={this.copy}
+                    style = {styles.buttons}>
+                    <Text style = {styles.buttonTextStyle}>COPY</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    //onPress={props.openMic} 
+                    style = {styles.buttons}>
+                    <Text style = {styles.buttonTextStyle}>SAVE</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    //onPress={props.openMic}
+                    style = {styles.buttons}>
+                    <Text style = {styles.buttonTextStyle}>SHARE</Text>
+                </TouchableOpacity>
+            </View>
         </View>
-    </View>
-)
+    )
+}
+
+function mapStateToProps(state, props) {
+    return {}
+  }
+  
+  function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        copy: copy,
+      },
+      dispatch
+    )
+  }
+
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(RecordingTab)
 
 const styles = StyleSheet.create({
     optionsContainer: {

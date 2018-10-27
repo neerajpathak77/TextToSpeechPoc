@@ -52,7 +52,7 @@ export default class RecordingTab extends Component<Props> {
     render = () => (
         <View style={styles.container}>
             <WaveContainer/>
-            <ScrollableTextView text= {this.state.convertedTextFromVoice}/>
+            <ScrollableTextView text= {'chooot'}/>
         </View>
     )
 }
