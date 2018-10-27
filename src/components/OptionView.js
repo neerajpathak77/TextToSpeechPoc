@@ -7,8 +7,8 @@ class RecordingTab extends Component {
 
     copy = () => {
 
-        this.props.copy('chooot')
-
+        this.props.copy(this.props.voiceConvertedText)
+        //MUST UNDERSTAND WHY IF I PASS HARD CODE STRING IT CHANGES ALL VALUES 
         alert('fvevw')
     }
 
@@ -36,7 +36,9 @@ class RecordingTab extends Component {
 }
 
 function mapStateToProps(state, props) {
-    return {}
+    return {
+        voiceConvertedText: state.global.voiceConvertedText
+    }
   }
   
   function mapDispatchToProps(dispatch) {

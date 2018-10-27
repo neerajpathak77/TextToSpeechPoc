@@ -4,28 +4,29 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, Dimensio
 import Voice from 'react-native-voice'
 import ScrollableTextView from './ScrollableTextView'
 import WaveContainer from './WaveContainer';
-var {height, width} = Dimensions.get('window');
-type Props = {};
-export default class RecordingTab extends Component<Props> {
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+import {setVoiceConvertedText} from '../actions/globalActions'
+
+class RecordingTab extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
-            convertedTextFromVoice: '',
-            status: "",
         }
     }
     onPressVoiceToTextButton = () => {
         alert('Hello')
     }
     onSpeechStart = (voice) => {
-        this.setState({ convertedTextFromVoice: 'Listening...' });
+        this.props.setVoiceConvertedText('Listening...')
     }
     onSpeechEnd = (voice) =>  {
-        this.setState({ convertedTextFromVoice: 'Processing...' });
+        this.props.setVoiceConvertedText('Processing...')
+
     }
     onSpeechError = (voice) =>  {
-        this.setState({convertedTextFromVoice: ''});
+        this.props.setVoiceConvertedText('')
     }
     onSpeechResults = (voice) =>  {
         //this.setState({ voiceToText: voice.value[0] });
@@ -35,7 +36,8 @@ export default class RecordingTab extends Component<Props> {
     onChange = text => {
         alert(text)
 
-        this.setState({convertedTextFromVoice:text})
+        //this.setState({convertedTextFromVoice:text})
+        this.props.setVoiceConvertedText(text)
     }
     openMic = () => {
         Voice.start("en_US")
@@ -52,10 +54,30 @@ export default class RecordingTab extends Component<Props> {
     render = () => (
         <View style={styles.container}>
             <WaveContainer/>
-            <ScrollableTextView text= {'chooot'}/>
+            <ScrollableTextView text= {this.props.voiceConvertedText}/>
         </View>
     )
 }
+
+
+function mapStateToProps(state, props) {
+    return {
+        voiceConvertedText: state.global.voiceConvertedText
+    }
+  }
+  
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        setVoiceConvertedText: setVoiceConvertedText
+        },
+        dispatch
+    )
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(RecordingTab)
 
 const styles = StyleSheet.create({
   container: {

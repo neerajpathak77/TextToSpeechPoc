@@ -83714,11 +83714,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _WaveContainer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./WaveContainer"));
 
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/RecordingTab.js";
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[12], "react-redux");
 
-  var _Dimensions$get = _reactNative.Dimensions.get('window'),
-      height = _Dimensions$get.height,
-      width = _Dimensions$get.width;
+  var _redux = _$$_REQUIRE(_dependencyMap[13], "redux");
+
+  var _globalActions = _$$_REQUIRE(_dependencyMap[14], "../actions/globalActions");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/RecordingTab.js";
 
   var RecordingTab = function (_Component) {
     (0, _inherits2.default)(RecordingTab, _Component);
@@ -83734,21 +83736,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
 
       _this.onSpeechStart = function (voice) {
-        _this.setState({
-          convertedTextFromVoice: 'Listening...'
-        });
+        _this.props.setVoiceConvertedText('Listening...');
       };
 
       _this.onSpeechEnd = function (voice) {
-        _this.setState({
-          convertedTextFromVoice: 'Processing...'
-        });
+        _this.props.setVoiceConvertedText('Processing...');
       };
 
       _this.onSpeechError = function (voice) {
-        _this.setState({
-          convertedTextFromVoice: ''
-        });
+        _this.props.setVoiceConvertedText('');
       };
 
       _this.onSpeechResults = function (voice) {
@@ -83758,9 +83754,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       _this.onChange = function (text) {
         alert(text);
 
-        _this.setState({
-          convertedTextFromVoice: text
-        });
+        _this.props.setVoiceConvertedText(text);
       };
 
       _this.openMic = function () {
@@ -83777,26 +83771,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 55
           }
         }, _react.default.createElement(_WaveContainer.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 56
           }
         }), _react.default.createElement(_ScrollableTextView.default, {
-          text: 'chooot',
+          text: _this.props.voiceConvertedText,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 57
           }
         }));
       };
 
-      _this.state = {
-        convertedTextFromVoice: '',
-        status: ""
-      };
+      _this.state = {};
       return _this;
     }
 
@@ -83809,7 +83800,21 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return RecordingTab;
   }(_react.Component);
 
-  exports.default = RecordingTab;
+  function mapStateToProps(state, props) {
+    return {
+      voiceConvertedText: state.global.voiceConvertedText
+    };
+  }
+
+  function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)({
+      setVoiceConvertedText: _globalActions.setVoiceConvertedText
+    }, dispatch);
+  }
+
+  var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(RecordingTab);
+
+  exports.default = _default;
 
   var styles = _reactNative.StyleSheet.create({
     container: {
@@ -83817,7 +83822,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       backgroundColor: '#3d2e48'
     }
   });
-},549,[1,539,19,20,27,30,33,46,2,541,551,562],"src/components/RecordingTab.js");
+},549,[1,539,19,20,27,30,33,46,2,541,551,562,563,590,580],"src/components/RecordingTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -84021,7 +84026,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(RecordingTab)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
       _this.copy = function () {
-        _this.props.copy('chooot');
+        _this.props.copy(_this.props.voiceConvertedText);
 
         alert('fvevw');
       };
@@ -84085,7 +84090,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }(_react.Component);
 
   function mapStateToProps(state, props) {
-    return {};
+    return {
+      voiceConvertedText: state.global.voiceConvertedText
+    };
   }
 
   function mapDispatchToProps(dispatch) {
@@ -84742,11 +84749,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = globalReducer;
 
-  var _globalActions = _$$_REQUIRE(_dependencyMap[1], "../actions/globalActions");
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
 
-  var _initialState = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../state/initialState"));
+  var _globalActions = _$$_REQUIRE(_dependencyMap[2], "../actions/globalActions");
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+  var _initialState = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../state/initialState"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
 
   function globalReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState.default;
@@ -84756,11 +84765,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       case _globalActions.COPY:
         _reactNative.Clipboard.setString(action.payload);
 
+      case _globalActions.SET_VOICE_CONVERTED_TEXT:
+        return (0, _extends2.default)({}, state, {
+          voiceConvertedText: action.payload
+        });
     }
 
     return state;
   }
-},574,[1,580,579,2],"src/reducers/globalReducer.js");
+},574,[1,8,580,579,2],"src/reducers/globalReducer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -84933,9 +84946,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.copy = exports.COPY = void 0;
+  exports.setVoiceConvertedText = exports.copy = exports.SET_VOICE_CONVERTED_TEXT = exports.COPY = void 0;
   var COPY = 'COPY';
   exports.COPY = COPY;
+  var SET_VOICE_CONVERTED_TEXT = 'SET_VOICE_CONVERTED_TEXT';
+  exports.SET_VOICE_CONVERTED_TEXT = SET_VOICE_CONVERTED_TEXT;
 
   var copy = function copy(data) {
     return {
@@ -84945,6 +84960,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 
   exports.copy = copy;
+
+  var setVoiceConvertedText = function setVoiceConvertedText(data) {
+    return {
+      type: SET_VOICE_CONVERTED_TEXT,
+      payload: data
+    };
+  };
+
+  exports.setVoiceConvertedText = setVoiceConvertedText;
 },580,[],"src/actions/globalActions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
