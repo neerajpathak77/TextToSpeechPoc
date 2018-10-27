@@ -10,7 +10,8 @@
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.3",
     "react-native-voice": "^0.2.6",
-    "rn-viewpager": "^1.2.9"
+    "rn-viewpager": "^1.2.9",
+    "react-native-wave-view": "github:shubham56/react-native-wave-view"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

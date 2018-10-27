@@ -1371,7 +1371,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,538,553],"index.js");
+},0,[1,2,538,555],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -82431,7 +82431,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = HomeScreenUi;
   exports.default = _default2;
-},542,[1,539,19,20,27,30,33,46,181,2,543,549,550,551,552],"src/components/HomeScreenUi.js");
+},542,[1,539,19,20,27,30,33,46,181,2,543,549,552,553,554],"src/components/HomeScreenUi.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -83673,23 +83673,29 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
 
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
 
-  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react-native-voice"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
 
-  var _OptionView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./OptionView"));
+  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "react-native-voice"));
 
   var _ScrollableTextView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ScrollableTextView"));
 
+  var _WaveContainer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./WaveContainer"));
+
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/RecordingTab.js";
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      height = _Dimensions$get.height,
+      width = _Dimensions$get.width;
 
   var RecordingTab = function (_Component) {
     (0, _inherits2.default)(RecordingTab, _Component);
@@ -83706,25 +83712,25 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       _this.onSpeechStart = function (voice) {
         _this.setState({
-          status: "Listening....."
+          convertedTextFromVoice: 'Listening...'
         });
       };
 
       _this.onSpeechEnd = function (voice) {
         _this.setState({
-          status: "Processing....."
+          convertedTextFromVoice: 'Processing...'
         });
       };
 
       _this.onSpeechError = function (voice) {
         _this.setState({
-          status: ""
+          convertedTextFromVoice: ''
         });
       };
 
       _this.onSpeechResults = function (voice) {
         _this.setState({
-          status: ""
+          convertedTextFromVoice: ''
         });
 
         _this.onChange(voice.value[0]);
@@ -83732,6 +83738,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       _this.onChange = function (text) {
         alert(text);
+
+        _this.setState({
+          convertedTextFromVoice: text
+        });
       };
 
       _this.openMic = function () {
@@ -83748,29 +83758,35 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 53
           }
-        }, _react.default.createElement(_OptionView.default, {
+        }, _react.default.createElement(_WaveContainer.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 54
           }
         }), _react.default.createElement(_ScrollableTextView.default, {
-          text: "Hello Raja Babu",
+          text: _this.state.convertedTextFromVoice,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 55
           }
         }));
       };
 
       _this.state = {
-        voiceToText: null,
+        convertedTextFromVoice: '',
         status: ""
       };
       return _this;
     }
 
+    (0, _createClass2.default)(RecordingTab, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.openMic();
+      }
+    }]);
     return RecordingTab;
   }(_react.Component);
 
@@ -83782,7 +83798,61 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       backgroundColor: '#3d2e48'
     }
   });
-},549,[1,539,19,27,30,33,46,2,541,557,558],"src/components/RecordingTab.js");
+},549,[1,539,19,20,27,30,33,46,2,541,551,562],"src/components/RecordingTab.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/ScrollableTextView.js";
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      height = _Dimensions$get.height,
+      width = _Dimensions$get.width;
+
+  var _default = ScrollableTextView = function ScrollableTextView(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.voiceToTextContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }, _react.default.createElement(_reactNative.ScrollView, {
+      style: styles.textView,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    }, props.text)));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    voiceToTextContainer: {
+      height: height * 0.7,
+      width: width,
+      backgroundColor: 'white',
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20
+    },
+    textView: {
+      padding: 15
+    }
+  });
+},551,[1,46,2],"src/components/ScrollableTextView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -83794,7 +83864,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "mic",
     "type": "png"
   });
-},550,[176],"assets/mic.png");
+},552,[176],"assets/mic.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -83806,7 +83876,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "searches",
     "type": "png"
   });
-},551,[176],"assets/searches.png");
+},553,[176],"assets/searches.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -83818,13 +83888,73 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "settings",
     "type": "png"
   });
-},552,[176],"assets/settings.png");
+},554,[176],"assets/settings.png");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "TextToSpeech",
   "displayName": "TextToSpeech"
 };
-},553,[],"app.json");
+},555,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _OptionView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./OptionView"));
+
+  var _reactNativeWaveView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-wave-view"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/WaveContainer.js";
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      height = _Dimensions$get.height,
+      width = _Dimensions$get.width;
+
+  var _default = WaveContainer = function WaveContainer(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.animationContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    }, _react.default.createElement(_reactNativeWaveView.default, {
+      height: height * 0.3 - 120,
+      width: width,
+      waveColor: 'white',
+      waveSpeed: 'slow',
+      waveAmplitude: 30,
+      noOfWaves: 100,
+      wavePosition: 'both',
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      }
+    }), _react.default.createElement(_OptionView.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    animationContainer: {
+      height: height * 0.3,
+      width: width,
+      backgroundColor: '#3d2e48',
+      justifyContent: 'flex-end'
+    }
+  });
+},562,[1,46,2,550,558],"src/components/WaveContainer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -83841,7 +83971,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = OptionView = function OptionView(props) {
     return _react.default.createElement(_reactNative.View, {
-      style: styles.optionsContainer,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 5
@@ -83919,7 +84048,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       backgroundColor: '#5d5268'
     }
   });
-},557,[1,46,2],"src/components/OptionView.js");
+},550,[1,46,2],"src/components/OptionView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -83928,47 +84057,191 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
 
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectSpread"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/ScrollableTextView.js";
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
 
-  var _default = ScrollableTextView = function ScrollableTextView(props) {
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.voiceToTextContainer,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 5
-      }
-    }, _react.default.createElement(_reactNative.ScrollView, {
-      style: styles.textView,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      }
-    }, props.text)));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/assertThisInitialized"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[10], "react-native");
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-wave-view/WaveView.js";
+  var _components = {
+    WaveView: {
+      displayName: "WaveView"
+    }
   };
 
-  exports.default = _default;
-
-  var styles = _reactNative.StyleSheet.create({
-    voiceToTextContainer: {
-      flex: .7,
-      backgroundColor: 'white',
-      borderTopLeftRadius: 20,
-      borderTopRightRadius: 20
-    },
-    textView: {
-      padding: 15
-    }
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-wave-view/WaveView.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
   });
-},558,[1,46,2],"src/components/ScrollableTextView.js");
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var WaveView = _wrapComponent("WaveView")(function (_React$Component) {
+    (0, _inherits2.default)(WaveView, _React$Component);
+
+    function WaveView() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, WaveView);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(WaveView)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this.waveFactor = _this.props.wavePosition === 'top' ? 3 : _this.props.wavePosition === 'bottom' ? -2 : 1;
+      _this.speed = typeof waveSpeed === 'number' ? _this.props.waveSpeed : _this.props.waveSpeed === 'fast' ? 500 : 1000;
+      _this._renderWaves = _this._renderWaves.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      return _this;
+    }
+
+    (0, _createClass2.default)(WaveView, [{
+      key: "_renderWaves",
+      value: function _renderWaves(_val, index) {
+        var _this2 = this;
+
+        var _this$props = this.props,
+            height = _this$props.height,
+            width = _this$props.width,
+            waveColor = _this$props.waveColor,
+            waveAmplitude = _this$props.waveAmplitude,
+            noOfWaves = _this$props.noOfWaves;
+        var sineIndex = Math.sin(index);
+        var transDistance = new _reactNative.Animated.Value(sineIndex * waveAmplitude);
+
+        var anim = function anim() {
+          return _reactNative.Animated.sequence([_reactNative.Animated.timing(transDistance, {
+            toValue: waveAmplitude,
+            duration: _this2.speed,
+            useNativeDriver: true
+          }), _reactNative.Animated.timing(transDistance, {
+            toValue: -waveAmplitude,
+            duration: _this2.speed,
+            useNativeDriver: true
+          })]).start(function () {
+            return anim();
+          });
+        };
+
+        _reactNative.Animated.timing(transDistance, {
+          toValue: -waveAmplitude,
+          duration: (sineIndex * waveAmplitude + waveAmplitude) * this.speed / 10,
+          useNativeDriver: true
+        }).start(anim);
+
+        return _react.default.createElement(_reactNative.Animated.View, {
+          key: index,
+          style: {
+            height: height,
+            width: width / noOfWaves,
+            top: this.waveFactor * waveAmplitude,
+            borderRadius: 50,
+            backgroundColor: waveColor,
+            transform: [{
+              translateY: transDistance
+            }]
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          }
+        });
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props2 = this.props,
+            height = _this$props2.height,
+            width = _this$props2.width,
+            waveColor = _this$props2.waveColor,
+            waveAmplitude = _this$props2.waveAmplitude,
+            noOfWaves = _this$props2.noOfWaves,
+            wavePosition = _this$props2.wavePosition,
+            style = _this$props2.style;
+        var wave = new Array(noOfWaves).fill(0);
+        return _react.default.createElement(_reactNative.View, {
+          style: {
+            height: height + waveAmplitude * 2,
+            overflow: 'hidden',
+            flexDirection: 'row'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66
+          }
+        }, wave.map(this._renderWaves), _react.default.createElement(_reactNative.View, {
+          style: (0, _objectSpread2.default)({
+            backgroundColor: waveColor
+          }, style, {
+            height: height - waveAmplitude * (wavePosition === 'top' ? 2 : wavePosition === 'bottom' ? 3 : 2),
+            width: width
+          }, wavePosition === 'top' ? {
+            bottom: 0
+          } : wavePosition === 'bottom' ? {
+            top: 0
+          } : {
+            top: waveAmplitude * 2
+          }, {
+            position: 'absolute'
+          }),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          }
+        }, this.props.children));
+      }
+    }]);
+    return WaveView;
+  }(_react.default.Component));
+
+  var _default2 = WaveView;
+  exports.default = _default2;
+  WaveView.propTypes = {
+    height: _propTypes.default.number,
+    width: _propTypes.default.number,
+    waveColor: _propTypes.default.string,
+    waveSpeed: _propTypes.default.oneOfType([_propTypes.default.oneOf(['fast', 'slow']), _propTypes.default.number]),
+    waveAmplitude: _propTypes.default.number,
+    noOfWaves: _propTypes.default.number,
+    wavePosition: _propTypes.default.oneOf(['top', 'bottom', 'both']),
+    style: _propTypes.default.any
+  };
+  WaveView.defaultProps = {
+    height: 200,
+    width: 376,
+    waveColor: 'blue',
+    waveSpeed: 'slow',
+    waveAmplitude: 10,
+    noOfWaves: 100,
+    wavePosition: 'both',
+    style: {}
+  };
+},558,[1,43,19,20,27,30,33,29,46,181,2,63],"node_modules/react-native-wave-view/WaveView.js");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map

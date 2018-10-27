@@ -1,5 +1,6 @@
 import React from 'react';
-import {Text, View, ScrollView, StyleSheet} from 'react-native';
+import {Text, View, ScrollView, StyleSheet, Dimensions} from 'react-native';
+var {height, width} = Dimensions.get('window');
 
 export default ScrollableTextView = props => (
     <View style = {styles.voiceToTextContainer}>
@@ -11,7 +12,9 @@ export default ScrollableTextView = props => (
 
 const styles = StyleSheet.create({
     voiceToTextContainer: {
-      flex: .7,
+    //   flex: .7,
+      height:height * 0.7,
+      width:width,
       backgroundColor: 'white',
       borderTopLeftRadius:20,
       borderTopRightRadius:20

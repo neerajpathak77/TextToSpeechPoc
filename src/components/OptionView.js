@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 
 export default OptionView = props => (
-    <View style = {styles.optionsContainer}>
+    <View>
         <View style = {styles.buttonContainer}>
             <TouchableOpacity 
                 //onPress={this.openMic}

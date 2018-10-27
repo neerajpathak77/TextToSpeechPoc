@@ -1,17 +1,17 @@
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import React, {Component} from 'react'
+import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, Dimensions} from 'react-native'
 import Voice from 'react-native-voice'
-import OptionView from './OptionView';
-import ScrollableTextView from './ScrollableTextView';
-
+import ScrollableTextView from './ScrollableTextView'
+import WaveContainer from './WaveContainer';
+var {height, width} = Dimensions.get('window');
 type Props = {};
 export default class RecordingTab extends Component<Props> {
 
     constructor(props) {
         super(props);
         this.state = {
-            voiceToText: null,
+            convertedTextFromVoice: '',
             status: "",
         }
     }
@@ -19,21 +19,23 @@ export default class RecordingTab extends Component<Props> {
         alert('Hello')
     }
     onSpeechStart = (voice) => {
-        this.setState({ status: "Listening....." });
+        this.setState({ convertedTextFromVoice: 'Listening...' });
     }
     onSpeechEnd = (voice) =>  {
-        this.setState({ status: "Processing....." });
+        this.setState({ convertedTextFromVoice: 'Processing...' });
     }
     onSpeechError = (voice) =>  {
-        this.setState({status: ""});
+        this.setState({convertedTextFromVoice: ''});
     }
     onSpeechResults = (voice) =>  {
         //this.setState({ voiceToText: voice.value[0] });
-        this.setState({ status: "" })
+        //this.setState({ convertedTextFromVoice: '' })
         this.onChange(voice.value[0])
     }
     onChange = text => {
         alert(text)
+
+        this.setState({convertedTextFromVoice:text})
     }
     openMic = () => {
         Voice.start("en_US")
@@ -43,10 +45,14 @@ export default class RecordingTab extends Component<Props> {
         Voice.onSpeechError = this.onSpeechError
     }
 
+    componentDidMount() {
+        this.openMic()
+    }
+
     render = () => (
         <View style={styles.container}>
-            <OptionView/>
-            <ScrollableTextView text='Hello Raja Babu'/>
+            <WaveContainer/>
+            <ScrollableTextView text= {this.state.convertedTextFromVoice}/>
         </View>
     )
 }
