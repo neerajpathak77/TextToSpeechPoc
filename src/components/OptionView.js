@@ -1,15 +1,25 @@
 import React, {Component } from 'react'
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
-import {copy} from '../actions/globalActions'
+import {copy, share, save} from '../actions/globalActions'
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
+
 class RecordingTab extends Component {
 
-    copy = () => {
+    constructor(props) {
+        super(props)
+    }
 
+    copy = () => {
         this.props.copy(this.props.voiceConvertedText)
-        //MUST UNDERSTAND WHY IF I PASS HARD CODE STRING IT CHANGES ALL VALUES 
-        alert('fvevw')
+    }
+
+    save = () => {
+        this.props.save(this.props.voiceConvertedText)
+    }
+
+    share = () => {
+        this.props.share(this.props.voiceConvertedText)
     }
 
     render = () => (
@@ -21,12 +31,12 @@ class RecordingTab extends Component {
                     <Text style = {styles.buttonTextStyle}>COPY</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    //onPress={props.openMic} 
+                    onPress={this.save} 
                     style = {styles.buttons}>
                     <Text style = {styles.buttonTextStyle}>SAVE</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    //onPress={props.openMic}
+                    onPress={this.share} 
                     style = {styles.buttons}>
                     <Text style = {styles.buttonTextStyle}>SHARE</Text>
                 </TouchableOpacity>
@@ -44,6 +54,8 @@ function mapStateToProps(state, props) {
   function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         copy: copy,
+        save:save,
+        share: share
       },
       dispatch
     )

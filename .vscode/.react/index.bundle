@@ -83744,7 +83744,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
 
       _this.onSpeechError = function (voice) {
-        _this.props.setVoiceConvertedText('');
+        _this.props.setVoiceConvertedText('jaaaazzzz');
       };
 
       _this.onSpeechResults = function (voice) {
@@ -83993,7 +83993,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
 
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
 
@@ -84012,63 +84012,38 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var RecordingTab = function (_Component) {
     (0, _inherits2.default)(RecordingTab, _Component);
 
-    function RecordingTab() {
-      var _getPrototypeOf2;
-
+    function RecordingTab(props) {
       var _this;
 
       (0, _classCallCheck2.default)(this, RecordingTab);
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(RecordingTab)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(RecordingTab).call(this, props));
 
       _this.copy = function () {
         _this.props.copy(_this.props.voiceConvertedText);
+      };
 
-        alert('fvevw');
+      _this.save = function () {
+        _this.props.save(_this.props.voiceConvertedText);
+      };
+
+      _this.share = function () {
+        _this.props.share(_this.props.voiceConvertedText);
       };
 
       _this.render = function () {
         return _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 26
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.buttonContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 27
           }
         }, _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.copy,
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 18
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          }
-        }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 23
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 26
-          }
-        }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
@@ -84079,6 +84054,32 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           __source: {
             fileName: _jsxFileName,
             lineNumber: 31
+          }
+        }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.save,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
+          }
+        }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.share,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
           }
         }, "SHARE"))));
       };
@@ -84097,7 +84098,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   function mapDispatchToProps(dispatch) {
     return (0, _redux.bindActionCreators)({
-      copy: _globalActions.copy
+      copy: _globalActions.copy,
+      save: _globalActions.save,
+      share: _globalActions.share
     }, dispatch);
   }
 
@@ -84757,6 +84760,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
 
+  var _reactNativeShare = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "react-native-share"));
+
+  var _Constants = _$$_REQUIRE(_dependencyMap[6], "../Constants");
+
   function globalReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState.default;
     var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -84764,6 +84771,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     switch (action.type) {
       case _globalActions.COPY:
         _reactNative.Clipboard.setString(action.payload);
+
+        break;
+
+      case _globalActions.SAVE:
+        alert(action.payload);
+        break;
+
+      case _globalActions.SHARE:
+        var shareOptions = {
+          title: _Constants.SHARE_TITLE,
+          message: action.payload,
+          subject: _Constants.SHARE_SUBJECT
+        };
+
+        _reactNativeShare.default.open(shareOptions);
+
+        break;
 
       case _globalActions.SET_VOICE_CONVERTED_TEXT:
         return (0, _extends2.default)({}, state, {
@@ -84773,7 +84797,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     return state;
   }
-},574,[1,8,580,579,2],"src/reducers/globalReducer.js");
+},574,[1,8,580,579,2,602,606],"src/reducers/globalReducer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -84946,9 +84970,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.setVoiceConvertedText = exports.copy = exports.SET_VOICE_CONVERTED_TEXT = exports.COPY = void 0;
+  exports.setVoiceConvertedText = exports.share = exports.save = exports.copy = exports.SET_VOICE_CONVERTED_TEXT = exports.SHARE = exports.SAVE = exports.COPY = void 0;
   var COPY = 'COPY';
   exports.COPY = COPY;
+  var SAVE = 'SAVE';
+  exports.SAVE = SAVE;
+  var SHARE = 'SHARE';
+  exports.SHARE = SHARE;
   var SET_VOICE_CONVERTED_TEXT = 'SET_VOICE_CONVERTED_TEXT';
   exports.SET_VOICE_CONVERTED_TEXT = SET_VOICE_CONVERTED_TEXT;
 
@@ -84960,6 +84988,24 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 
   exports.copy = copy;
+
+  var save = function save(data) {
+    return {
+      type: SAVE,
+      payload: data
+    };
+  };
+
+  exports.save = save;
+
+  var share = function share(data) {
+    return {
+      type: SHARE,
+      payload: data
+    };
+  };
+
+  exports.share = share;
 
   var setVoiceConvertedText = function setVoiceConvertedText(data) {
     return {
@@ -87148,6 +87194,646 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   });
 },600,[8],"node_modules/redux-logger/dist/redux-logger.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  var _regenerator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/regenerator"));
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./../react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+
+  var _Overlay = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./components/Overlay"));
+
+  var _Sheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./components/Sheet"));
+
+  var _Button = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[14], "./components/Button"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/index.js";
+  var _components = {
+    ShareSheet: {
+      displayName: "ShareSheet"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/index.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var styles = _reactNative.StyleSheet.create({
+    actionSheetContainer: {
+      flex: 1,
+      paddingTop: 10,
+      paddingBottom: 0,
+      justifyContent: 'flex-end',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    },
+    buttonContainer: {
+      overflow: 'hidden',
+      backgroundColor: 'white',
+      paddingBottom: 5,
+      paddingTop: 5
+    }
+  });
+
+  var ShareSheet = function (_React$Component) {
+    (0, _inherits2.default)(ShareSheet, _React$Component);
+
+    function ShareSheet() {
+      (0, _classCallCheck2.default)(this, ShareSheet);
+      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ShareSheet).apply(this, arguments));
+    }
+
+    (0, _createClass2.default)(ShareSheet, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.backButtonHandler = this.backButtonHandler.bind(this);
+
+        _reactNative.BackHandler.addEventListener('backPress', this.backButtonHandler);
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        _reactNative.BackHandler.removeEventListener('backPress', this.backButtonHandler);
+      }
+    }, {
+      key: "backButtonHandler",
+      value: function backButtonHandler() {
+        if (this.props.visible) {
+          this.props.onCancel();
+          return true;
+        }
+
+        return false;
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return React.createElement(_Overlay.default, (0, _extends2.default)({
+          visible: this.props.visible
+        }, this.props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          }
+        }), React.createElement(_reactNative.View, {
+          style: styles.actionSheetContainer,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63
+          }
+        }, React.createElement(_reactNative.TouchableOpacity, {
+          style: {
+            flex: 1
+          },
+          onPress: this.props.onCancel,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64
+          }
+        }), React.createElement(_Sheet.default, {
+          visible: this.props.visible,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65
+          }
+        }, React.createElement(_reactNative.View, {
+          style: styles.buttonContainer,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66
+          }
+        }, this.props.children))));
+      }
+    }]);
+    return ShareSheet;
+  }(React.Component);
+
+  ShareSheet = _wrapComponent("ShareSheet")(ShareSheet);
+
+  var requireAndAskPermissions = function requireAndAskPermissions(options) {
+    var urls, resultArr, requirePermission, hasPermission, result;
+    return _regenerator.default.async(function requireAndAskPermissions$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            if (!((options.url || options.urls) && _reactNative.Platform.OS === 'android')) {
+              _context.next = 25;
+              break;
+            }
+
+            urls = options.urls || [options.url];
+            _context.prev = 2;
+            _context.next = 5;
+            return _regenerator.default.awrap(Promise.all(urls.map(function (url) {
+              return new Promise(function (res, rej) {
+                _reactNative.NativeModules.RNShare.isBase64File(url, function (e) {
+                  rej(e);
+                }, function (isBase64) {
+                  res(isBase64);
+                });
+              });
+            })));
+
+          case 5:
+            resultArr = _context.sent;
+            requirePermission = resultArr.includes(true);
+
+            if (requirePermission) {
+              _context.next = 9;
+              break;
+            }
+
+            return _context.abrupt("return", Promise.resolve(true));
+
+          case 9:
+            _context.next = 11;
+            return _regenerator.default.awrap(_reactNative.PermissionsAndroid.check(_reactNative.PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE));
+
+          case 11:
+            hasPermission = _context.sent;
+
+            if (!hasPermission) {
+              _context.next = 14;
+              break;
+            }
+
+            return _context.abrupt("return", Promise.resolve(true));
+
+          case 14:
+            _context.next = 16;
+            return _regenerator.default.awrap(_reactNative.PermissionsAndroid.request(_reactNative.PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE));
+
+          case 16:
+            result = _context.sent;
+
+            if (!(result === _reactNative.PermissionsAndroid.RESULTS.GRANTED)) {
+              _context.next = 19;
+              break;
+            }
+
+            return _context.abrupt("return", Promise.resolve());
+
+          case 19:
+            throw new Error('Write Permission not available');
+
+          case 22:
+            _context.prev = 22;
+            _context.t0 = _context["catch"](2);
+            return _context.abrupt("return", Promise.reject(_context.t0));
+
+          case 25:
+            return _context.abrupt("return", Promise.resolve(true));
+
+          case 26:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, this, [[2, 22]]);
+  };
+
+  var RNShare = function () {
+    function RNShare() {
+      (0, _classCallCheck2.default)(this, RNShare);
+    }
+
+    (0, _createClass2.default)(RNShare, null, [{
+      key: "open",
+      value: function open(options) {
+        return new Promise(function (resolve, reject) {
+          requireAndAskPermissions(options).then(function () {
+            if (_reactNative.Platform.OS === 'ios') {
+              if (options.urls) {
+                _reactNative.NativeModules.RNShare.open(options, function (error) {
+                  return reject({
+                    error: error
+                  });
+                }, function (success, activityType) {
+                  if (success) {
+                    return resolve({
+                      app: activityType
+                    });
+                  } else if (options.failOnCancel === false) {
+                    return resolve({
+                      dismissedAction: true
+                    });
+                  } else {
+                    reject({
+                      error: 'User did not share'
+                    });
+                  }
+                });
+              } else {
+                _reactNative.ActionSheetIOS.showShareActionSheetWithOptions(options, function (error) {
+                  return reject({
+                    error: error
+                  });
+                }, function (success, activityType) {
+                  if (success) {
+                    return resolve({
+                      app: activityType
+                    });
+                  } else if (options.failOnCancel === false) {
+                    return resolve({
+                      dismissedAction: true
+                    });
+                  } else {
+                    reject({
+                      error: 'User did not share'
+                    });
+                  }
+                });
+              }
+            } else {
+              _reactNative.NativeModules.RNShare.open(options, function (e) {
+                return reject({
+                  error: e
+                });
+              }, function (e) {
+                resolve({
+                  message: e
+                });
+              });
+            }
+          }).catch(function (e) {
+            return reject(e);
+          });
+        });
+      }
+    }, {
+      key: "shareSingle",
+      value: function shareSingle(options) {
+        if (_reactNative.Platform.OS === 'ios' || _reactNative.Platform.OS === 'android') {
+          return new Promise(function (resolve, reject) {
+            requireAndAskPermissions(options).then(function () {
+              _reactNative.NativeModules.RNShare.shareSingle(options, function (e) {
+                return reject({
+                  error: e
+                });
+              }, function (e) {
+                return resolve({
+                  message: e
+                });
+              });
+            }).catch(function (e) {
+              return reject(e);
+            });
+          });
+        } else {
+          throw new Error('Not implemented');
+        }
+      }
+    }]);
+    return RNShare;
+  }();
+
+  RNShare.Social = {
+    FACEBOOK: _reactNative.NativeModules.RNShare.FACEBOOK || 'facebook',
+    PAGESMANAGER: _reactNative.NativeModules.RNShare.PAGESMANAGER || 'pagesmanager',
+    TWITTER: _reactNative.NativeModules.RNShare.TWITTER || 'twitter',
+    WHATSAPP: _reactNative.NativeModules.RNShare.WHATSAPP || 'whatsapp',
+    INSTAGRAM: _reactNative.NativeModules.RNShare.INSTAGRAM || 'instagram',
+    GOOGLEPLUS: _reactNative.NativeModules.RNShare.GOOGLEPLUS || 'googleplus',
+    EMAIL: _reactNative.NativeModules.RNShare.EMAIL || 'email',
+    PINTEREST: _reactNative.NativeModules.RNShare.PINTEREST || 'pinterest'
+  };
+  module.exports = RNShare;
+  module.exports.Overlay = _Overlay.default;
+  module.exports.Sheet = _Sheet.default;
+  module.exports.Button = _Button.default;
+  module.exports.ShareSheet = ShareSheet;
+},602,[1,539,95,8,19,20,27,30,33,46,181,2,604,605,603],"node_modules/react-native-share/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/components/Overlay.js";
+  var _components = {
+    Overlay: {
+      displayName: "Overlay"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/components/Overlay.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DEFAULT_ANIMATE_TIME = 300;
+
+  var styles = _reactNative.StyleSheet.create({
+    fullOverlay: {
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: 'transparent',
+      position: 'absolute'
+    },
+    emptyOverlay: {
+      width: 0,
+      height: 0,
+      backgroundColor: 'transparent',
+      position: 'absolute'
+    }
+  });
+
+  var Overlay = function (_React$Component) {
+    (0, _inherits2.default)(Overlay, _React$Component);
+
+    function Overlay() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, Overlay);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(Overlay)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this.state = {
+        fadeAnim: new _reactNative.Animated.Value(0),
+        overlayStyle: styles.emptyOverlay
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(Overlay, [{
+      key: "onAnimatedEnd",
+      value: function onAnimatedEnd() {
+        if (!this.props.visible) {
+          this.setState({
+            overlayStyle: styles.emptyOverlay
+          });
+        }
+      }
+    }, {
+      key: "UNSAFE_componentWillReceiveProps",
+      value: function UNSAFE_componentWillReceiveProps(newProps) {
+        if (newProps.visible) {
+          this.setState({
+            overlayStyle: styles.fullOverlay
+          });
+        }
+
+        return _reactNative.Animated.timing(this.state.fadeAnim, {
+          toValue: newProps.visible ? 1 : 0,
+          duration: DEFAULT_ANIMATE_TIME
+        }).start(this.onAnimatedEnd.bind(this));
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return React.createElement(_reactNative.Animated.View, {
+          style: [this.state.overlayStyle, {
+            opacity: this.state.fadeAnim
+          }],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58
+          }
+        }, this.props.children);
+      }
+    }]);
+    return Overlay;
+  }(React.Component);
+
+  Overlay = _wrapComponent("Overlay")(Overlay);
+  var _default2 = Overlay;
+  exports.default = _default2;
+},604,[1,539,19,20,27,30,33,46,181,2],"node_modules/react-native-share/components/Overlay.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/components/Sheet.js";
+  var _components = {
+    _component: {}
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/components/Sheet.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DEFAULT_BOTTOM = -300;
+  var DEFAULT_ANIMATE_TIME = 300;
+
+  var _component = _wrapComponent("_component")(function (_React$Component) {
+    (0, _inherits2.default)(_class2, _React$Component);
+
+    function _class2() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, _class2);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(_class2)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this.state = {
+        bottom: new _reactNative.Animated.Value(DEFAULT_BOTTOM)
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(_class2, [{
+      key: "UNSAFE_componentWillReceiveProps",
+      value: function UNSAFE_componentWillReceiveProps(newProps) {
+        return _reactNative.Animated.timing(this.state.bottom, {
+          toValue: newProps.visible ? 0 : DEFAULT_BOTTOM,
+          duration: DEFAULT_ANIMATE_TIME
+        }).start();
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return React.createElement(_reactNative.Animated.View, {
+          style: {
+            bottom: this.state.bottom
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32
+          }
+        }, this.props.children);
+      }
+    }]);
+    return _class2;
+  }(React.Component));
+
+  var _default2 = _component;
+  exports.default = _default2;
+},605,[1,539,19,20,27,30,33,46,181,2],"node_modules/react-native-share/components/Sheet.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-share/components/Button.js";
+
+  var styles = _reactNative.StyleSheet.create({
+    buttonText: {
+      color: '#2c2c2c',
+      textAlign: 'left',
+      fontSize: 16,
+      fontWeight: 'bold',
+      textAlignVertical: 'center'
+    },
+    button: {
+      height: 50,
+      backgroundColor: 'white',
+      padding: 10,
+      flexDirection: 'row'
+    },
+    icon: {
+      width: 28,
+      height: 28,
+      marginLeft: 10,
+      marginRight: 30
+    }
+  });
+
+  var _default = function _default(_ref) {
+    var buttonStyle = _ref.buttonStyle,
+        onPress = _ref.onPress,
+        iconSrc = _ref.iconSrc,
+        textStyle = _ref.textStyle,
+        children = _ref.children;
+    return React.createElement(_reactNative.TouchableOpacity, {
+      activeOpacity: 0.5,
+      style: [styles.button, buttonStyle],
+      onPress: onPress,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      }
+    }, React.createElement(_reactNative.Image, {
+      style: styles.icon,
+      source: iconSrc,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      }
+    }), React.createElement(_reactNative.Text, {
+      style: [styles.buttonText, textStyle],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      }
+    }, children));
+  };
+
+  exports.default = _default;
+},603,[539,46,2],"node_modules/react-native-share/components/Button.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.SHARE_SUBJECT = exports.SHARE_TITLE = void 0;
+  var SHARE_TITLE = 'Text to speech POC';
+  exports.SHARE_TITLE = SHARE_TITLE;
+  var SHARE_SUBJECT = 'Text shared by text to speech POC App';
+  exports.SHARE_SUBJECT = SHARE_SUBJECT;
+},606,[],"src/Constants.js");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map

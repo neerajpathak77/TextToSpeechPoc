@@ -7,7 +7,7 @@ import WaveContainer from './WaveContainer';
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import {setVoiceConvertedText} from '../actions/globalActions'
-
+ 
 class RecordingTab extends Component{
 
     constructor(props) {
@@ -26,7 +26,7 @@ class RecordingTab extends Component{
 
     }
     onSpeechError = (voice) =>  {
-        this.props.setVoiceConvertedText('')
+        this.props.setVoiceConvertedText('jaaaazzzz')
     }
     onSpeechResults = (voice) =>  {
         //this.setState({ voiceToText: voice.value[0] });
