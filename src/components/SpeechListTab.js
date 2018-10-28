@@ -1,41 +1,19 @@
 import React, { Component } from 'react';
-import { Text, View, Dimensions, FlatList, StyleSheet } from 'react-native';
+import {View, Dimensions, FlatList, StyleSheet} from 'react-native';
 import { connect } from 'react-redux';
 import SpeechCard from './SpeechCard';
 import Header from './Header';
-import DatabaseLayer from '../localdb/DatabaseLayer'
-import {NOTES_TABLE} from '../Constants'
+const { height, width } = Dimensions.get("window");
 
-  const { height, width } = Dimensions.get("window");
   class SpeechListTab extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-          dataSource: [],
-        }
-    }
 
-
-    componentWillMount() {
-      DatabaseLayer.getListFromStorage(NOTES_TABLE)
-        .then(data=>console.log('DatabaseLayer',data))
-
-        
-
-        
-    }
-    
-  render() {
-
-    console.log(this.props.savedSpeechList)
-    
-    return (
+  render = () => (
       <View>
         <Header title={'SAVED SPEECH'}/>
+        {/* add placeholder for blank list */}
         {this.renderSpeechList()}
       </View>
   )
-    }
 
   renderSpeechList = () => (
       <FlatList

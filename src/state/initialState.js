@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
-    micOn: false
+    micOn: false,
+    savedSpeechList:[]
 }
 export default INITIAL_STATE;

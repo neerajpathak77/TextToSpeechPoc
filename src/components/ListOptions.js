@@ -1,21 +1,22 @@
 import React, {Component } from 'react'
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
-import {copy, share, remove} from '../actions/globalActions'
-import { connect } from "react-redux"
-import { bindActionCreators } from "redux"
+import {copy, share, remove, setSavedSpeechList} from '../actions/globalActions'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import DatabaseLayer from '../localdb/DatabaseLayer'
+import {NOTES_TABLE} from '../Constants'
 
 class ListOptions extends Component {
-
-    constructor(props) {
-        super(props)
-    }
 
     copy = () => {
         this.props.copy(this.props.voiceConvertedText)
     }
 
     remove = () => {
-        this.props.remove('itemId')
+        DatabaseLayer.removeItemFromList(NOTES_TABLE, this.props.item)
+            .then((items) => {
+                this.props.setSavedSpeechList(items)
+            })
     }
 
     share = () => {
@@ -55,7 +56,8 @@ function mapStateToProps(state, props) {
     return bindActionCreators({
         copy: copy,
         remove: remove,
-        share: share
+        share: share,
+        setSavedSpeechList: setSavedSpeechList
       },
       dispatch
     )

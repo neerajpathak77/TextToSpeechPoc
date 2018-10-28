@@ -83334,7 +83334,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
 
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
 
@@ -83359,11 +83359,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var RecordingTab = function (_Component) {
     (0, _inherits2.default)(RecordingTab, _Component);
 
-    function RecordingTab(props) {
+    function RecordingTab() {
+      var _getPrototypeOf2;
+
       var _this;
 
       (0, _classCallCheck2.default)(this, RecordingTab);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(RecordingTab).call(this, props));
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(RecordingTab)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
       _this.onPressVoiceToTextButton = function () {
         alert('Hello');
@@ -83399,23 +83406,22 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 41
           }
         }, _react.default.createElement(_WaveContainer.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 42
           }
         }), _react.default.createElement(_ScrollableTextView.default, {
           text: _this.props.voiceConvertedText,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 43
           }
         }));
       };
 
-      _this.state = {};
       return _this;
     }
 
@@ -83803,7 +83809,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
 
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
 
@@ -83826,11 +83832,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var OptionView = function (_Component) {
     (0, _inherits2.default)(OptionView, _Component);
 
-    function OptionView(props) {
+    function OptionView() {
+      var _getPrototypeOf2;
+
       var _this;
 
       (0, _classCallCheck2.default)(this, OptionView);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(OptionView).call(this, props));
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(OptionView)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
       _this.copy = function () {
         _this.props.copy(_this.props.voiceConvertedText);
@@ -83848,58 +83861,56 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         _this.props.share(_this.props.voiceConvertedText);
       };
 
-      _this.afterItemSave = function () {};
-
       _this.render = function () {
         return _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 28
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.buttonContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 29
           }
         }, _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.copy,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 30
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.buttonTextStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 33
           }
         }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.save,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 35
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.buttonTextStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 38
           }
         }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.share,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 40
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.buttonTextStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 43
           }
         }, "SHARE"))));
       };
@@ -83921,8 +83932,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       copy: _globalActions.copy,
       save: _globalActions.save,
       share: _globalActions.share,
-      setSavedSpeechList: _globalActions.setSavedSpeechList,
-      saveSpeech: _globalActions.saveSpeech
+      setSavedSpeechList: _globalActions.setSavedSpeechList
     }, dispatch);
   }
 
@@ -85974,8 +85984,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
-  var _this = this;
-
   var DatabaseLayer = function DatabaseLayer() {
     (0, _classCallCheck2.default)(this, DatabaseLayer);
   };
@@ -86017,12 +86025,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       _reactNative.AsyncStorage.getItem(key).then(function (req) {
         var items = JSON.parse(req);
         items = items == null || items == undefined ? [] : items;
-        items.push(item);
+        var index = items.findIndex(function (element) {
+          return element.key == item.key;
+        });
+
+        if (index != -1) {
+          items.splice(index, 1);
+        }
 
         _reactNative.AsyncStorage.setItem(key, JSON.stringify(items)).then(function (item) {
           resolve(items);
-
-          _this.props.setSavedSpeechList(items);
         }).catch(function (error) {
           return reject(error);
         });
@@ -86257,49 +86269,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
 
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
 
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
 
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../node_modules/react-transform-hmr/lib/index.js"));
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[8], "react-redux");
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+  var _SpeechCard = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./SpeechCard"));
 
-  var _reactRedux = _$$_REQUIRE(_dependencyMap[10], "react-redux");
-
-  var _SpeechCard = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./SpeechCard"));
-
-  var _Header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./Header"));
-
-  var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "../localdb/DatabaseLayer"));
-
-  var _Constants = _$$_REQUIRE(_dependencyMap[14], "../Constants");
+  var _Header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./Header"));
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js";
-  var _components = {
-    SpeechListTab: {
-      displayName: "SpeechListTab"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
 
   var _Dimensions$get = _reactNative.Dimensions.get("window"),
       height = _Dimensions$get.height,
@@ -86308,11 +86294,41 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var SpeechListTab = function (_Component) {
     (0, _inherits2.default)(SpeechListTab, _Component);
 
-    function SpeechListTab(props) {
+    function SpeechListTab() {
+      var _getPrototypeOf2;
+
       var _this;
 
       (0, _classCallCheck2.default)(this, SpeechListTab);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(SpeechListTab).call(this, props));
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(SpeechListTab)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+      _this.render = function () {
+        return _react.default.createElement(_reactNative.View, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11
+          }
+        }, _react.default.createElement(_Header.default, {
+          title: 'SAVED SPEECH',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12
+          }
+        }), _this.props.savedSpeechList.length > 0 ? _react.default.createElement(_reactNative.View, {
+          style: {
+            backgroundColor: 'red'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14
+          }
+        }) : _this.renderSpeechList());
+      };
 
       _this.renderSpeechList = function () {
         return _react.default.createElement(_reactNative.FlatList, {
@@ -86324,13 +86340,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             return _react.default.createElement(_reactNative.View, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 45
+                lineNumber: 24
               }
             }, _react.default.createElement(_SpeechCard.default, {
               item: item,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 46
+                lineNumber: 25
               }
             }));
           },
@@ -86339,46 +86355,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 20
           }
         });
       };
 
-      _this.state = {
-        dataSource: []
-      };
       return _this;
     }
 
-    (0, _createClass2.default)(SpeechListTab, [{
-      key: "componentWillMount",
-      value: function componentWillMount() {
-        _DatabaseLayer.default.getListFromStorage(_Constants.NOTES_TABLE).then(function (data) {
-          return console.log('DatabaseLayer', data);
-        });
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        console.log(this.props.savedSpeechList);
-        return _react.default.createElement(_reactNative.View, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-          }
-        }, _react.default.createElement(_Header.default, {
-          title: 'SAVED SPEECH',
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 34
-          }
-        }), this.renderSpeechList());
-      }
-    }]);
     return SpeechListTab;
   }(_react.Component);
-
-  SpeechListTab = _wrapComponent("SpeechListTab")(SpeechListTab);
 
   function mapStateToProps(state, props) {
     return {
@@ -86386,9 +86372,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
   }
 
-  var _default2 = (0, _reactRedux.connect)(mapStateToProps, null)(SpeechListTab);
+  var _default = (0, _reactRedux.connect)(mapStateToProps, null)(SpeechListTab);
 
-  exports.default = _default2;
+  exports.default = _default;
 
   var styles = _reactNative.StyleSheet.create({
     itemContainer: {
@@ -86426,7 +86412,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginRight: 10
     }
   });
-},581,[1,539,19,20,27,30,33,46,181,2,553,582,584,578,579],"src/components/SpeechListTab.js");
+},581,[1,539,19,27,30,33,46,2,553,582,584],"src/components/SpeechListTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86472,6 +86458,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           lineNumber: 17
         }
       }, _react.default.createElement(_ListOptions.default, {
+        item: item,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
@@ -86530,7 +86517,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
 
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
 
@@ -86544,23 +86531,36 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _redux = _$$_REQUIRE(_dependencyMap[10], "redux");
 
+  var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "../localdb/DatabaseLayer"));
+
+  var _Constants = _$$_REQUIRE(_dependencyMap[12], "../Constants");
+
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/ListOptions.js";
 
   var ListOptions = function (_Component) {
     (0, _inherits2.default)(ListOptions, _Component);
 
-    function ListOptions(props) {
+    function ListOptions() {
+      var _getPrototypeOf2;
+
       var _this;
 
       (0, _classCallCheck2.default)(this, ListOptions);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ListOptions).call(this, props));
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(ListOptions)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
       _this.copy = function () {
         _this.props.copy(_this.props.voiceConvertedText);
       };
 
       _this.remove = function () {
-        _this.props.remove('itemId');
+        _DatabaseLayer.default.removeItemFromList(_Constants.NOTES_TABLE, _this.props.item).then(function (items) {
+          _this.props.setSavedSpeechList(items);
+        });
       };
 
       _this.share = function () {
@@ -86571,52 +86571,52 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 27
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.buttonContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 28
           }
         }, _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.copy,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 29
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.buttonTextStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 32
           }
         }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.remove,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 34
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.buttonTextStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 37
           }
         }, "DELETE")), _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.share,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 39
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.buttonTextStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 42
           }
         }, "SHARE"))));
       };
@@ -86637,7 +86637,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return (0, _redux.bindActionCreators)({
       copy: _globalActions.copy,
       remove: _globalActions.remove,
-      share: _globalActions.share
+      share: _globalActions.share,
+      setSavedSpeechList: _globalActions.setSavedSpeechList
     }, dispatch);
   }
 
@@ -86667,7 +86668,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       height: 20
     }
   });
-},583,[1,539,19,27,30,33,46,2,552,553,568],"src/components/ListOptions.js");
+},583,[1,539,19,27,30,33,46,2,552,553,568,578,579],"src/components/ListOptions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86934,7 +86935,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       case _globalActions.SET_SAVED_SPEECH_LIST:
         return (0, _extends2.default)({}, state, {
-          savedSpeechList: action.payload
+          savedSpeechList: action.payload.reverse()
         });
 
       case _globalActions.SAVE_SPEECH:
@@ -86953,7 +86954,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
   var INITIAL_STATE = {
-    micOn: false
+    micOn: false,
+    savedSpeechList: []
   };
   var _default = INITIAL_STATE;
   exports.default = _default;

@@ -37,11 +37,11 @@ export default class DatabaseLayer {
                 .then(req => {
                     let items = JSON.parse(req)
                     items = (items ==null || items==undefined) ? [] : items
-                    items.push(item)
+                    let index = items.findIndex((element)=>{return element.key == item.key})
+                    if (index != -1) {items.splice(index, 1)}
                     AsyncStorage.setItem(key, JSON.stringify(items))
                         .then(item => {
                         resolve(items)
-                        this.props.setSavedSpeechList(items)
                 })
                 .catch(error => reject(error))
             })

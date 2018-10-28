@@ -15,7 +15,7 @@ const {width} = Dimensions.get('window');
                     <Text>{item.note}</Text>
                 </View>
             <View style={styles.bottomContainer}>
-                <ListOptions/>
+                <ListOptions item={item}/>
             </View>
                 <View style={styles.separator}/>
             </View>

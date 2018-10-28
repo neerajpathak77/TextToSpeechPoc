@@ -1,6 +1,5 @@
-
 import React, {Component} from 'react'
-import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, Dimensions} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import Voice from 'react-native-voice'
 import ScrollableTextView from './ScrollableTextView'
 import WaveContainer from './WaveContainer';
@@ -10,11 +9,6 @@ import {setVoiceConvertedText} from '../actions/globalActions'
  
 class RecordingTab extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
     onPressVoiceToTextButton = () => {
         alert('Hello')
     }
@@ -29,17 +23,8 @@ class RecordingTab extends Component {
         this.props.setVoiceConvertedText('')
     }
     onSpeechResults = (voice) =>  {
-        //this.setState({ voiceToText: voice.value[0] });
-        //this.setState({ convertedTextFromVoice: '' })
-        // this.onChange(voice.value[0])
         this.props.setVoiceConvertedText(voice.value[0])
-
     }
-    // onChange = text => {
-    //     alert(text)
-
-    //     //this.setState({convertedTextFromVoice:text})
-    // }
     openMic = () => {
         Voice.start("en_US")
         Voice.onSpeechStart = this.onSpeechStart
@@ -60,12 +45,11 @@ class RecordingTab extends Component {
     )
 }
 
-
 function mapStateToProps(state, props) {
     return {
         voiceConvertedText: state.global.voiceConvertedText
     }
-  }
+}
   
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
