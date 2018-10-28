@@ -5,9 +5,9 @@ import {
     Text,
     TouchableOpacity
   } from "react-native";
-  import React from "react";
+import React from "react";
 import ListOptions from "./ListOptions";
-  const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
   export default SpeechCard = props => {
     const renderCell = item => {

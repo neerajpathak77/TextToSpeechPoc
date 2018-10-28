@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Dimensions, FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import SpeechCard from './SpeechCard';
+import Header from './Header';
 
   const { height, width } = Dimensions.get("window");
   class SpeechListTab extends Component {
@@ -12,26 +13,25 @@ import SpeechCard from './SpeechCard';
         }
     }
     
-  render() {
-    return (
+  render = () => (
       <View>
-        <FlatList
+        <Header title={'SAVED SPEECH'}/>
+        {this.renderSpeechList()}
+      </View>
+  )
+
+  renderSpeechList = () => (
+      <FlatList
           style={styles.listStyle}
           data={this.state.dataSource}
           renderItem={({item, index}) => (
             <View>
               <SpeechCard/>
-              {/* <MediaHolder 
-                mediaURL = {item.mediaURL} 
-                mediaType = {item.msgType}
-                onItemSelect = {this.onItemSelect}/> */}
             </View>
           )}
           keyExtractor={item => item}
-          />
-      </View>
-      )
-  }
+      />
+  )
 }
 
 function mapStateToProps(state, props) {

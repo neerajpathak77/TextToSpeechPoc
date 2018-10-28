@@ -86597,7 +86597,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           }
         }, _react.default.createElement(_reactNative.View, {
           style: {
-            backgroundColor: 'cadetblue'
+            backgroundColor: 'white'
           },
           __source: {
             fileName: _jsxFileName,
@@ -86609,9 +86609,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             lineNumber: 17
           }
         })), _react.default.createElement(_reactNative.View, {
-          style: {
-            backgroundColor: 'cornflowerblue'
-          },
           __source: {
             fileName: _jsxFileName,
             lineNumber: 19
@@ -88708,43 +88705,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
 
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
 
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
 
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
 
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
 
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../node_modules/react-transform-hmr/lib/index.js"));
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[8], "react-redux");
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+  var _SpeechCard = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./SpeechCard"));
 
-  var _reactRedux = _$$_REQUIRE(_dependencyMap[10], "react-redux");
-
-  var _SpeechCard = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./SpeechCard"));
+  var _Header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./Header"));
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js";
-  var _components = {
-    SpeechListTab: {
-      displayName: "SpeechListTab"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
 
   var _Dimensions$get = _reactNative.Dimensions.get("window"),
       height = _Dimensions$get.height,
@@ -88758,35 +88735,38 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       (0, _classCallCheck2.default)(this, SpeechListTab);
       _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(SpeechListTab).call(this, props));
-      _this.state = {
-        dataSource: [1, 2, 3, 4, 5, 5]
-      };
-      return _this;
-    }
 
-    (0, _createClass2.default)(SpeechListTab, [{
-      key: "render",
-      value: function render() {
+      _this.render = function () {
         return _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 17
           }
-        }, _react.default.createElement(_reactNative.FlatList, {
+        }, _react.default.createElement(_Header.default, {
+          title: 'SAVED SPEECH',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          }
+        }), _this.renderSpeechList());
+      };
+
+      _this.renderSpeechList = function () {
+        return _react.default.createElement(_reactNative.FlatList, {
           style: styles.listStyle,
-          data: this.state.dataSource,
+          data: _this.state.dataSource,
           renderItem: function renderItem(_ref) {
             var item = _ref.item,
                 index = _ref.index;
             return _react.default.createElement(_reactNative.View, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 22
+                lineNumber: 28
               }
             }, _react.default.createElement(_SpeechCard.default, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 23
+                lineNumber: 29
               }
             }));
           },
@@ -88795,23 +88775,27 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 24
           }
-        }));
-      }
-    }]);
+        });
+      };
+
+      _this.state = {
+        dataSource: [1, 2, 3, 4, 5, 5]
+      };
+      return _this;
+    }
+
     return SpeechListTab;
   }(_react.Component);
-
-  SpeechListTab = _wrapComponent("SpeechListTab")(SpeechListTab);
 
   function mapStateToProps(state, props) {
     return {};
   }
 
-  var _default2 = (0, _reactRedux.connect)(mapStateToProps, null)(SpeechListTab);
+  var _default = (0, _reactRedux.connect)(mapStateToProps, null)(SpeechListTab);
 
-  exports.default = _default2;
+  exports.default = _default;
 
   var styles = _reactNative.StyleSheet.create({
     itemContainer: {
@@ -88849,7 +88833,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginRight: 10
     }
   });
-},635,[1,539,19,20,27,30,33,46,181,2,554,630],"src/components/SpeechListTab.js");
+},635,[1,539,19,27,30,33,46,2,554,630,636],"src/components/SpeechListTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -89092,6 +89076,54 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
 },631,[1,539,19,27,30,33,46,2,553,554,569],"src/components/ListOptions.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "react"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/Header.js";
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      width = _Dimensions$get.width;
+
+  var _default = Header = function Header(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.container,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.textStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      }
+    }, props.title));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      width: width,
+      height: 50,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    textStyle: {
+      fontWeight: 'bold',
+      fontSize: 18
+    }
+  });
+},636,[1,2,46],"src/components/Header.js");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map
