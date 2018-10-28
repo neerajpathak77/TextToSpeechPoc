@@ -12,6 +12,9 @@ export default function globalReducer(state = INITIAL_STATE, action) {
 
     case SAVE:
       alert(action.payload)
+
+      
+
       break
 
     case SHARE:

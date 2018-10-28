@@ -4,7 +4,7 @@ import {copy, share, save} from '../actions/globalActions'
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 
-class OptionView extends Component {
+class ListOptions extends Component {
 
     constructor(props) {
         super(props)
@@ -64,31 +64,27 @@ function mapStateToProps(state, props) {
   export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(OptionView)
+  )(ListOptions)
 
 const styles = StyleSheet.create({
-    optionsContainer: {
-      flex: .3,
-      backgroundColor: '#3d2e48',
-      justifyContent: 'flex-end'
-    },
     buttonContainer: {
-        height: 50,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginLeft: 50,
-        marginRight: 50,
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 5,
+        marginBottom: 5
     },
     buttonTextStyle: {
         color: 'white',
         marginLeft: 20,
         marginRight: 20,
-        marginTop: 5,
-        marginBottom: 5,
+        alignSelf: 'center'
     },
     buttons: {
         alignSelf: 'center',
         borderRadius:15,
         backgroundColor: '#5d5268',
+        height: 20
     }
   })

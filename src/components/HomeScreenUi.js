@@ -2,6 +2,8 @@ import {StyleSheet, View, Text} from 'react-native';
 import React, {Component} from 'react';
 import {PagerTabIndicator, IndicatorViewPager} from 'rn-viewpager';
 import RecordingTab from './RecordingTab';
+import SpeechList from './SpeechList';
+import Settings from './Settings';
 
 export default class HomeScreenUi extends Component {
     render() {
@@ -12,13 +14,13 @@ export default class HomeScreenUi extends Component {
                     indicator={this.renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>page one</Text>
+                        <SpeechList/>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                         <RecordingTab/>
                     </View>
-                    <View style={{backgroundColor:'#1AA094'}}>
-                        <Text>page three</Text>
+                    <View style={{backgroundColor:'#3d2e48'}}>
+                        <Settings/>
                     </View>
                 </IndicatorViewPager>
             </View>
