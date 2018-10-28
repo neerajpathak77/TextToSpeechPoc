@@ -13,13 +13,13 @@ export default class HomeContainer extends Component {
 					style={{flex:1, paddingTop:0}}
                     indicator={this.renderTabIndicator()}
                 >
-                    <View style={{backgroundColor:'white'}}>
+                    <View style={{backgroundColor:'white', marginBottom:45}}>
                         <SpeechListTab/>
                     </View>
-                    <View>
+                    <View style={{backgroundColor:'white', marginBottom:45}}>
                         <RecordingTab/>
                     </View>
-                    <View style={{backgroundColor:'#3d2e48'}}>
+                    <View style={{backgroundColor:'#3d2e48', marginBottom:45}}>
                         <SettingsTab/>
                     </View>
                 </IndicatorViewPager>

@@ -2,27 +2,24 @@ import {
     View,
     StyleSheet,
     Dimensions,
-    Text,
-    TouchableOpacity
-  } from "react-native";
+    Text
+} from "react-native";
 import React from "react";
 import ListOptions from "./ListOptions";
-const { height, width } = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
-  export default SpeechCard = props => {
-    const renderCell = item => {
-        return (
+    export default SpeechCard = props => {
+        const renderCell = item => (
             <View style={styles.container}>
                 <View style={styles.textContainer}>
-                    <Text>This is simple textThis is simple textThis is simple textThis </Text>
+                    <Text>{item.note}</Text>
                 </View>
             <View style={styles.bottomContainer}>
                 <ListOptions/>
             </View>
                 <View style={styles.separator}/>
             </View>
-          ) 
-      }
+    ) 
  
   return (
     renderCell(props.item)

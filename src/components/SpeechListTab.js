@@ -3,41 +3,64 @@ import { Text, View, Dimensions, FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import SpeechCard from './SpeechCard';
 import Header from './Header';
+import DatabaseLayer from '../localdb/DatabaseLayer';
 
   const { height, width } = Dimensions.get("window");
   class SpeechListTab extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          dataSource: [1,2,3,4,5,5],
+          dataSource: [],
         }
     }
+
+
+    componentWillMount() {
+      DatabaseLayer.getListFromStorage('KEY')
+        .then(data=>console.log('DatabaseLayer',data))
+
+        
+        let note = DatabaseLayer.createNoteTemplateModel('neeraj ')
+
+        console.log('DatabaseLayer.addItemToList', DatabaseLayer.addItemToList('KEY'))
+        DatabaseLayer.addItemToList('KEY', note)
+        .then(dataSource => {
+          
+          console.log('DatabaseLayer',dataSource)
+          this.setState({dataSource})
+        })
+    }
     
-  render = () => (
+  render() {
+
+    console.log(this.props.savedSpeechList)
+    
+    return (
       <View>
         <Header title={'SAVED SPEECH'}/>
         {this.renderSpeechList()}
       </View>
   )
+    }
 
   renderSpeechList = () => (
       <FlatList
           style={styles.listStyle}
-          data={this.state.dataSource}
+          data={this.props.savedSpeechList}
           renderItem={({item, index}) => (
             <View>
-              <SpeechCard/>
+              <SpeechCard item={item}/>
             </View>
           )}
-          keyExtractor={item => item}
+          keyExtractor={item => item.key}
       />
   )
 }
 
 function mapStateToProps(state, props) {
   return {
-      
-  };
+    savedSpeechList: state.global.savedSpeechList
+  }
 }
 export default connect(mapStateToProps, null)(SpeechListTab);
 

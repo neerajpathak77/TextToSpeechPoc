@@ -7,7 +7,6 @@ import WaveContainer from './WaveContainer';
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import {setVoiceConvertedText} from '../actions/globalActions'
-import DatabaseLayer from '../localdb/DatabaseLayer';
  
 class RecordingTab extends Component{
 
@@ -50,19 +49,6 @@ class RecordingTab extends Component{
 
     componentDidMount() {
         this.openMic()
-
-
-        DatabaseLayer .getListFromStorage('KEY')
-        .then(data=>console.log('DatabaseLayer',data))
-
-        
-        let note = DatabaseLayer.createNoteTemplateModel('neeraj ')
-
-        console.log('DatabaseLayer.addItemToList', DatabaseLayer.addItemToList('KEY'))
-        DatabaseLayer.addItemToList('KEY', note)
-        .then(data=>console.log('DatabaseLayer',data))
-        
-
     }
 
     render = () => (

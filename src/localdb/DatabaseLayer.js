@@ -10,7 +10,7 @@ export default class DatabaseLayer {
                     items = (items ==null || items==undefined) ? [] : items
                     items.push(item)
                     AsyncStorage.setItem(key, JSON.stringify(items))
-                        .then(json => {
+                        .then(item => {
                         resolve(items)
                 })
                 .catch(error => reject(error))

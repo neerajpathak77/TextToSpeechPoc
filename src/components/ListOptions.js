@@ -1,6 +1,6 @@
 import React, {Component } from 'react'
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
-import {copy, share, save} from '../actions/globalActions'
+import {copy, share, remove} from '../actions/globalActions'
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 
@@ -14,8 +14,8 @@ class ListOptions extends Component {
         this.props.copy(this.props.voiceConvertedText)
     }
 
-    save = () => {
-        this.props.save(this.props.voiceConvertedText)
+    remove = () => {
+        this.props.remove('itemId')
     }
 
     share = () => {
@@ -31,9 +31,9 @@ class ListOptions extends Component {
                     <Text style = {styles.buttonTextStyle}>COPY</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={this.save} 
+                    onPress={this.remove} 
                     style = {styles.buttons}>
-                    <Text style = {styles.buttonTextStyle}>SAVE</Text>
+                    <Text style = {styles.buttonTextStyle}>DELETE</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                     onPress={this.share} 
@@ -54,7 +54,7 @@ function mapStateToProps(state, props) {
   function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         copy: copy,
-        save:save,
+        remove: remove,
         share: share
       },
       dispatch
