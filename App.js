@@ -9,13 +9,13 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import VoiceToText from './src/components/VoiceToText';
-import HomeScreenUi from './src/components/HomeScreenUi';
+import HomeContainer from './src/components/HomeContainer';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <HomeScreenUi/>
+      <HomeContainer/>
     );
   }
 }

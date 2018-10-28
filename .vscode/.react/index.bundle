@@ -81822,7 +81822,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _VoiceToText = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./src/components/VoiceToText"));
 
-  var _HomeScreenUi = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./src/components/HomeScreenUi"));
+  var _HomeContainer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./src/components/HomeContainer"));
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/App.js";
   var _components = {
@@ -81855,7 +81855,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _createClass2.default)(App, [{
       key: "render",
       value: function render() {
-        return _react.default.createElement(_HomeScreenUi.default, {
+        return _react.default.createElement(_HomeContainer.default, {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 18
@@ -81868,7 +81868,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = App;
   exports.default = _default2;
-},538,[1,539,19,20,27,30,33,46,181,2,540,542],"App.js");
+},538,[1,539,19,20,27,30,33,46,181,2,540,633],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireWildcard(obj) {
     if (obj && obj.__esModule) {
@@ -82288,1829 +82288,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   exports.default = _default;
 },541,[539,1,8,19,20,2],"node_modules/react-native-voice/index.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../node_modules/react-transform-hmr/lib/index.js"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
-
-  var _rnViewpager = _$$_REQUIRE(_dependencyMap[10], "rn-viewpager");
-
-  var _RecordingTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./RecordingTab"));
-
-  var _SpeechList = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./SpeechList"));
-
-  var _Settings = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./Settings"));
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/HomeScreenUi.js";
-  var _components = {
-    HomeScreenUi: {
-      displayName: "HomeScreenUi"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/HomeScreenUi.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var HomeScreenUi = _wrapComponent("HomeScreenUi")(function (_Component) {
-    (0, _inherits2.default)(HomeScreenUi, _Component);
-
-    function HomeScreenUi() {
-      (0, _classCallCheck2.default)(this, HomeScreenUi);
-      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(HomeScreenUi).apply(this, arguments));
-    }
-
-    (0, _createClass2.default)(HomeScreenUi, [{
-      key: "render",
-      value: function render() {
-        return _react.default.createElement(_reactNative.View, {
-          style: {
-            flex: 1
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 11
-          }
-        }, _react.default.createElement(_rnViewpager.IndicatorViewPager, {
-          style: {
-            flex: 1,
-            paddingTop: 0
-          },
-          indicator: this.renderTabIndicator(),
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          }
-        }, _react.default.createElement(_reactNative.View, {
-          style: {
-            backgroundColor: 'cadetblue'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 16
-          }
-        }, _react.default.createElement(_SpeechList.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          }
-        })), _react.default.createElement(_reactNative.View, {
-          style: {
-            backgroundColor: 'cornflowerblue'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
-          }
-        }, _react.default.createElement(_RecordingTab.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 20
-          }
-        })), _react.default.createElement(_reactNative.View, {
-          style: {
-            backgroundColor: '#3d2e48'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 22
-          }
-        }, _react.default.createElement(_Settings.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 23
-          }
-        }))));
-      }
-    }, {
-      key: "renderTabIndicator",
-      value: function renderTabIndicator() {
-        var tabs = [{
-          text: 'Search',
-          iconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/mic.png"),
-          selectedIconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/mic.png")
-        }, {
-          text: 'Mic',
-          iconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/searches.png"),
-          selectedIconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/searches.png")
-        }, {
-          text: 'Settings',
-          iconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/settings.png"),
-          selectedIconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/settings.png")
-        }];
-        return _react.default.createElement(_rnViewpager.PagerTabIndicator, {
-          tabs: tabs,
-          itemStyle: {
-            height: 25,
-            width: 25
-          },
-          selectedItemStyle: {
-            height: 40,
-            width: 40
-          },
-          iconStyle: {
-            height: 25,
-            width: 25
-          },
-          selectedIconStyle: {
-            height: 40,
-            width: 40
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 44
-          }
-        });
-      }
-    }]);
-    return HomeScreenUi;
-  }(_react.Component));
-
-  var _default2 = HomeScreenUi;
-  exports.default = _default2;
-},542,[1,539,19,20,27,30,33,46,181,2,543,549,629,632,580,581,582],"src/components/HomeScreenUi.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "ViewPager", {
-    enumerable: true,
-    get: function get() {
-      return _ViewPager.default;
-    }
-  });
-  Object.defineProperty(exports, "IndicatorViewPager", {
-    enumerable: true,
-    get: function get() {
-      return _IndicatorViewPager.default;
-    }
-  });
-  Object.defineProperty(exports, "PagerDotIndicator", {
-    enumerable: true,
-    get: function get() {
-      return _PagerDotIndicator.default;
-    }
-  });
-  Object.defineProperty(exports, "PagerTitleIndicator", {
-    enumerable: true,
-    get: function get() {
-      return _PagerTitleIndicator.default;
-    }
-  });
-  Object.defineProperty(exports, "PagerTabIndicator", {
-    enumerable: true,
-    get: function get() {
-      return _PagerTabIndicator.default;
-    }
-  });
-
-  var _ViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./viewpager/ViewPager"));
-
-  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./viewpager/IndicatorViewPager"));
-
-  var _PagerDotIndicator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./viewpager/indicator/PagerDotIndicator"));
-
-  var _PagerTitleIndicator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./viewpager/indicator/PagerTitleIndicator"));
-
-  var _PagerTabIndicator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./viewpager/indicator/PagerTabIndicator"));
-},543,[1,544,545,546,547,548],"node_modules/rn-viewpager/index.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
-
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
-
-  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/assertThisInitialized"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./../../react-transform-hmr/lib/index.js"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[12], "react-native");
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/ViewPager.js";
-
-  var _components = {
-    ViewPager: {
-      displayName: "ViewPager"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/ViewPager.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var SCROLLVIEW_REF = 'scrollView';
-  var VIEWPAGER_REF = 'viewPager';
-  var SCROLL_STATE = {
-    idle: 'idle',
-    settling: 'settling',
-    dragging: 'dragging'
-  };
-
-  var ViewPager = _wrapComponent("ViewPager")((_temp = _class = function (_Component) {
-    (0, _inherits2.default)(ViewPager, _Component);
-
-    function ViewPager(props) {
-      var _this;
-
-      (0, _classCallCheck2.default)(this, ViewPager);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ViewPager).call(this, props));
-      _this._scrollState = SCROLL_STATE.idle;
-      _this._preScrollX = null;
-      _this._panResponder = _reactNative.PanResponder.create({
-        onStartShouldSetPanResponder: function onStartShouldSetPanResponder() {
-          return true;
-        },
-        onMoveShouldSetPanResponder: function onMoveShouldSetPanResponder() {
-          return true;
-        },
-        onPanResponderGrant: function onPanResponderGrant() {
-          return _this._setScrollState(SCROLL_STATE.dragging);
-        },
-        onPanResponderMove: function onPanResponderMove() {
-          return null;
-        },
-        onPanResponderRelease: function onPanResponderRelease() {
-          return _this._setScrollState(SCROLL_STATE.settling);
-        },
-        onPanResponderTerminate: function onPanResponderTerminate() {
-          return null;
-        },
-        onPanResponderTerminationRequest: function onPanResponderTerminationRequest(evt, gestureState) {
-          return true;
-        }
-      });
-      _this._onPageScrollOnAndroid = _this._onPageScrollOnAndroid.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._onPageSelectedOnAndroid = _this._onPageSelectedOnAndroid.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._renderOnIOS = _this._renderOnIOS.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._onScrollOnIOS = _this._onScrollOnIOS.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._onScrollViewLayout = _this._onScrollViewLayout.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._childrenWithOverridenStyle = _this._childrenWithOverridenStyle.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._setScrollState = _this._setScrollState.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this.setPageWithoutAnimation = _this.setPageWithoutAnimation.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this.setPage = _this.setPage.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this.state = {
-        width: 0,
-        height: 0,
-        page: props.initialPage
-      };
-      return _this;
-    }
-
-    (0, _createClass2.default)(ViewPager, [{
-      key: "render",
-      value: function render() {
-        return this.props.forceScrollView || _reactNative.Platform.OS === 'ios' ? this._renderOnIOS() : _react.default.createElement(_reactNative.ViewPagerAndroid, (0, _extends2.default)({}, this.props, {
-          scrollEnabled: this.props.horizontalScroll ? true : false,
-          ref: VIEWPAGER_REF,
-          key: this.props.children ? this.props.children.length : 0,
-          onPageScroll: this._onPageScrollOnAndroid,
-          onPageSelected: this._onPageSelectedOnAndroid,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 62
-          }
-        }));
-      }
-    }, {
-      key: "_onPageScrollOnAndroid",
-      value: function _onPageScrollOnAndroid(e) {
-        if (this.props.onPageScroll) this.props.onPageScroll(e.nativeEvent);
-      }
-    }, {
-      key: "_onPageSelectedOnAndroid",
-      value: function _onPageSelectedOnAndroid(e) {
-        if (this.props.onPageSelected) this.props.onPageSelected(e.nativeEvent);
-      }
-    }, {
-      key: "_renderOnIOS",
-      value: function _renderOnIOS() {
-        var childrenCount = this.props.children ? this.props.children.length : 0;
-        var initialPage = Math.min(Math.max(0, this.props.initialPage), childrenCount - 1);
-        var needMonitorScroll = !!this.props.onPageScroll || !!this.props.onPageSelected || !!this.props.onPageScrollStateChanged;
-        var needMonitorTouch = !!this.props.onPageScrollStateChanged;
-        var props = (0, _objectSpread2.default)({}, this.props, {
-          ref: SCROLLVIEW_REF,
-          onLayout: this._onScrollViewLayout,
-          horizontal: true,
-          pagingEnabled: this.props.horizontalScroll ? true : false,
-          scrollsToTop: false,
-          showsHorizontalScrollIndicator: false,
-          showsVerticalScrollIndicator: false,
-          children: this._childrenWithOverridenStyle(),
-          contentOffset: {
-            x: this.state.width * initialPage,
-            y: 0
-          },
-          decelerationRate: 0.9,
-          onScroll: needMonitorScroll ? this._onScrollOnIOS : null,
-          scrollEventThrottle: needMonitorScroll ? this.props.onPageScroll ? 8 : 1 : 0
-        });
-        if (needMonitorTouch) props = (0, _extends2.default)(props, this._panResponder.panHandlers);
-        var scrollViewStyle = {
-          overflow: 'visible',
-          marginHorizontal: -this.props.pageMargin / 2
-        };
-        if (this.props.style && !this.props.style.height) return _react.default.createElement(_reactNative.ScrollView, (0, _extends2.default)({}, props, {
-          style: [scrollViewStyle, this.props.style],
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 107
-          }
-        }));else return _react.default.createElement(_reactNative.View, {
-          style: this.props.style,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 109
-          }
-        }, _react.default.createElement(_reactNative.ScrollView, (0, _extends2.default)({}, props, {
-          style: scrollViewStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 110
-          }
-        })));
-      }
-    }, {
-      key: "_onScrollOnIOS",
-      value: function _onScrollOnIOS(e) {
-        var x = e.nativeEvent.contentOffset.x,
-            offset,
-            position = Math.floor(x / this.state.width);
-        if (x === this._preScrollX) return;
-        this._preScrollX = x;
-        offset = x / this.state.width - position;
-        if (this.props.onPageScroll) this.props.onPageScroll({
-          offset: offset,
-          position: position
-        });
-
-        if (this.props.onPageSelected && offset === 0) {
-          this.props.onPageSelected({
-            position: position
-          });
-          this.props.onPageScrollStateChanged && this._setScrollState(SCROLL_STATE.idle);
-          this.setState({
-            page: position
-          });
-        }
-      }
-    }, {
-      key: "_onScrollViewLayout",
-      value: function _onScrollViewLayout(event) {
-        var _this2 = this;
-
-        var _event$nativeEvent$la = event.nativeEvent.layout,
-            width = _event$nativeEvent$la.width,
-            height = _event$nativeEvent$la.height;
-        this.setState({
-          width: width,
-          height: height
-        }, function () {
-          return _reactNative.Platform.OS === 'ios' && _this2.setPageWithoutAnimation(_this2.state.page);
-        });
-      }
-    }, {
-      key: "_childrenWithOverridenStyle",
-      value: function _childrenWithOverridenStyle() {
-        var _this3 = this;
-
-        if (this.state.width === 0 || this.state.height === 0) return null;
-        return _react.default.Children.map(this.props.children, function (child) {
-          if (!child) return null;
-          var newProps = (0, _objectSpread2.default)({}, child.props, {
-            style: [child.props.style, {
-              width: _this3.state.width,
-              height: _this3.state.height,
-              position: null
-            }],
-            collapsable: false
-          });
-
-          if (child.type && child.type.displayName && child.type.displayName !== 'RCTView' && child.type.displayName !== 'View') {
-            console.warn('Each ViewPager child must be a <View>. Was ' + child.type.displayName);
-          }
-
-          return _react.default.createElement(child.type, newProps);
-        });
-      }
-    }, {
-      key: "_setScrollState",
-      value: function _setScrollState(scrollState) {
-        if (scrollState === this._scrollState) return;
-        this.props.onPageScrollStateChanged && this.props.onPageScrollStateChanged(scrollState);
-        this._scrollState = scrollState;
-      }
-    }, {
-      key: "setPageWithoutAnimation",
-      value: function setPageWithoutAnimation(selectedPage) {
-        this.setState({
-          page: selectedPage
-        });
-        if (this.props.forceScrollView || _reactNative.Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({
-          x: this.state.width * selectedPage,
-          animated: false
-        });else {
-          this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage);
-          if (this.props.onPageSelected) this.props.onPageSelected({
-            position: selectedPage
-          });
-        }
-      }
-    }, {
-      key: "setPage",
-      value: function setPage(selectedPage) {
-        this.setState({
-          page: selectedPage
-        });
-        if (this.props.forceScrollView || _reactNative.Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({
-          x: this.state.width * selectedPage
-        });else {
-          this.refs[VIEWPAGER_REF].setPage(selectedPage);
-          if (this.props.onPageSelected) this.props.onPageSelected({
-            position: selectedPage
-          });
-        }
-      }
-    }]);
-    return ViewPager;
-  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPagerAndroid.propTypes), _class.defaultProps = {
-    initialPage: 0,
-    keyboardDismissMode: 'on-drag',
-    onPageScroll: null,
-    onPageSelected: null,
-    onPageScrollStateChanged: null,
-    pageMargin: 0,
-    horizontalScroll: true
-  }, _temp));
-
-  var _default2 = ViewPager;
-  exports.default = _default2;
-},544,[1,539,43,8,19,20,27,30,33,29,46,181,2],"node_modules/rn-viewpager/viewpager/ViewPager.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
-
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
-
-  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/assertThisInitialized"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./../../react-transform-hmr/lib/index.js"));
-
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "prop-types"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[13], "react-native");
-
-  var _ViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[14], "./ViewPager"));
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/IndicatorViewPager.js";
-
-  var _components = {
-    IndicatorViewPager: {
-      displayName: "IndicatorViewPager"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/IndicatorViewPager.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var VIEWPAGER_REF = 'viewPager';
-  var INDICATOR_REF = 'indicator';
-
-  var IndicatorViewPager = _wrapComponent("IndicatorViewPager")((_temp = _class = function (_Component) {
-    (0, _inherits2.default)(IndicatorViewPager, _Component);
-
-    function IndicatorViewPager(props) {
-      var _this;
-
-      (0, _classCallCheck2.default)(this, IndicatorViewPager);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(IndicatorViewPager).call(this, props));
-      _this._onPageScroll = _this._onPageScroll.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._onPageSelected = _this._onPageSelected.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._goToNextPage = _this._goToNextPage.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._renderIndicator = _this._renderIndicator.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this.setPage = _this.setPage.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this.setPageWithoutAnimation = _this.setPageWithoutAnimation.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._startAutoPlay = _this._startAutoPlay.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._stopAutoPlay = _this._stopAutoPlay.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      _this._currentIndex = props.initialPage;
-      _this._childrenCount = _react.default.Children.count(props.children);
-      return _this;
-    }
-
-    (0, _createClass2.default)(IndicatorViewPager, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        if (this.props.autoPlayEnable) this._startAutoPlay();else this._stopAutoPlay();
-      }
-    }, {
-      key: "componentWillUpdate",
-      value: function componentWillUpdate(nextProps, nextState) {
-        this._childrenCount = _react.default.Children.count(nextProps.children);
-
-        if (this.props.autoPlayEnable !== nextProps.autoPlayEnable) {
-          nextProps.autoPlayEnable ? this._startAutoPlay() : this._stopAutoPlay();
-        }
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        return _react.default.createElement(_reactNative.View, {
-          style: [styles.container, this.props.style],
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 60
-          }
-        }, _react.default.createElement(_ViewPager.default, (0, _extends2.default)({}, this.props, {
-          horizontalScroll: this.props.horizontalScroll,
-          ref: VIEWPAGER_REF,
-          style: [styles.pager, this.props.pagerStyle],
-          onPageScroll: this._onPageScroll,
-          onPageSelected: this._onPageSelected,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 61
-          }
-        })), this._renderIndicator());
-      }
-    }, {
-      key: "componentWillUnmount",
-      value: function componentWillUnmount() {
-        this._stopAutoPlay();
-      }
-    }, {
-      key: "_onPageScroll",
-      value: function _onPageScroll(params) {
-        var indicator = this.refs[INDICATOR_REF];
-        indicator && indicator.onPageScroll && indicator.onPageScroll(params);
-        this.props.onPageScroll && this.props.onPageScroll(params);
-      }
-    }, {
-      key: "_onPageSelected",
-      value: function _onPageSelected(params) {
-        var indicator = this.refs[INDICATOR_REF];
-        indicator && indicator.onPageSelected && indicator.onPageSelected(params);
-        this.props.onPageSelected && this.props.onPageSelected(params);
-        this._currentIndex = params.position;
-      }
-    }, {
-      key: "_renderIndicator",
-      value: function _renderIndicator() {
-        var _this$props = this.props,
-            indicator = _this$props.indicator,
-            initialPage = _this$props.initialPage;
-        if (!indicator) return null;
-        return _react.default.cloneElement(indicator, {
-          ref: INDICATOR_REF,
-          pager: this,
-          initialPage: initialPage
-        });
-      }
-    }, {
-      key: "_goToNextPage",
-      value: function _goToNextPage() {
-        var nextIndex = (this._currentIndex + 1) % this._childrenCount;
-        this.setPage(nextIndex);
-      }
-    }, {
-      key: "_startAutoPlay",
-      value: function _startAutoPlay() {
-        if (this._timerId) clearInterval(this._timerId);
-        this._timerId = setInterval(this._goToNextPage, this.props.autoPlayInterval);
-      }
-    }, {
-      key: "_stopAutoPlay",
-      value: function _stopAutoPlay() {
-        if (this._timerId) {
-          clearInterval(this._timerId);
-          this._timerId = null;
-        }
-      }
-    }, {
-      key: "setPage",
-      value: function setPage(selectedPage) {
-        this.refs[VIEWPAGER_REF].setPage(selectedPage);
-      }
-    }, {
-      key: "setPageWithoutAnimation",
-      value: function setPageWithoutAnimation(selectedPage) {
-        this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage);
-      }
-    }]);
-    return IndicatorViewPager;
-  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _ViewPager.default.propTypes, {
-    indicator: _propTypes.default.node,
-    pagerStyle: _reactNative.ViewPropTypes.style,
-    autoPlayEnable: _propTypes.default.bool,
-    autoPlayInterval: _propTypes.default.number,
-    horizontalScroll: _propTypes.default.bool
-  }), _class.defaultProps = {
-    indicator: null,
-    initialPage: 0,
-    autoPlayInterval: 3000,
-    autoPlayEnable: false,
-    horizontalScroll: true
-  }, _temp));
-
-  var _default2 = IndicatorViewPager;
-  exports.default = _default2;
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {},
-    pager: {
-      flex: 1
-    }
-  });
-},545,[1,539,43,8,19,20,27,30,33,29,46,181,63,2,544],"node_modules/rn-viewpager/viewpager/IndicatorViewPager.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
-
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./../../../react-transform-hmr/lib/index.js"));
-
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[12], "react-native");
-
-  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "../IndicatorViewPager"));
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/indicator/PagerDotIndicator.js";
-
-  var _components = {
-    PagerDotIndicator: {
-      displayName: "PagerDotIndicator"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/indicator/PagerDotIndicator.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var DEFAULT_DOT_RADIUS = 6;
-
-  var PagerDotIndicator = _wrapComponent("PagerDotIndicator")((_temp = _class = function (_Component) {
-    (0, _inherits2.default)(PagerDotIndicator, _Component);
-
-    function PagerDotIndicator() {
-      var _getPrototypeOf2;
-
-      var _this;
-
-      (0, _classCallCheck2.default)(this, PagerDotIndicator);
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PagerDotIndicator)).call.apply(_getPrototypeOf2, [this].concat(args)));
-      _this.state = {
-        selectedIndex: _this.props.initialPage
-      };
-      return _this;
-    }
-
-    (0, _createClass2.default)(PagerDotIndicator, [{
-      key: "shouldComponentUpdate",
-      value: function shouldComponentUpdate(nextProps, nextState) {
-        return this.state.selectedIndex != nextState.selectedIndex || this.props.pageCount != nextProps.pageCount || this.props.dotStyle != nextProps.dotStyle || this.props.selectedDotStyle != nextProps.selectedDotStyle || this.props.style != nextProps.style;
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this$props = this.props,
-            pageCount = _this$props.pageCount,
-            dotStyle = _this$props.dotStyle,
-            selectedDotStyle = _this$props.selectedDotStyle;
-        if (pageCount <= 0) return null;
-        if (this.props.hideSingle && pageCount == 1) return null;
-        var dotsView = [];
-
-        for (var i = 0; i < pageCount; i++) {
-          var isSelect = i === this.state.selectedIndex;
-          dotsView.push(_react.default.createElement(_reactNative.View, {
-            style: [styles.dot, isSelect ? styles.selectDot : null, isSelect ? selectedDotStyle : dotStyle],
-            key: i,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 49
-            }
-          }));
-        }
-
-        return _react.default.createElement(_reactNative.View, (0, _extends2.default)({}, this.props, {
-          style: [styles.container, this.props.style],
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 56
-          }
-        }), dotsView);
-      }
-    }, {
-      key: "onPageSelected",
-      value: function onPageSelected(e) {
-        this.setState({
-          selectedIndex: e.position
-        });
-      }
-    }]);
-    return PagerDotIndicator;
-  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPropTypes, {
-    pageCount: _propTypes.default.number.isRequired,
-    initialPage: _propTypes.default.number,
-    pager: _propTypes.default.instanceOf(_IndicatorViewPager.default),
-    dotStyle: _reactNative.ViewPropTypes.style,
-    selectedDotStyle: _reactNative.ViewPropTypes.style,
-    hideSingle: _propTypes.default.bool
-  }), _class.defaultProps = {
-    pageCount: 0,
-    initialPage: 0,
-    hideSingle: false
-  }, _temp));
-
-  var _default2 = PagerDotIndicator;
-  exports.default = _default2;
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      position: 'absolute',
-      bottom: 10,
-      left: 0,
-      right: 0,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-    dot: {
-      width: DEFAULT_DOT_RADIUS,
-      height: DEFAULT_DOT_RADIUS,
-      borderRadius: DEFAULT_DOT_RADIUS >> 1,
-      backgroundColor: '#BBBBBB',
-      margin: DEFAULT_DOT_RADIUS >> 1
-    },
-    selectDot: {
-      backgroundColor: 'white'
-    }
-  });
-},546,[1,539,43,8,19,20,27,30,33,46,181,63,2,545],"node_modules/rn-viewpager/viewpager/indicator/PagerDotIndicator.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../../../react-transform-hmr/lib/index.js"));
-
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "prop-types"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
-
-  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "../IndicatorViewPager"));
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/indicator/PagerTitleIndicator.js";
-
-  var _components = {
-    PagerTitleIndicator: {
-      displayName: "PagerTitleIndicator"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/indicator/PagerTitleIndicator.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var itemLayoutInfo = [];
-
-  var screenWidth = _reactNative.Dimensions.get('window').width;
-
-  var FORWARD = 1;
-  var NONE = 0;
-  var BACKWARD = -1;
-  var DEFAULT_ITEM_MARGIN = 20;
-
-  var PagerTitleIndicator = _wrapComponent("PagerTitleIndicator")((_temp = _class = function (_Component) {
-    (0, _inherits2.default)(PagerTitleIndicator, _Component);
-
-    function PagerTitleIndicator(props) {
-      var _this;
-
-      (0, _classCallCheck2.default)(this, PagerTitleIndicator);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(PagerTitleIndicator).call(this, props));
-      _this.state = {
-        selectedIndex: _this.props.initialPage
-      };
-      _this._preSelectedIndex = props.initialPage;
-      _this._contentHorOffset = 0;
-      _this._currentMaxHor = screenWidth;
-      _this._titleCount = props.titles.length || 0;
-      return _this;
-    }
-
-    (0, _createClass2.default)(PagerTitleIndicator, [{
-      key: "shouldComponentUpdate",
-      value: function shouldComponentUpdate(nextProps, nextState) {
-        return this.state.selectedIndex != nextState.selectedIndex || this.props.titles + '' != nextProps.titles + '' || this.props.style != nextProps.style || this.props.itemStyle != nextProps.itemStyle || this.props.itemTextStyle != nextProps.itemTextStyle || this.props.selectedItemTextStyle != nextProps.selectedItemTextStyle || this.props.selectedBorderStyle != nextProps.selectedBorderStyle;
-      }
-    }, {
-      key: "componentWillReceiveProps",
-      value: function componentWillReceiveProps(nextProps) {
-        this._titleCount = nextProps.titles.length;
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this2 = this;
-
-        var _this$props = this.props,
-            titles = _this$props.titles,
-            pager = _this$props.pager,
-            itemStyle = _this$props.itemStyle,
-            selectedItemStyle = _this$props.selectedItemStyle,
-            itemTextStyle = _this$props.itemTextStyle,
-            selectedItemTextStyle = _this$props.selectedItemTextStyle,
-            selectedBorderStyle = _this$props.selectedBorderStyle;
-        if (!titles || titles.length === 0) return null;
-        var titleViews = titles.map(function (title, index) {
-          var isSelected = _this2.state.selectedIndex === index;
-          var itemMargin = itemStyle && itemStyle.marginLeft || DEFAULT_ITEM_MARGIN;
-          var itemMarginObj = null;
-
-          if (!itemStyle && !selectedItemStyle) {
-            itemMarginObj = index < _this2._titleCount - 1 ? {
-              marginLeft: itemMargin
-            } : {
-              marginLeft: itemMargin,
-              marginRight: itemMargin
-            };
-          }
-
-          var titleView = _this2.props.renderTitle ? _this2.props.renderTitle(index, title, isSelected) : _react.default.createElement(_reactNative.Text, {
-            style: isSelected ? [styles.titleTextSelected, selectedItemTextStyle] : [styles.titleText, itemTextStyle],
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 82
-            }
-          }, title);
-          return _react.default.createElement(_reactNative.TouchableOpacity, {
-            style: [styles.titleContainer, itemMarginObj, isSelected ? selectedItemStyle : itemStyle],
-            activeOpacity: 0.6,
-            key: index,
-            onLayout: function onLayout(e) {
-              itemLayoutInfo[index] = e.nativeEvent;
-            },
-            onPress: function onPress() {
-              if (_this2.props.trackScroll === true) {
-                _this2._visibleDetect(index);
-              }
-
-              !isSelected && pager.setPage(index);
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 88
-            }
-          }, titleView, isSelected ? _react.default.createElement(_reactNative.View, {
-            style: [styles.selectedBorder, selectedBorderStyle],
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 103
-            }
-          }) : null);
-        });
-        return _react.default.createElement(_reactNative.View, {
-          style: [styles.indicatorContainer, this.props.style],
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 108
-          }
-        }, _react.default.createElement(_reactNative.ScrollView, {
-          scrollEventThrottle: 1,
-          onScroll: function onScroll(e) {
-            _this2._contentHorOffset = e.nativeEvent.contentOffset.x;
-            _this2._currentMaxHor = screenWidth + _this2._contentHorOffset;
-          },
-          showsHorizontalScrollIndicator: false,
-          ref: function ref(c) {
-            _this2.scroller = c;
-          },
-          horizontal: true,
-          style: {
-            flex: 1
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 109
-          }
-        }, titleViews));
-      }
-    }, {
-      key: "_visibleDetect",
-      value: function _visibleDetect(selectedIndex) {
-        if (selectedIndex > this._titleCount - 1) return;
-        var curItemLayoutInfo = itemLayoutInfo[selectedIndex];
-        var _curItemLayoutInfo$la = curItemLayoutInfo.layout,
-            width = _curItemLayoutInfo$la.width,
-            curItemOffsetX = _curItemLayoutInfo$la.x;
-        var curItemAbsPosition = width + curItemOffsetX + DEFAULT_ITEM_MARGIN;
-        var moveDir = NONE;
-
-        if (selectedIndex > this._preSelectedIndex) {
-          moveDir = FORWARD;
-        } else if (selectedIndex < this._preSelectedIndex) {
-          moveDir = BACKWARD;
-        }
-
-        if (moveDir === FORWARD) {
-          var lastItemOffsetX;
-          var lastItemAbsPosition;
-
-          if (selectedIndex < this._titleCount - 1) {
-            var nextLayoutInfo = itemLayoutInfo[selectedIndex + 1];
-            var _width = nextLayoutInfo.layout.width;
-            lastItemOffsetX = nextLayoutInfo.layout.x;
-            lastItemAbsPosition = _width + lastItemOffsetX + DEFAULT_ITEM_MARGIN;
-          } else if (selectedIndex === this._titleCount - 1) {
-            lastItemOffsetX = curItemOffsetX;
-            lastItemAbsPosition = curItemAbsPosition;
-          }
-
-          if (this._contentHorOffset > lastItemOffsetX) {
-            var deltaX = curItemOffsetX - DEFAULT_ITEM_MARGIN;
-            this.scroller.scrollTo({
-              x: deltaX
-            });
-          } else if (this._currentMaxHor < lastItemAbsPosition) {
-            var _deltaX = lastItemAbsPosition - this._currentMaxHor;
-
-            this.scroller.scrollTo({
-              x: this._contentHorOffset + _deltaX
-            });
-          }
-        } else if (moveDir === BACKWARD) {
-          var _lastItemOffsetX;
-
-          var _lastItemAbsPosition;
-
-          if (selectedIndex > 0) {
-            var _nextLayoutInfo = itemLayoutInfo[selectedIndex - 1];
-            var _width2 = _nextLayoutInfo.layout.width;
-            _lastItemOffsetX = _nextLayoutInfo.layout.x;
-            _lastItemAbsPosition = _width2 + _lastItemOffsetX + DEFAULT_ITEM_MARGIN;
-          } else if (selectedIndex === 0) {
-            _lastItemOffsetX = curItemOffsetX;
-            _lastItemAbsPosition = curItemAbsPosition;
-          }
-
-          if (this._contentHorOffset > _lastItemOffsetX || this._currentMaxHor < curItemAbsPosition) {
-            var _deltaX2 = _lastItemOffsetX - DEFAULT_ITEM_MARGIN;
-
-            this.scroller.scrollTo({
-              x: _deltaX2
-            });
-          }
-        }
-      }
-    }, {
-      key: "onPageSelected",
-      value: function onPageSelected(e) {
-        if (this.props.trackScroll === true) {
-          this._visibleDetect(e.position);
-        }
-
-        this._preSelectedIndex = e.position;
-        this.setState({
-          selectedIndex: e.position
-        });
-      }
-    }]);
-    return PagerTitleIndicator;
-  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPropTypes, {
-    initialPage: _propTypes.default.number,
-    pager: _propTypes.default.instanceOf(_IndicatorViewPager.default),
-    titles: _propTypes.default.arrayOf(_propTypes.default.string).isRequired,
-    itemStyle: _reactNative.ViewPropTypes.style,
-    selectedItemStyle: _reactNative.ViewPropTypes.style,
-    itemTextStyle: _reactNative.Text.propTypes.style,
-    trackScroll: _propTypes.default.bool,
-    selectedItemTextStyle: _reactNative.Text.propTypes.style,
-    selectedBorderStyle: _reactNative.ViewPropTypes.style,
-    renderTitle: _propTypes.default.func
-  }), _class.defaultProps = {
-    titles: [],
-    initialPage: 0
-  }, _temp));
-
-  var _default2 = PagerTitleIndicator;
-  exports.default = _default2;
-
-  var styles = _reactNative.StyleSheet.create({
-    indicatorContainer: {
-      height: 40,
-      flexDirection: 'row',
-      backgroundColor: '#F6F6F6'
-    },
-    titleText: {
-      color: '#333333',
-      fontSize: 15
-    },
-    titleTextSelected: {
-      color: '#FF7200',
-      fontSize: 15
-    },
-    titleContainer: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-    selectedBorder: {
-      backgroundColor: '#FF7200',
-      height: 2,
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0
-    }
-  });
-},547,[1,539,43,19,20,27,30,33,46,181,63,2,545],"node_modules/rn-viewpager/viewpager/indicator/PagerTitleIndicator.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../../../react-transform-hmr/lib/index.js"));
-
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "prop-types"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
-
-  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "../IndicatorViewPager"));
-
-  var _class,
-      _temp,
-      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/indicator/PagerTabIndicator.js";
-
-  var _components = {
-    PagerTabIndicator: {
-      displayName: "PagerTabIndicator"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/rn-viewpager/viewpager/indicator/PagerTabIndicator.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var PagerTabIndicator = _wrapComponent("PagerTabIndicator")((_temp = _class = function (_Component) {
-    (0, _inherits2.default)(PagerTabIndicator, _Component);
-
-    function PagerTabIndicator() {
-      var _getPrototypeOf2;
-
-      var _this;
-
-      (0, _classCallCheck2.default)(this, PagerTabIndicator);
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PagerTabIndicator)).call.apply(_getPrototypeOf2, [this].concat(args)));
-      _this.state = {
-        selectedIndex: _this.props.initialPage
-      };
-      return _this;
-    }
-
-    (0, _createClass2.default)(PagerTabIndicator, [{
-      key: "render",
-      value: function render() {
-        var _this2 = this;
-
-        var _this$props = this.props,
-            tabs = _this$props.tabs,
-            pager = _this$props.pager,
-            style = _this$props.style,
-            itemStyle = _this$props.itemStyle,
-            selectedItemStyle = _this$props.selectedItemStyle,
-            iconStyle = _this$props.iconStyle,
-            selectedIconStyle = _this$props.selectedIconStyle,
-            textStyle = _this$props.textStyle,
-            selectedTextStyle = _this$props.selectedTextStyle,
-            changePageWithAnimation = _this$props.changePageWithAnimation;
-        if (!tabs || tabs.length === 0) return null;
-        var tabsView = tabs.map(function (tab, index) {
-          var isSelected = _this2.state.selectedIndex === index;
-          return _react.default.createElement(_reactNative.TouchableOpacity, {
-            style: [styles.itemContainer, isSelected ? selectedItemStyle : itemStyle],
-            activeOpacity: 0.6,
-            key: index,
-            onPress: function onPress() {
-              if (!isSelected) {
-                if (_this2.props.changePageWithAnimation) pager.setPage(index);else pager.setPageWithoutAnimation(index);
-              }
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 49
-            }
-          }, _react.default.createElement(_reactNative.Image, {
-            style: [styles.image, isSelected ? selectedIconStyle : iconStyle],
-            source: isSelected ? tab.selectedIconSource : tab.iconSource,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 61
-            }
-          }), _react.default.createElement(_reactNative.Text, {
-            style: [isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle],
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 65
-            }
-          }, tab.text));
-        });
-        return _react.default.createElement(_reactNative.View, {
-          style: [styles.container, style],
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 74
-          }
-        }, tabsView);
-      }
-    }, {
-      key: "onPageSelected",
-      value: function onPageSelected(e) {
-        this.setState({
-          selectedIndex: e.position
-        });
-      }
-    }]);
-    return PagerTabIndicator;
-  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPropTypes, {
-    initialPage: _propTypes.default.number,
-    pager: _propTypes.default.instanceOf(_IndicatorViewPager.default),
-    tabs: _propTypes.default.arrayOf(_propTypes.default.shape({
-      text: _propTypes.default.string,
-      iconSource: _reactNative.Image.propTypes.source,
-      selectedIconSource: _reactNative.Image.propTypes.source
-    })).isRequired,
-    itemStyle: _reactNative.ViewPropTypes.style,
-    selectedItemStyle: _reactNative.ViewPropTypes.style,
-    iconStyle: _reactNative.Image.propTypes.style,
-    selectedIconStyle: _reactNative.Image.propTypes.style,
-    textStyle: _reactNative.Text.propTypes.style,
-    selectedTextStyle: _reactNative.Text.propTypes.style,
-    changePageWithAnimation: _propTypes.default.bool
-  }), _class.defaultProps = {
-    tabs: [],
-    changePageWithAnimation: true
-  }, _temp));
-
-  var _default2 = PagerTabIndicator;
-  exports.default = _default2;
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flexDirection: 'row',
-      paddingTop: 8,
-      paddingBottom: 4,
-      borderTopWidth: 0.5,
-      borderTopColor: '#E0E0E0',
-      backgroundColor: '#F7F7F7'
-    },
-    itemContainer: {
-      alignItems: 'center',
-      flex: 1
-    },
-    image: {},
-    text: {
-      marginTop: 4,
-      fontSize: 11,
-      color: '#999999'
-    },
-    textSelected: {
-      marginTop: 4,
-      fontSize: 11,
-      color: '#3584F6'
-    }
-  });
-},548,[1,539,43,19,20,27,30,33,46,181,63,2,545],"node_modules/rn-viewpager/viewpager/indicator/PagerTabIndicator.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
-
-  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "react-native-voice"));
-
-  var _ScrollableTextView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ScrollableTextView"));
-
-  var _WaveContainer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./WaveContainer"));
-
-  var _reactRedux = _$$_REQUIRE(_dependencyMap[12], "react-redux");
-
-  var _redux = _$$_REQUIRE(_dependencyMap[13], "redux");
-
-  var _globalActions = _$$_REQUIRE(_dependencyMap[14], "../actions/globalActions");
-
-  var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[15], "../localdb/DatabaseLayer"));
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/RecordingTab.js";
-
-  var RecordingTab = function (_Component) {
-    (0, _inherits2.default)(RecordingTab, _Component);
-
-    function RecordingTab(props) {
-      var _this;
-
-      (0, _classCallCheck2.default)(this, RecordingTab);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(RecordingTab).call(this, props));
-
-      _this.onPressVoiceToTextButton = function () {
-        alert('Hello');
-      };
-
-      _this.onSpeechStart = function (voice) {
-        _this.props.setVoiceConvertedText('Listening...');
-      };
-
-      _this.onSpeechEnd = function (voice) {
-        _this.props.setVoiceConvertedText('Processing...');
-      };
-
-      _this.onSpeechError = function (voice) {
-        _this.props.setVoiceConvertedText('jaaaazzzz');
-      };
-
-      _this.onSpeechResults = function (voice) {
-        _this.onChange(voice.value[0]);
-      };
-
-      _this.onChange = function (text) {
-        alert(text);
-
-        _this.props.setVoiceConvertedText(text);
-      };
-
-      _this.openMic = function () {
-        _reactNativeVoice.default.start("en_US");
-
-        _reactNativeVoice.default.onSpeechStart = _this.onSpeechStart;
-        _reactNativeVoice.default.onSpeechEnd = _this.onSpeechEnd;
-        _reactNativeVoice.default.onSpeechResults = _this.onSpeechResults;
-        _reactNativeVoice.default.onSpeechError = _this.onSpeechError;
-      };
-
-      _this.render = function () {
-        return _react.default.createElement(_reactNative.View, {
-          style: styles.container,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 69
-          }
-        }, _react.default.createElement(_WaveContainer.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 70
-          }
-        }), _react.default.createElement(_ScrollableTextView.default, {
-          text: _this.props.voiceConvertedText,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 71
-          }
-        }));
-      };
-
-      _this.state = {};
-      return _this;
-    }
-
-    (0, _createClass2.default)(RecordingTab, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        this.openMic();
-
-        _DatabaseLayer.default.getListFromStorage('KEY').then(function (data) {
-          return console.log('DatabaseLayer', data);
-        });
-
-        var note = _DatabaseLayer.default.createNoteTemplateModel('neeraj ');
-
-        console.log('DatabaseLayer.addItemToList', _DatabaseLayer.default.addItemToList('KEY'));
-
-        _DatabaseLayer.default.addItemToList('KEY', note).then(function (data) {
-          return console.log('DatabaseLayer', data);
-        });
-      }
-    }]);
-    return RecordingTab;
-  }(_react.Component);
-
-  function mapStateToProps(state, props) {
-    return {
-      voiceConvertedText: state.global.voiceConvertedText
-    };
-  }
-
-  function mapDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)({
-      setVoiceConvertedText: _globalActions.setVoiceConvertedText
-    }, dispatch);
-  }
-
-  var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(RecordingTab);
-
-  exports.default = _default;
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#3d2e48'
-    }
-  });
-},549,[1,539,19,20,27,30,33,46,2,541,550,551,554,569,553,628],"src/components/RecordingTab.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/src/components/ScrollableTextView.js";
-
-  var _Dimensions$get = _reactNative.Dimensions.get('window'),
-      height = _Dimensions$get.height,
-      width = _Dimensions$get.width;
-
-  var _default = ScrollableTextView = function ScrollableTextView(props) {
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.voiceToTextContainer,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6
-      }
-    }, _react.default.createElement(_reactNative.ScrollView, {
-      style: styles.textView,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      }
-    }, props.text)));
-  };
-
-  exports.default = _default;
-
-  var styles = _reactNative.StyleSheet.create({
-    voiceToTextContainer: {
-      height: height * 0.7,
-      width: width,
-      backgroundColor: 'white',
-      borderTopLeftRadius: 20,
-      borderTopRightRadius: 20
-    },
-    textView: {
-      padding: 15
-    }
-  });
-},550,[1,46,2],"src/components/ScrollableTextView.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var _OptionView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./OptionView"));
-
-  var _reactNativeWaveView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-wave-view"));
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/src/components/WaveContainer.js";
-
-  var _Dimensions$get = _reactNative.Dimensions.get('window'),
-      height = _Dimensions$get.height,
-      width = _Dimensions$get.width;
-
-  var _default = WaveContainer = function WaveContainer(props) {
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.animationContainer,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      }
-    }, _react.default.createElement(_reactNativeWaveView.default, {
-      height: height * 0.3 - 120,
-      width: width,
-      waveColor: 'white',
-      waveSpeed: 'slow',
-      waveAmplitude: 30,
-      noOfWaves: 100,
-      wavePosition: 'both',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      }
-    }), _react.default.createElement(_OptionView.default, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      }
-    }));
-  };
-
-  exports.default = _default;
-
-  var styles = _reactNative.StyleSheet.create({
-    animationContainer: {
-      height: height * 0.3,
-      width: width,
-      backgroundColor: '#3d2e48',
-      justifyContent: 'flex-end'
-    }
-  });
-},551,[1,46,2,552,579],"src/components/WaveContainer.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
-
-  var _globalActions = _$$_REQUIRE(_dependencyMap[8], "../actions/globalActions");
-
-  var _reactRedux = _$$_REQUIRE(_dependencyMap[9], "react-redux");
-
-  var _redux = _$$_REQUIRE(_dependencyMap[10], "redux");
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/OptionView.js";
-
-  var OptionView = function (_Component) {
-    (0, _inherits2.default)(OptionView, _Component);
-
-    function OptionView(props) {
-      var _this;
-
-      (0, _classCallCheck2.default)(this, OptionView);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(OptionView).call(this, props));
-
-      _this.copy = function () {
-        _this.props.copy(_this.props.voiceConvertedText);
-      };
-
-      _this.save = function () {
-        _this.props.save(_this.props.voiceConvertedText);
-      };
-
-      _this.share = function () {
-        _this.props.share(_this.props.voiceConvertedText);
-      };
-
-      _this.render = function () {
-        return _react.default.createElement(_reactNative.View, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 26
-          }
-        }, _react.default.createElement(_reactNative.View, {
-          style: styles.buttonContainer,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 27
-          }
-        }, _react.default.createElement(_reactNative.TouchableOpacity, {
-          onPress: _this.copy,
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 28
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 31
-          }
-        }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
-          onPress: _this.save,
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 36
-          }
-        }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
-          onPress: _this.share,
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41
-          }
-        }, "SHARE"))));
-      };
-
-      return _this;
-    }
-
-    return OptionView;
-  }(_react.Component);
-
-  function mapStateToProps(state, props) {
-    return {
-      voiceConvertedText: state.global.voiceConvertedText
-    };
-  }
-
-  function mapDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)({
-      copy: _globalActions.copy,
-      save: _globalActions.save,
-      share: _globalActions.share
-    }, dispatch);
-  }
-
-  var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(OptionView);
-
-  exports.default = _default;
-
-  var styles = _reactNative.StyleSheet.create({
-    optionsContainer: {
-      flex: .3,
-      backgroundColor: '#3d2e48',
-      justifyContent: 'flex-end'
-    },
-    buttonContainer: {
-      height: 50,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginLeft: 50,
-      marginRight: 50
-    },
-    buttonTextStyle: {
-      color: 'white',
-      marginLeft: 20,
-      marginRight: 20,
-      marginTop: 5,
-      marginBottom: 5
-    },
-    buttons: {
-      alignSelf: 'center',
-      borderRadius: 15,
-      backgroundColor: '#5d5268'
-    }
-  });
-},552,[1,539,19,27,30,33,46,2,553,554,569],"src/components/OptionView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86072,235 +84249,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     verify(mergeProps, 'mergeProps', displayName);
   }
 },578,[1,558],"node_modules/react-redux/lib/connect/verifySubselectors.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectSpread"));
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-
-  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/assertThisInitialized"));
-
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../react-transform-hmr/lib/index.js"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[10], "react-native");
-
-  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/react-native-wave-view/WaveView.js";
-  var _components = {
-    WaveView: {
-      displayName: "WaveView"
-    }
-  };
-
-  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native/node_modules/react-native-wave-view/WaveView.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _reactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var WaveView = _wrapComponent("WaveView")(function (_React$Component) {
-    (0, _inherits2.default)(WaveView, _React$Component);
-
-    function WaveView() {
-      var _getPrototypeOf2;
-
-      var _this;
-
-      (0, _classCallCheck2.default)(this, WaveView);
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(WaveView)).call.apply(_getPrototypeOf2, [this].concat(args)));
-      _this.waveFactor = _this.props.wavePosition === 'top' ? 3 : _this.props.wavePosition === 'bottom' ? -2 : 1;
-      _this.speed = typeof waveSpeed === 'number' ? _this.props.waveSpeed : _this.props.waveSpeed === 'fast' ? 500 : 1000;
-      _this._renderWaves = _this._renderWaves.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-      return _this;
-    }
-
-    (0, _createClass2.default)(WaveView, [{
-      key: "_renderWaves",
-      value: function _renderWaves(_val, index) {
-        var _this2 = this;
-
-        var _this$props = this.props,
-            height = _this$props.height,
-            width = _this$props.width,
-            waveColor = _this$props.waveColor,
-            waveAmplitude = _this$props.waveAmplitude,
-            noOfWaves = _this$props.noOfWaves;
-        var sineIndex = Math.sin(index);
-        var transDistance = new _reactNative.Animated.Value(sineIndex * waveAmplitude);
-
-        var anim = function anim() {
-          return _reactNative.Animated.sequence([_reactNative.Animated.timing(transDistance, {
-            toValue: waveAmplitude,
-            duration: _this2.speed,
-            useNativeDriver: true
-          }), _reactNative.Animated.timing(transDistance, {
-            toValue: -waveAmplitude,
-            duration: _this2.speed,
-            useNativeDriver: true
-          })]).start(function () {
-            return anim();
-          });
-        };
-
-        _reactNative.Animated.timing(transDistance, {
-          toValue: -waveAmplitude,
-          duration: (sineIndex * waveAmplitude + waveAmplitude) * this.speed / 10,
-          useNativeDriver: true
-        }).start(anim);
-
-        return _react.default.createElement(_reactNative.Animated.View, {
-          key: index,
-          style: {
-            height: height,
-            width: width / noOfWaves,
-            top: this.waveFactor * waveAmplitude,
-            borderRadius: 50,
-            backgroundColor: waveColor,
-            transform: [{
-              translateY: transDistance
-            }]
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 40
-          }
-        });
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this$props2 = this.props,
-            height = _this$props2.height,
-            width = _this$props2.width,
-            waveColor = _this$props2.waveColor,
-            waveAmplitude = _this$props2.waveAmplitude,
-            noOfWaves = _this$props2.noOfWaves,
-            wavePosition = _this$props2.wavePosition,
-            style = _this$props2.style;
-        var wave = new Array(noOfWaves).fill(0);
-        return _react.default.createElement(_reactNative.View, {
-          style: {
-            height: height + waveAmplitude * 2,
-            overflow: 'hidden',
-            flexDirection: 'row'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 66
-          }
-        }, wave.map(this._renderWaves), _react.default.createElement(_reactNative.View, {
-          style: (0, _objectSpread2.default)({
-            backgroundColor: waveColor
-          }, style, {
-            height: height - waveAmplitude * (wavePosition === 'top' ? 2 : wavePosition === 'bottom' ? 3 : 2),
-            width: width
-          }, wavePosition === 'top' ? {
-            bottom: 0
-          } : wavePosition === 'bottom' ? {
-            top: 0
-          } : {
-            top: waveAmplitude * 2
-          }, {
-            position: 'absolute'
-          }),
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 74
-          }
-        }, this.props.children));
-      }
-    }]);
-    return WaveView;
-  }(_react.default.Component));
-
-  var _default2 = WaveView;
-  exports.default = _default2;
-  WaveView.propTypes = {
-    height: _propTypes.default.number,
-    width: _propTypes.default.number,
-    waveColor: _propTypes.default.string,
-    waveSpeed: _propTypes.default.oneOfType([_propTypes.default.oneOf(['fast', 'slow']), _propTypes.default.number]),
-    waveAmplitude: _propTypes.default.number,
-    noOfWaves: _propTypes.default.number,
-    wavePosition: _propTypes.default.oneOf(['top', 'bottom', 'both']),
-    style: _propTypes.default.any
-  };
-  WaveView.defaultProps = {
-    height: 200,
-    width: 376,
-    waveColor: 'blue',
-    waveSpeed: 'slow',
-    waveAmplitude: 10,
-    noOfWaves: 100,
-    wavePosition: 'both',
-    style: {}
-  };
-},579,[1,43,19,20,27,30,33,29,46,181,2,63],"node_modules/react-native-wave-view/WaveView.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/assets",
-    "width": 300,
-    "height": 294,
-    "scales": [1],
-    "hash": "a71000ef4f9eee0548dc9e50a7334405",
-    "name": "mic",
-    "type": "png"
-  });
-},580,[176],"assets/mic.png");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/assets",
-    "width": 300,
-    "height": 294,
-    "scales": [1],
-    "hash": "3c6964939bfab5ad95b133c4e9a50221",
-    "name": "searches",
-    "type": "png"
-  });
-},581,[176],"assets/searches.png");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/assets",
-    "width": 256,
-    "height": 256,
-    "scales": [1],
-    "hash": "6c6a63dd5624746b9ce914f143c5cdab",
-    "name": "settings",
-    "type": "png"
-  });
-},582,[176],"assets/settings.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -88567,6 +86515,330 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _rnViewpager = _$$_REQUIRE(_dependencyMap[10], "rn-viewpager");
+
+  var _RecordingTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./RecordingTab"));
+
+  var _SpeechListTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./SpeechListTab"));
+
+  var _SettingsTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./SettingsTab"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/HomeContainer.js";
+  var _components = {
+    HomeContainer: {
+      displayName: "HomeContainer"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/HomeContainer.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var HomeContainer = _wrapComponent("HomeContainer")(function (_Component) {
+    (0, _inherits2.default)(HomeContainer, _Component);
+
+    function HomeContainer() {
+      (0, _classCallCheck2.default)(this, HomeContainer);
+      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(HomeContainer).apply(this, arguments));
+    }
+
+    (0, _createClass2.default)(HomeContainer, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: {
+            flex: 1
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11
+          }
+        }, _react.default.createElement(_rnViewpager.IndicatorViewPager, {
+          style: {
+            flex: 1,
+            paddingTop: 0
+          },
+          indicator: this.renderTabIndicator(),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: {
+            backgroundColor: 'cadetblue'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16
+          }
+        }, _react.default.createElement(_SpeechListTab.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          }
+        })), _react.default.createElement(_reactNative.View, {
+          style: {
+            backgroundColor: 'cornflowerblue'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          }
+        }, _react.default.createElement(_RecordingTab.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          }
+        })), _react.default.createElement(_reactNative.View, {
+          style: {
+            backgroundColor: '#3d2e48'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          }
+        }, _react.default.createElement(_SettingsTab.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          }
+        }))));
+      }
+    }, {
+      key: "renderTabIndicator",
+      value: function renderTabIndicator() {
+        var tabs = [{
+          text: 'Search',
+          iconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/mic.png"),
+          selectedIconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/mic.png")
+        }, {
+          text: 'Mic',
+          iconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/searches.png"),
+          selectedIconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/searches.png")
+        }, {
+          text: 'Settings',
+          iconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/settings.png"),
+          selectedIconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/settings.png")
+        }];
+        return _react.default.createElement(_rnViewpager.PagerTabIndicator, {
+          tabs: tabs,
+          itemStyle: {
+            height: 25,
+            width: 25
+          },
+          selectedItemStyle: {
+            height: 40,
+            width: 40
+          },
+          iconStyle: {
+            height: 25,
+            width: 25
+          },
+          selectedIconStyle: {
+            height: 40,
+            width: 40
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44
+          }
+        });
+      }
+    }]);
+    return HomeContainer;
+  }(_react.Component));
+
+  var _default2 = HomeContainer;
+  exports.default = _default2;
+},633,[1,539,19,20,27,30,33,46,181,2,543,549,635,634,580,581,582],"src/components/HomeContainer.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+
+  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "react-native-voice"));
+
+  var _ScrollableTextView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ScrollableTextView"));
+
+  var _WaveContainer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./WaveContainer"));
+
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[12], "react-redux");
+
+  var _redux = _$$_REQUIRE(_dependencyMap[13], "redux");
+
+  var _globalActions = _$$_REQUIRE(_dependencyMap[14], "../actions/globalActions");
+
+  var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[15], "../localdb/DatabaseLayer"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/RecordingTab.js";
+
+  var RecordingTab = function (_Component) {
+    (0, _inherits2.default)(RecordingTab, _Component);
+
+    function RecordingTab(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, RecordingTab);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(RecordingTab).call(this, props));
+
+      _this.onPressVoiceToTextButton = function () {
+        alert('Hello');
+      };
+
+      _this.onSpeechStart = function (voice) {
+        _this.props.setVoiceConvertedText('Listening...');
+      };
+
+      _this.onSpeechEnd = function (voice) {
+        _this.props.setVoiceConvertedText('Processing...');
+      };
+
+      _this.onSpeechError = function (voice) {
+        _this.props.setVoiceConvertedText('jaaaazzzz');
+      };
+
+      _this.onSpeechResults = function (voice) {
+        _this.onChange(voice.value[0]);
+      };
+
+      _this.onChange = function (text) {
+        alert(text);
+
+        _this.props.setVoiceConvertedText(text);
+      };
+
+      _this.openMic = function () {
+        _reactNativeVoice.default.start("en_US");
+
+        _reactNativeVoice.default.onSpeechStart = _this.onSpeechStart;
+        _reactNativeVoice.default.onSpeechEnd = _this.onSpeechEnd;
+        _reactNativeVoice.default.onSpeechResults = _this.onSpeechResults;
+        _reactNativeVoice.default.onSpeechError = _this.onSpeechError;
+      };
+
+      _this.render = function () {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69
+          }
+        }, _react.default.createElement(_WaveContainer.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70
+          }
+        }), _react.default.createElement(_ScrollableTextView.default, {
+          text: _this.props.voiceConvertedText,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71
+          }
+        }));
+      };
+
+      _this.state = {};
+      return _this;
+    }
+
+    (0, _createClass2.default)(RecordingTab, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.openMic();
+
+        _DatabaseLayer.default.getListFromStorage('KEY').then(function (data) {
+          return console.log('DatabaseLayer', data);
+        });
+
+        var note = _DatabaseLayer.default.createNoteTemplateModel('neeraj ');
+
+        console.log('DatabaseLayer.addItemToList', _DatabaseLayer.default.addItemToList('KEY'));
+
+        _DatabaseLayer.default.addItemToList('KEY', note).then(function (data) {
+          return console.log('DatabaseLayer', data);
+        });
+      }
+    }]);
+    return RecordingTab;
+  }(_react.Component);
+
+  function mapStateToProps(state, props) {
+    return {
+      voiceConvertedText: state.global.voiceConvertedText
+    };
+  }
+
+  function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)({
+      setVoiceConvertedText: _globalActions.setVoiceConvertedText
+    }, dispatch);
+  }
+
+  var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(RecordingTab);
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#3d2e48'
+    }
+  });
+},549,[1,539,19,20,27,30,33,46,2,541,550,551,554,569,553,628],"src/components/RecordingTab.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
@@ -88621,6 +86893,1810 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 },628,[1,19,2],"src/localdb/DatabaseLayer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/assets",
+    "width": 300,
+    "height": 294,
+    "scales": [1],
+    "hash": "a71000ef4f9eee0548dc9e50a7334405",
+    "name": "mic",
+    "type": "png"
+  });
+},580,[176],"assets/mic.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/assets",
+    "width": 256,
+    "height": 256,
+    "scales": [1],
+    "hash": "6c6a63dd5624746b9ce914f143c5cdab",
+    "name": "settings",
+    "type": "png"
+  });
+},582,[176],"assets/settings.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/assets",
+    "width": 300,
+    "height": 294,
+    "scales": [1],
+    "hash": "3c6964939bfab5ad95b133c4e9a50221",
+    "name": "searches",
+    "type": "png"
+  });
+},581,[176],"assets/searches.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "ViewPager", {
+    enumerable: true,
+    get: function get() {
+      return _ViewPager.default;
+    }
+  });
+  Object.defineProperty(exports, "IndicatorViewPager", {
+    enumerable: true,
+    get: function get() {
+      return _IndicatorViewPager.default;
+    }
+  });
+  Object.defineProperty(exports, "PagerDotIndicator", {
+    enumerable: true,
+    get: function get() {
+      return _PagerDotIndicator.default;
+    }
+  });
+  Object.defineProperty(exports, "PagerTitleIndicator", {
+    enumerable: true,
+    get: function get() {
+      return _PagerTitleIndicator.default;
+    }
+  });
+  Object.defineProperty(exports, "PagerTabIndicator", {
+    enumerable: true,
+    get: function get() {
+      return _PagerTabIndicator.default;
+    }
+  });
+
+  var _ViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./viewpager/ViewPager"));
+
+  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./viewpager/IndicatorViewPager"));
+
+  var _PagerDotIndicator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./viewpager/indicator/PagerDotIndicator"));
+
+  var _PagerTitleIndicator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./viewpager/indicator/PagerTitleIndicator"));
+
+  var _PagerTabIndicator = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./viewpager/indicator/PagerTabIndicator"));
+},543,[1,544,545,546,547,548],"node_modules/rn-viewpager/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _OptionView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./OptionView"));
+
+  var _reactNativeWaveView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-wave-view"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/WaveContainer.js";
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      height = _Dimensions$get.height,
+      width = _Dimensions$get.width;
+
+  var _default = WaveContainer = function WaveContainer(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.animationContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    }, _react.default.createElement(_reactNativeWaveView.default, {
+      height: height * 0.3 - 120,
+      width: width,
+      waveColor: 'white',
+      waveSpeed: 'slow',
+      waveAmplitude: 30,
+      noOfWaves: 100,
+      wavePosition: 'both',
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      }
+    }), _react.default.createElement(_OptionView.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    animationContainer: {
+      height: height * 0.3,
+      width: width,
+      backgroundColor: '#3d2e48',
+      justifyContent: 'flex-end'
+    }
+  });
+},551,[1,46,2,552,579],"src/components/WaveContainer.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
+
+  var _globalActions = _$$_REQUIRE(_dependencyMap[8], "../actions/globalActions");
+
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[9], "react-redux");
+
+  var _redux = _$$_REQUIRE(_dependencyMap[10], "redux");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/OptionView.js";
+
+  var OptionView = function (_Component) {
+    (0, _inherits2.default)(OptionView, _Component);
+
+    function OptionView(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, OptionView);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(OptionView).call(this, props));
+
+      _this.copy = function () {
+        _this.props.copy(_this.props.voiceConvertedText);
+      };
+
+      _this.save = function () {
+        _this.props.save(_this.props.voiceConvertedText);
+      };
+
+      _this.share = function () {
+        _this.props.share(_this.props.voiceConvertedText);
+      };
+
+      _this.render = function () {
+        return _react.default.createElement(_reactNative.View, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: styles.buttonContainer,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27
+          }
+        }, _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.copy,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31
+          }
+        }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.save,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
+          }
+        }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.share,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          }
+        }, "SHARE"))));
+      };
+
+      return _this;
+    }
+
+    return OptionView;
+  }(_react.Component);
+
+  function mapStateToProps(state, props) {
+    return {
+      voiceConvertedText: state.global.voiceConvertedText
+    };
+  }
+
+  function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)({
+      copy: _globalActions.copy,
+      save: _globalActions.save,
+      share: _globalActions.share
+    }, dispatch);
+  }
+
+  var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(OptionView);
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    optionsContainer: {
+      flex: .3,
+      backgroundColor: '#3d2e48',
+      justifyContent: 'flex-end'
+    },
+    buttonContainer: {
+      height: 50,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginLeft: 50,
+      marginRight: 50
+    },
+    buttonTextStyle: {
+      color: 'white',
+      marginLeft: 20,
+      marginRight: 20,
+      marginTop: 5,
+      marginBottom: 5
+    },
+    buttons: {
+      alignSelf: 'center',
+      borderRadius: 15,
+      backgroundColor: '#5d5268'
+    }
+  });
+},552,[1,539,19,27,30,33,46,2,553,554,569],"src/components/OptionView.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/ScrollableTextView.js";
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      height = _Dimensions$get.height,
+      width = _Dimensions$get.width;
+
+  var _default = ScrollableTextView = function ScrollableTextView(props) {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.voiceToTextContainer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      }
+    }, _react.default.createElement(_reactNative.ScrollView, {
+      style: styles.textView,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    }, props.text)));
+  };
+
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    voiceToTextContainer: {
+      height: height * 0.7,
+      width: width,
+      backgroundColor: 'white',
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20
+    },
+    textView: {
+      padding: 15
+    }
+  });
+},550,[1,46,2],"src/components/ScrollableTextView.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./../../../react-transform-hmr/lib/index.js"));
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[12], "react-native");
+
+  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "../IndicatorViewPager"));
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/indicator/PagerDotIndicator.js";
+
+  var _components = {
+    PagerDotIndicator: {
+      displayName: "PagerDotIndicator"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/indicator/PagerDotIndicator.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DEFAULT_DOT_RADIUS = 6;
+
+  var PagerDotIndicator = _wrapComponent("PagerDotIndicator")((_temp = _class = function (_Component) {
+    (0, _inherits2.default)(PagerDotIndicator, _Component);
+
+    function PagerDotIndicator() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, PagerDotIndicator);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PagerDotIndicator)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this.state = {
+        selectedIndex: _this.props.initialPage
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(PagerDotIndicator, [{
+      key: "shouldComponentUpdate",
+      value: function shouldComponentUpdate(nextProps, nextState) {
+        return this.state.selectedIndex != nextState.selectedIndex || this.props.pageCount != nextProps.pageCount || this.props.dotStyle != nextProps.dotStyle || this.props.selectedDotStyle != nextProps.selectedDotStyle || this.props.style != nextProps.style;
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+            pageCount = _this$props.pageCount,
+            dotStyle = _this$props.dotStyle,
+            selectedDotStyle = _this$props.selectedDotStyle;
+        if (pageCount <= 0) return null;
+        if (this.props.hideSingle && pageCount == 1) return null;
+        var dotsView = [];
+
+        for (var i = 0; i < pageCount; i++) {
+          var isSelect = i === this.state.selectedIndex;
+          dotsView.push(_react.default.createElement(_reactNative.View, {
+            style: [styles.dot, isSelect ? styles.selectDot : null, isSelect ? selectedDotStyle : dotStyle],
+            key: i,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 49
+            }
+          }));
+        }
+
+        return _react.default.createElement(_reactNative.View, (0, _extends2.default)({}, this.props, {
+          style: [styles.container, this.props.style],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56
+          }
+        }), dotsView);
+      }
+    }, {
+      key: "onPageSelected",
+      value: function onPageSelected(e) {
+        this.setState({
+          selectedIndex: e.position
+        });
+      }
+    }]);
+    return PagerDotIndicator;
+  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPropTypes, {
+    pageCount: _propTypes.default.number.isRequired,
+    initialPage: _propTypes.default.number,
+    pager: _propTypes.default.instanceOf(_IndicatorViewPager.default),
+    dotStyle: _reactNative.ViewPropTypes.style,
+    selectedDotStyle: _reactNative.ViewPropTypes.style,
+    hideSingle: _propTypes.default.bool
+  }), _class.defaultProps = {
+    pageCount: 0,
+    initialPage: 0,
+    hideSingle: false
+  }, _temp));
+
+  var _default2 = PagerDotIndicator;
+  exports.default = _default2;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      position: 'absolute',
+      bottom: 10,
+      left: 0,
+      right: 0,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    dot: {
+      width: DEFAULT_DOT_RADIUS,
+      height: DEFAULT_DOT_RADIUS,
+      borderRadius: DEFAULT_DOT_RADIUS >> 1,
+      backgroundColor: '#BBBBBB',
+      margin: DEFAULT_DOT_RADIUS >> 1
+    },
+    selectDot: {
+      backgroundColor: 'white'
+    }
+  });
+},546,[1,539,43,8,19,20,27,30,33,46,181,63,2,545],"node_modules/rn-viewpager/viewpager/indicator/PagerDotIndicator.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
+
+  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/assertThisInitialized"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./../../react-transform-hmr/lib/index.js"));
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "prop-types"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[13], "react-native");
+
+  var _ViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[14], "./ViewPager"));
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/IndicatorViewPager.js";
+
+  var _components = {
+    IndicatorViewPager: {
+      displayName: "IndicatorViewPager"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/IndicatorViewPager.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var VIEWPAGER_REF = 'viewPager';
+  var INDICATOR_REF = 'indicator';
+
+  var IndicatorViewPager = _wrapComponent("IndicatorViewPager")((_temp = _class = function (_Component) {
+    (0, _inherits2.default)(IndicatorViewPager, _Component);
+
+    function IndicatorViewPager(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, IndicatorViewPager);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(IndicatorViewPager).call(this, props));
+      _this._onPageScroll = _this._onPageScroll.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._onPageSelected = _this._onPageSelected.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._goToNextPage = _this._goToNextPage.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._renderIndicator = _this._renderIndicator.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this.setPage = _this.setPage.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this.setPageWithoutAnimation = _this.setPageWithoutAnimation.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._startAutoPlay = _this._startAutoPlay.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._stopAutoPlay = _this._stopAutoPlay.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._currentIndex = props.initialPage;
+      _this._childrenCount = _react.default.Children.count(props.children);
+      return _this;
+    }
+
+    (0, _createClass2.default)(IndicatorViewPager, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        if (this.props.autoPlayEnable) this._startAutoPlay();else this._stopAutoPlay();
+      }
+    }, {
+      key: "componentWillUpdate",
+      value: function componentWillUpdate(nextProps, nextState) {
+        this._childrenCount = _react.default.Children.count(nextProps.children);
+
+        if (this.props.autoPlayEnable !== nextProps.autoPlayEnable) {
+          nextProps.autoPlayEnable ? this._startAutoPlay() : this._stopAutoPlay();
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: [styles.container, this.props.style],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60
+          }
+        }, _react.default.createElement(_ViewPager.default, (0, _extends2.default)({}, this.props, {
+          horizontalScroll: this.props.horizontalScroll,
+          ref: VIEWPAGER_REF,
+          style: [styles.pager, this.props.pagerStyle],
+          onPageScroll: this._onPageScroll,
+          onPageSelected: this._onPageSelected,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          }
+        })), this._renderIndicator());
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        this._stopAutoPlay();
+      }
+    }, {
+      key: "_onPageScroll",
+      value: function _onPageScroll(params) {
+        var indicator = this.refs[INDICATOR_REF];
+        indicator && indicator.onPageScroll && indicator.onPageScroll(params);
+        this.props.onPageScroll && this.props.onPageScroll(params);
+      }
+    }, {
+      key: "_onPageSelected",
+      value: function _onPageSelected(params) {
+        var indicator = this.refs[INDICATOR_REF];
+        indicator && indicator.onPageSelected && indicator.onPageSelected(params);
+        this.props.onPageSelected && this.props.onPageSelected(params);
+        this._currentIndex = params.position;
+      }
+    }, {
+      key: "_renderIndicator",
+      value: function _renderIndicator() {
+        var _this$props = this.props,
+            indicator = _this$props.indicator,
+            initialPage = _this$props.initialPage;
+        if (!indicator) return null;
+        return _react.default.cloneElement(indicator, {
+          ref: INDICATOR_REF,
+          pager: this,
+          initialPage: initialPage
+        });
+      }
+    }, {
+      key: "_goToNextPage",
+      value: function _goToNextPage() {
+        var nextIndex = (this._currentIndex + 1) % this._childrenCount;
+        this.setPage(nextIndex);
+      }
+    }, {
+      key: "_startAutoPlay",
+      value: function _startAutoPlay() {
+        if (this._timerId) clearInterval(this._timerId);
+        this._timerId = setInterval(this._goToNextPage, this.props.autoPlayInterval);
+      }
+    }, {
+      key: "_stopAutoPlay",
+      value: function _stopAutoPlay() {
+        if (this._timerId) {
+          clearInterval(this._timerId);
+          this._timerId = null;
+        }
+      }
+    }, {
+      key: "setPage",
+      value: function setPage(selectedPage) {
+        this.refs[VIEWPAGER_REF].setPage(selectedPage);
+      }
+    }, {
+      key: "setPageWithoutAnimation",
+      value: function setPageWithoutAnimation(selectedPage) {
+        this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage);
+      }
+    }]);
+    return IndicatorViewPager;
+  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _ViewPager.default.propTypes, {
+    indicator: _propTypes.default.node,
+    pagerStyle: _reactNative.ViewPropTypes.style,
+    autoPlayEnable: _propTypes.default.bool,
+    autoPlayInterval: _propTypes.default.number,
+    horizontalScroll: _propTypes.default.bool
+  }), _class.defaultProps = {
+    indicator: null,
+    initialPage: 0,
+    autoPlayInterval: 3000,
+    autoPlayEnable: false,
+    horizontalScroll: true
+  }, _temp));
+
+  var _default2 = IndicatorViewPager;
+  exports.default = _default2;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {},
+    pager: {
+      flex: 1
+    }
+  });
+},545,[1,539,43,8,19,20,27,30,33,29,46,181,63,2,544],"node_modules/rn-viewpager/viewpager/IndicatorViewPager.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../../../react-transform-hmr/lib/index.js"));
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "prop-types"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+
+  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "../IndicatorViewPager"));
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/indicator/PagerTabIndicator.js";
+
+  var _components = {
+    PagerTabIndicator: {
+      displayName: "PagerTabIndicator"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/indicator/PagerTabIndicator.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var PagerTabIndicator = _wrapComponent("PagerTabIndicator")((_temp = _class = function (_Component) {
+    (0, _inherits2.default)(PagerTabIndicator, _Component);
+
+    function PagerTabIndicator() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, PagerTabIndicator);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PagerTabIndicator)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this.state = {
+        selectedIndex: _this.props.initialPage
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(PagerTabIndicator, [{
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+
+        var _this$props = this.props,
+            tabs = _this$props.tabs,
+            pager = _this$props.pager,
+            style = _this$props.style,
+            itemStyle = _this$props.itemStyle,
+            selectedItemStyle = _this$props.selectedItemStyle,
+            iconStyle = _this$props.iconStyle,
+            selectedIconStyle = _this$props.selectedIconStyle,
+            textStyle = _this$props.textStyle,
+            selectedTextStyle = _this$props.selectedTextStyle,
+            changePageWithAnimation = _this$props.changePageWithAnimation;
+        if (!tabs || tabs.length === 0) return null;
+        var tabsView = tabs.map(function (tab, index) {
+          var isSelected = _this2.state.selectedIndex === index;
+          return _react.default.createElement(_reactNative.TouchableOpacity, {
+            style: [styles.itemContainer, isSelected ? selectedItemStyle : itemStyle],
+            activeOpacity: 0.6,
+            key: index,
+            onPress: function onPress() {
+              if (!isSelected) {
+                if (_this2.props.changePageWithAnimation) pager.setPage(index);else pager.setPageWithoutAnimation(index);
+              }
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 49
+            }
+          }, _react.default.createElement(_reactNative.Image, {
+            style: [styles.image, isSelected ? selectedIconStyle : iconStyle],
+            source: isSelected ? tab.selectedIconSource : tab.iconSource,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 61
+            }
+          }), _react.default.createElement(_reactNative.Text, {
+            style: [isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle],
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 65
+            }
+          }, tab.text));
+        });
+        return _react.default.createElement(_reactNative.View, {
+          style: [styles.container, style],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          }
+        }, tabsView);
+      }
+    }, {
+      key: "onPageSelected",
+      value: function onPageSelected(e) {
+        this.setState({
+          selectedIndex: e.position
+        });
+      }
+    }]);
+    return PagerTabIndicator;
+  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPropTypes, {
+    initialPage: _propTypes.default.number,
+    pager: _propTypes.default.instanceOf(_IndicatorViewPager.default),
+    tabs: _propTypes.default.arrayOf(_propTypes.default.shape({
+      text: _propTypes.default.string,
+      iconSource: _reactNative.Image.propTypes.source,
+      selectedIconSource: _reactNative.Image.propTypes.source
+    })).isRequired,
+    itemStyle: _reactNative.ViewPropTypes.style,
+    selectedItemStyle: _reactNative.ViewPropTypes.style,
+    iconStyle: _reactNative.Image.propTypes.style,
+    selectedIconStyle: _reactNative.Image.propTypes.style,
+    textStyle: _reactNative.Text.propTypes.style,
+    selectedTextStyle: _reactNative.Text.propTypes.style,
+    changePageWithAnimation: _propTypes.default.bool
+  }), _class.defaultProps = {
+    tabs: [],
+    changePageWithAnimation: true
+  }, _temp));
+
+  var _default2 = PagerTabIndicator;
+  exports.default = _default2;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flexDirection: 'row',
+      paddingTop: 8,
+      paddingBottom: 4,
+      borderTopWidth: 0.5,
+      borderTopColor: '#E0E0E0',
+      backgroundColor: '#F7F7F7'
+    },
+    itemContainer: {
+      alignItems: 'center',
+      flex: 1
+    },
+    image: {},
+    text: {
+      marginTop: 4,
+      fontSize: 11,
+      color: '#999999'
+    },
+    textSelected: {
+      marginTop: 4,
+      fontSize: 11,
+      color: '#3584F6'
+    }
+  });
+},548,[1,539,43,19,20,27,30,33,46,181,63,2,545],"node_modules/rn-viewpager/viewpager/indicator/PagerTabIndicator.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectSpread"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/assertThisInitialized"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[10], "react-native");
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-wave-view/WaveView.js";
+  var _components = {
+    WaveView: {
+      displayName: "WaveView"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/react-native-wave-view/WaveView.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var WaveView = _wrapComponent("WaveView")(function (_React$Component) {
+    (0, _inherits2.default)(WaveView, _React$Component);
+
+    function WaveView() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, WaveView);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(WaveView)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      _this.waveFactor = _this.props.wavePosition === 'top' ? 3 : _this.props.wavePosition === 'bottom' ? -2 : 1;
+      _this.speed = typeof waveSpeed === 'number' ? _this.props.waveSpeed : _this.props.waveSpeed === 'fast' ? 500 : 1000;
+      _this._renderWaves = _this._renderWaves.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      return _this;
+    }
+
+    (0, _createClass2.default)(WaveView, [{
+      key: "_renderWaves",
+      value: function _renderWaves(_val, index) {
+        var _this2 = this;
+
+        var _this$props = this.props,
+            height = _this$props.height,
+            width = _this$props.width,
+            waveColor = _this$props.waveColor,
+            waveAmplitude = _this$props.waveAmplitude,
+            noOfWaves = _this$props.noOfWaves;
+        var sineIndex = Math.sin(index);
+        var transDistance = new _reactNative.Animated.Value(sineIndex * waveAmplitude);
+
+        var anim = function anim() {
+          return _reactNative.Animated.sequence([_reactNative.Animated.timing(transDistance, {
+            toValue: waveAmplitude,
+            duration: _this2.speed,
+            useNativeDriver: true
+          }), _reactNative.Animated.timing(transDistance, {
+            toValue: -waveAmplitude,
+            duration: _this2.speed,
+            useNativeDriver: true
+          })]).start(function () {
+            return anim();
+          });
+        };
+
+        _reactNative.Animated.timing(transDistance, {
+          toValue: -waveAmplitude,
+          duration: (sineIndex * waveAmplitude + waveAmplitude) * this.speed / 10,
+          useNativeDriver: true
+        }).start(anim);
+
+        return _react.default.createElement(_reactNative.Animated.View, {
+          key: index,
+          style: {
+            height: height,
+            width: width / noOfWaves,
+            top: this.waveFactor * waveAmplitude,
+            borderRadius: 50,
+            backgroundColor: waveColor,
+            transform: [{
+              translateY: transDistance
+            }]
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          }
+        });
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props2 = this.props,
+            height = _this$props2.height,
+            width = _this$props2.width,
+            waveColor = _this$props2.waveColor,
+            waveAmplitude = _this$props2.waveAmplitude,
+            noOfWaves = _this$props2.noOfWaves,
+            wavePosition = _this$props2.wavePosition,
+            style = _this$props2.style;
+        var wave = new Array(noOfWaves).fill(0);
+        return _react.default.createElement(_reactNative.View, {
+          style: {
+            height: height + waveAmplitude * 2,
+            overflow: 'hidden',
+            flexDirection: 'row'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66
+          }
+        }, wave.map(this._renderWaves), _react.default.createElement(_reactNative.View, {
+          style: (0, _objectSpread2.default)({
+            backgroundColor: waveColor
+          }, style, {
+            height: height - waveAmplitude * (wavePosition === 'top' ? 2 : wavePosition === 'bottom' ? 3 : 2),
+            width: width
+          }, wavePosition === 'top' ? {
+            bottom: 0
+          } : wavePosition === 'bottom' ? {
+            top: 0
+          } : {
+            top: waveAmplitude * 2
+          }, {
+            position: 'absolute'
+          }),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          }
+        }, this.props.children));
+      }
+    }]);
+    return WaveView;
+  }(_react.default.Component));
+
+  var _default2 = WaveView;
+  exports.default = _default2;
+  WaveView.propTypes = {
+    height: _propTypes.default.number,
+    width: _propTypes.default.number,
+    waveColor: _propTypes.default.string,
+    waveSpeed: _propTypes.default.oneOfType([_propTypes.default.oneOf(['fast', 'slow']), _propTypes.default.number]),
+    waveAmplitude: _propTypes.default.number,
+    noOfWaves: _propTypes.default.number,
+    wavePosition: _propTypes.default.oneOf(['top', 'bottom', 'both']),
+    style: _propTypes.default.any
+  };
+  WaveView.defaultProps = {
+    height: 200,
+    width: 376,
+    waveColor: 'blue',
+    waveSpeed: 'slow',
+    waveAmplitude: 10,
+    noOfWaves: 100,
+    wavePosition: 'both',
+    style: {}
+  };
+},579,[1,43,19,20,27,30,33,29,46,181,2,63],"node_modules/react-native-wave-view/WaveView.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/inherits"));
+
+  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/assertThisInitialized"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./../../react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[12], "react-native");
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/ViewPager.js";
+
+  var _components = {
+    ViewPager: {
+      displayName: "ViewPager"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/ViewPager.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var SCROLLVIEW_REF = 'scrollView';
+  var VIEWPAGER_REF = 'viewPager';
+  var SCROLL_STATE = {
+    idle: 'idle',
+    settling: 'settling',
+    dragging: 'dragging'
+  };
+
+  var ViewPager = _wrapComponent("ViewPager")((_temp = _class = function (_Component) {
+    (0, _inherits2.default)(ViewPager, _Component);
+
+    function ViewPager(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, ViewPager);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ViewPager).call(this, props));
+      _this._scrollState = SCROLL_STATE.idle;
+      _this._preScrollX = null;
+      _this._panResponder = _reactNative.PanResponder.create({
+        onStartShouldSetPanResponder: function onStartShouldSetPanResponder() {
+          return true;
+        },
+        onMoveShouldSetPanResponder: function onMoveShouldSetPanResponder() {
+          return true;
+        },
+        onPanResponderGrant: function onPanResponderGrant() {
+          return _this._setScrollState(SCROLL_STATE.dragging);
+        },
+        onPanResponderMove: function onPanResponderMove() {
+          return null;
+        },
+        onPanResponderRelease: function onPanResponderRelease() {
+          return _this._setScrollState(SCROLL_STATE.settling);
+        },
+        onPanResponderTerminate: function onPanResponderTerminate() {
+          return null;
+        },
+        onPanResponderTerminationRequest: function onPanResponderTerminationRequest(evt, gestureState) {
+          return true;
+        }
+      });
+      _this._onPageScrollOnAndroid = _this._onPageScrollOnAndroid.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._onPageSelectedOnAndroid = _this._onPageSelectedOnAndroid.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._renderOnIOS = _this._renderOnIOS.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._onScrollOnIOS = _this._onScrollOnIOS.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._onScrollViewLayout = _this._onScrollViewLayout.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._childrenWithOverridenStyle = _this._childrenWithOverridenStyle.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this._setScrollState = _this._setScrollState.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this.setPageWithoutAnimation = _this.setPageWithoutAnimation.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this.setPage = _this.setPage.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
+      _this.state = {
+        width: 0,
+        height: 0,
+        page: props.initialPage
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(ViewPager, [{
+      key: "render",
+      value: function render() {
+        return this.props.forceScrollView || _reactNative.Platform.OS === 'ios' ? this._renderOnIOS() : _react.default.createElement(_reactNative.ViewPagerAndroid, (0, _extends2.default)({}, this.props, {
+          scrollEnabled: this.props.horizontalScroll ? true : false,
+          ref: VIEWPAGER_REF,
+          key: this.props.children ? this.props.children.length : 0,
+          onPageScroll: this._onPageScrollOnAndroid,
+          onPageSelected: this._onPageSelectedOnAndroid,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          }
+        }));
+      }
+    }, {
+      key: "_onPageScrollOnAndroid",
+      value: function _onPageScrollOnAndroid(e) {
+        if (this.props.onPageScroll) this.props.onPageScroll(e.nativeEvent);
+      }
+    }, {
+      key: "_onPageSelectedOnAndroid",
+      value: function _onPageSelectedOnAndroid(e) {
+        if (this.props.onPageSelected) this.props.onPageSelected(e.nativeEvent);
+      }
+    }, {
+      key: "_renderOnIOS",
+      value: function _renderOnIOS() {
+        var childrenCount = this.props.children ? this.props.children.length : 0;
+        var initialPage = Math.min(Math.max(0, this.props.initialPage), childrenCount - 1);
+        var needMonitorScroll = !!this.props.onPageScroll || !!this.props.onPageSelected || !!this.props.onPageScrollStateChanged;
+        var needMonitorTouch = !!this.props.onPageScrollStateChanged;
+        var props = (0, _objectSpread2.default)({}, this.props, {
+          ref: SCROLLVIEW_REF,
+          onLayout: this._onScrollViewLayout,
+          horizontal: true,
+          pagingEnabled: this.props.horizontalScroll ? true : false,
+          scrollsToTop: false,
+          showsHorizontalScrollIndicator: false,
+          showsVerticalScrollIndicator: false,
+          children: this._childrenWithOverridenStyle(),
+          contentOffset: {
+            x: this.state.width * initialPage,
+            y: 0
+          },
+          decelerationRate: 0.9,
+          onScroll: needMonitorScroll ? this._onScrollOnIOS : null,
+          scrollEventThrottle: needMonitorScroll ? this.props.onPageScroll ? 8 : 1 : 0
+        });
+        if (needMonitorTouch) props = (0, _extends2.default)(props, this._panResponder.panHandlers);
+        var scrollViewStyle = {
+          overflow: 'visible',
+          marginHorizontal: -this.props.pageMargin / 2
+        };
+        if (this.props.style && !this.props.style.height) return _react.default.createElement(_reactNative.ScrollView, (0, _extends2.default)({}, props, {
+          style: [scrollViewStyle, this.props.style],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          }
+        }));else return _react.default.createElement(_reactNative.View, {
+          style: this.props.style,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          }
+        }, _react.default.createElement(_reactNative.ScrollView, (0, _extends2.default)({}, props, {
+          style: scrollViewStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          }
+        })));
+      }
+    }, {
+      key: "_onScrollOnIOS",
+      value: function _onScrollOnIOS(e) {
+        var x = e.nativeEvent.contentOffset.x,
+            offset,
+            position = Math.floor(x / this.state.width);
+        if (x === this._preScrollX) return;
+        this._preScrollX = x;
+        offset = x / this.state.width - position;
+        if (this.props.onPageScroll) this.props.onPageScroll({
+          offset: offset,
+          position: position
+        });
+
+        if (this.props.onPageSelected && offset === 0) {
+          this.props.onPageSelected({
+            position: position
+          });
+          this.props.onPageScrollStateChanged && this._setScrollState(SCROLL_STATE.idle);
+          this.setState({
+            page: position
+          });
+        }
+      }
+    }, {
+      key: "_onScrollViewLayout",
+      value: function _onScrollViewLayout(event) {
+        var _this2 = this;
+
+        var _event$nativeEvent$la = event.nativeEvent.layout,
+            width = _event$nativeEvent$la.width,
+            height = _event$nativeEvent$la.height;
+        this.setState({
+          width: width,
+          height: height
+        }, function () {
+          return _reactNative.Platform.OS === 'ios' && _this2.setPageWithoutAnimation(_this2.state.page);
+        });
+      }
+    }, {
+      key: "_childrenWithOverridenStyle",
+      value: function _childrenWithOverridenStyle() {
+        var _this3 = this;
+
+        if (this.state.width === 0 || this.state.height === 0) return null;
+        return _react.default.Children.map(this.props.children, function (child) {
+          if (!child) return null;
+          var newProps = (0, _objectSpread2.default)({}, child.props, {
+            style: [child.props.style, {
+              width: _this3.state.width,
+              height: _this3.state.height,
+              position: null
+            }],
+            collapsable: false
+          });
+
+          if (child.type && child.type.displayName && child.type.displayName !== 'RCTView' && child.type.displayName !== 'View') {
+            console.warn('Each ViewPager child must be a <View>. Was ' + child.type.displayName);
+          }
+
+          return _react.default.createElement(child.type, newProps);
+        });
+      }
+    }, {
+      key: "_setScrollState",
+      value: function _setScrollState(scrollState) {
+        if (scrollState === this._scrollState) return;
+        this.props.onPageScrollStateChanged && this.props.onPageScrollStateChanged(scrollState);
+        this._scrollState = scrollState;
+      }
+    }, {
+      key: "setPageWithoutAnimation",
+      value: function setPageWithoutAnimation(selectedPage) {
+        this.setState({
+          page: selectedPage
+        });
+        if (this.props.forceScrollView || _reactNative.Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({
+          x: this.state.width * selectedPage,
+          animated: false
+        });else {
+          this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage);
+          if (this.props.onPageSelected) this.props.onPageSelected({
+            position: selectedPage
+          });
+        }
+      }
+    }, {
+      key: "setPage",
+      value: function setPage(selectedPage) {
+        this.setState({
+          page: selectedPage
+        });
+        if (this.props.forceScrollView || _reactNative.Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({
+          x: this.state.width * selectedPage
+        });else {
+          this.refs[VIEWPAGER_REF].setPage(selectedPage);
+          if (this.props.onPageSelected) this.props.onPageSelected({
+            position: selectedPage
+          });
+        }
+      }
+    }]);
+    return ViewPager;
+  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPagerAndroid.propTypes), _class.defaultProps = {
+    initialPage: 0,
+    keyboardDismissMode: 'on-drag',
+    onPageScroll: null,
+    onPageSelected: null,
+    onPageScrollStateChanged: null,
+    pageMargin: 0,
+    horizontalScroll: true
+  }, _temp));
+
+  var _default2 = ViewPager;
+  exports.default = _default2;
+},544,[1,539,43,8,19,20,27,30,33,29,46,181,2],"node_modules/rn-viewpager/viewpager/ViewPager.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectSpread"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../../../react-transform-hmr/lib/index.js"));
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "prop-types"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+
+  var _IndicatorViewPager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "../IndicatorViewPager"));
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/indicator/PagerTitleIndicator.js";
+
+  var _components = {
+    PagerTitleIndicator: {
+      displayName: "PagerTitleIndicator"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/node_modules/rn-viewpager/viewpager/indicator/PagerTitleIndicator.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var itemLayoutInfo = [];
+
+  var screenWidth = _reactNative.Dimensions.get('window').width;
+
+  var FORWARD = 1;
+  var NONE = 0;
+  var BACKWARD = -1;
+  var DEFAULT_ITEM_MARGIN = 20;
+
+  var PagerTitleIndicator = _wrapComponent("PagerTitleIndicator")((_temp = _class = function (_Component) {
+    (0, _inherits2.default)(PagerTitleIndicator, _Component);
+
+    function PagerTitleIndicator(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, PagerTitleIndicator);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(PagerTitleIndicator).call(this, props));
+      _this.state = {
+        selectedIndex: _this.props.initialPage
+      };
+      _this._preSelectedIndex = props.initialPage;
+      _this._contentHorOffset = 0;
+      _this._currentMaxHor = screenWidth;
+      _this._titleCount = props.titles.length || 0;
+      return _this;
+    }
+
+    (0, _createClass2.default)(PagerTitleIndicator, [{
+      key: "shouldComponentUpdate",
+      value: function shouldComponentUpdate(nextProps, nextState) {
+        return this.state.selectedIndex != nextState.selectedIndex || this.props.titles + '' != nextProps.titles + '' || this.props.style != nextProps.style || this.props.itemStyle != nextProps.itemStyle || this.props.itemTextStyle != nextProps.itemTextStyle || this.props.selectedItemTextStyle != nextProps.selectedItemTextStyle || this.props.selectedBorderStyle != nextProps.selectedBorderStyle;
+      }
+    }, {
+      key: "componentWillReceiveProps",
+      value: function componentWillReceiveProps(nextProps) {
+        this._titleCount = nextProps.titles.length;
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+
+        var _this$props = this.props,
+            titles = _this$props.titles,
+            pager = _this$props.pager,
+            itemStyle = _this$props.itemStyle,
+            selectedItemStyle = _this$props.selectedItemStyle,
+            itemTextStyle = _this$props.itemTextStyle,
+            selectedItemTextStyle = _this$props.selectedItemTextStyle,
+            selectedBorderStyle = _this$props.selectedBorderStyle;
+        if (!titles || titles.length === 0) return null;
+        var titleViews = titles.map(function (title, index) {
+          var isSelected = _this2.state.selectedIndex === index;
+          var itemMargin = itemStyle && itemStyle.marginLeft || DEFAULT_ITEM_MARGIN;
+          var itemMarginObj = null;
+
+          if (!itemStyle && !selectedItemStyle) {
+            itemMarginObj = index < _this2._titleCount - 1 ? {
+              marginLeft: itemMargin
+            } : {
+              marginLeft: itemMargin,
+              marginRight: itemMargin
+            };
+          }
+
+          var titleView = _this2.props.renderTitle ? _this2.props.renderTitle(index, title, isSelected) : _react.default.createElement(_reactNative.Text, {
+            style: isSelected ? [styles.titleTextSelected, selectedItemTextStyle] : [styles.titleText, itemTextStyle],
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 82
+            }
+          }, title);
+          return _react.default.createElement(_reactNative.TouchableOpacity, {
+            style: [styles.titleContainer, itemMarginObj, isSelected ? selectedItemStyle : itemStyle],
+            activeOpacity: 0.6,
+            key: index,
+            onLayout: function onLayout(e) {
+              itemLayoutInfo[index] = e.nativeEvent;
+            },
+            onPress: function onPress() {
+              if (_this2.props.trackScroll === true) {
+                _this2._visibleDetect(index);
+              }
+
+              !isSelected && pager.setPage(index);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 88
+            }
+          }, titleView, isSelected ? _react.default.createElement(_reactNative.View, {
+            style: [styles.selectedBorder, selectedBorderStyle],
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 103
+            }
+          }) : null);
+        });
+        return _react.default.createElement(_reactNative.View, {
+          style: [styles.indicatorContainer, this.props.style],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108
+          }
+        }, _react.default.createElement(_reactNative.ScrollView, {
+          scrollEventThrottle: 1,
+          onScroll: function onScroll(e) {
+            _this2._contentHorOffset = e.nativeEvent.contentOffset.x;
+            _this2._currentMaxHor = screenWidth + _this2._contentHorOffset;
+          },
+          showsHorizontalScrollIndicator: false,
+          ref: function ref(c) {
+            _this2.scroller = c;
+          },
+          horizontal: true,
+          style: {
+            flex: 1
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          }
+        }, titleViews));
+      }
+    }, {
+      key: "_visibleDetect",
+      value: function _visibleDetect(selectedIndex) {
+        if (selectedIndex > this._titleCount - 1) return;
+        var curItemLayoutInfo = itemLayoutInfo[selectedIndex];
+        var _curItemLayoutInfo$la = curItemLayoutInfo.layout,
+            width = _curItemLayoutInfo$la.width,
+            curItemOffsetX = _curItemLayoutInfo$la.x;
+        var curItemAbsPosition = width + curItemOffsetX + DEFAULT_ITEM_MARGIN;
+        var moveDir = NONE;
+
+        if (selectedIndex > this._preSelectedIndex) {
+          moveDir = FORWARD;
+        } else if (selectedIndex < this._preSelectedIndex) {
+          moveDir = BACKWARD;
+        }
+
+        if (moveDir === FORWARD) {
+          var lastItemOffsetX;
+          var lastItemAbsPosition;
+
+          if (selectedIndex < this._titleCount - 1) {
+            var nextLayoutInfo = itemLayoutInfo[selectedIndex + 1];
+            var _width = nextLayoutInfo.layout.width;
+            lastItemOffsetX = nextLayoutInfo.layout.x;
+            lastItemAbsPosition = _width + lastItemOffsetX + DEFAULT_ITEM_MARGIN;
+          } else if (selectedIndex === this._titleCount - 1) {
+            lastItemOffsetX = curItemOffsetX;
+            lastItemAbsPosition = curItemAbsPosition;
+          }
+
+          if (this._contentHorOffset > lastItemOffsetX) {
+            var deltaX = curItemOffsetX - DEFAULT_ITEM_MARGIN;
+            this.scroller.scrollTo({
+              x: deltaX
+            });
+          } else if (this._currentMaxHor < lastItemAbsPosition) {
+            var _deltaX = lastItemAbsPosition - this._currentMaxHor;
+
+            this.scroller.scrollTo({
+              x: this._contentHorOffset + _deltaX
+            });
+          }
+        } else if (moveDir === BACKWARD) {
+          var _lastItemOffsetX;
+
+          var _lastItemAbsPosition;
+
+          if (selectedIndex > 0) {
+            var _nextLayoutInfo = itemLayoutInfo[selectedIndex - 1];
+            var _width2 = _nextLayoutInfo.layout.width;
+            _lastItemOffsetX = _nextLayoutInfo.layout.x;
+            _lastItemAbsPosition = _width2 + _lastItemOffsetX + DEFAULT_ITEM_MARGIN;
+          } else if (selectedIndex === 0) {
+            _lastItemOffsetX = curItemOffsetX;
+            _lastItemAbsPosition = curItemAbsPosition;
+          }
+
+          if (this._contentHorOffset > _lastItemOffsetX || this._currentMaxHor < curItemAbsPosition) {
+            var _deltaX2 = _lastItemOffsetX - DEFAULT_ITEM_MARGIN;
+
+            this.scroller.scrollTo({
+              x: _deltaX2
+            });
+          }
+        }
+      }
+    }, {
+      key: "onPageSelected",
+      value: function onPageSelected(e) {
+        if (this.props.trackScroll === true) {
+          this._visibleDetect(e.position);
+        }
+
+        this._preSelectedIndex = e.position;
+        this.setState({
+          selectedIndex: e.position
+        });
+      }
+    }]);
+    return PagerTitleIndicator;
+  }(_react.Component), _class.propTypes = (0, _objectSpread2.default)({}, _reactNative.ViewPropTypes, {
+    initialPage: _propTypes.default.number,
+    pager: _propTypes.default.instanceOf(_IndicatorViewPager.default),
+    titles: _propTypes.default.arrayOf(_propTypes.default.string).isRequired,
+    itemStyle: _reactNative.ViewPropTypes.style,
+    selectedItemStyle: _reactNative.ViewPropTypes.style,
+    itemTextStyle: _reactNative.Text.propTypes.style,
+    trackScroll: _propTypes.default.bool,
+    selectedItemTextStyle: _reactNative.Text.propTypes.style,
+    selectedBorderStyle: _reactNative.ViewPropTypes.style,
+    renderTitle: _propTypes.default.func
+  }), _class.defaultProps = {
+    titles: [],
+    initialPage: 0
+  }, _temp));
+
+  var _default2 = PagerTitleIndicator;
+  exports.default = _default2;
+
+  var styles = _reactNative.StyleSheet.create({
+    indicatorContainer: {
+      height: 40,
+      flexDirection: 'row',
+      backgroundColor: '#F6F6F6'
+    },
+    titleText: {
+      color: '#333333',
+      fontSize: 15
+    },
+    titleTextSelected: {
+      color: '#FF7200',
+      fontSize: 15
+    },
+    titleContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    selectedBorder: {
+      backgroundColor: '#FF7200',
+      height: 2,
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0
+    }
+  });
+},547,[1,539,43,19,20,27,30,33,46,181,63,2,545],"node_modules/rn-viewpager/viewpager/indicator/PagerTitleIndicator.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
+
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SettingsTab.js";
+
+  var SettingsTab = function (_Component) {
+    (0, _inherits2.default)(SettingsTab, _Component);
+
+    function SettingsTab() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, SettingsTab);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(SettingsTab)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+      _this.render = function () {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 7
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.textStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 8
+          }
+        }, " We are working hard to make this functional :-)"));
+      };
+
+      return _this;
+    }
+
+    return SettingsTab;
+  }(_react.Component);
+
+  exports.default = SettingsTab;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#3d2e48',
+      justifyContent: 'center'
+    },
+    textStyle: {
+      color: 'white',
+      alignSelf: 'center'
+    }
+  });
+},634,[1,539,19,27,30,33,46,2],"src/components/SettingsTab.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
   var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
@@ -88650,15 +88726,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _SpeechCard = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./SpeechCard"));
 
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechList.js";
+  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js";
   var _components = {
-    SpeechList: {
-      displayName: "SpeechList"
+    SpeechListTab: {
+      displayName: "SpeechListTab"
     }
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechList.js",
+    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js",
     components: _components,
     locals: [module],
     imports: [_react.default]
@@ -88674,21 +88750,21 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       height = _Dimensions$get.height,
       width = _Dimensions$get.width;
 
-  var SpeechList = function (_Component) {
-    (0, _inherits2.default)(SpeechList, _Component);
+  var SpeechListTab = function (_Component) {
+    (0, _inherits2.default)(SpeechListTab, _Component);
 
-    function SpeechList(props) {
+    function SpeechListTab(props) {
       var _this;
 
-      (0, _classCallCheck2.default)(this, SpeechList);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(SpeechList).call(this, props));
+      (0, _classCallCheck2.default)(this, SpeechListTab);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(SpeechListTab).call(this, props));
       _this.state = {
         dataSource: [1, 2, 3, 4, 5, 5]
       };
       return _this;
     }
 
-    (0, _createClass2.default)(SpeechList, [{
+    (0, _createClass2.default)(SpeechListTab, [{
       key: "render",
       value: function render() {
         return _react.default.createElement(_reactNative.View, {
@@ -88724,16 +88800,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         }));
       }
     }]);
-    return SpeechList;
+    return SpeechListTab;
   }(_react.Component);
 
-  SpeechList = _wrapComponent("SpeechList")(SpeechList);
+  SpeechListTab = _wrapComponent("SpeechListTab")(SpeechListTab);
 
   function mapStateToProps(state, props) {
     return {};
   }
 
-  var _default2 = (0, _reactRedux.connect)(mapStateToProps, null)(SpeechList);
+  var _default2 = (0, _reactRedux.connect)(mapStateToProps, null)(SpeechListTab);
 
   exports.default = _default2;
 
@@ -88773,7 +88849,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginRight: 10
     }
   });
-},629,[1,539,19,20,27,30,33,46,181,2,554,630],"src/components/SpeechList.js");
+},635,[1,539,19,20,27,30,33,46,181,2,554,630],"src/components/SpeechListTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -89016,82 +89092,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
 },631,[1,539,19,27,30,33,46,2,553,554,569],"src/components/ListOptions.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/Settings.js";
-
-  var Settings = function (_Component) {
-    (0, _inherits2.default)(Settings, _Component);
-
-    function Settings() {
-      var _getPrototypeOf2;
-
-      var _this;
-
-      (0, _classCallCheck2.default)(this, Settings);
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(Settings)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-      _this.render = function () {
-        return _react.default.createElement(_reactNative.View, {
-          style: styles.container,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 7
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.textStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 8
-          }
-        }, " We are working hard to make this functional :-)"));
-      };
-
-      return _this;
-    }
-
-    return Settings;
-  }(_react.Component);
-
-  exports.default = Settings;
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#3d2e48',
-      justifyContent: 'center'
-    },
-    textStyle: {
-      color: 'white',
-      alignSelf: 'center'
-    }
-  });
-},632,[1,539,19,27,30,33,46,2],"src/components/Settings.js");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map

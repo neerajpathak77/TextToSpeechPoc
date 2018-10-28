@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import SpeechCard from './SpeechCard';
 
   const { height, width } = Dimensions.get("window");
-  class SpeechList extends Component {
+  class SpeechListTab extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -39,7 +39,7 @@ function mapStateToProps(state, props) {
       
   };
 }
-export default connect(mapStateToProps, null)(SpeechList);
+export default connect(mapStateToProps, null)(SpeechListTab);
 
 const styles = StyleSheet.create({
     itemContainer: {

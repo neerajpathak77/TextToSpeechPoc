@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
  
-export default class Settings extends Component{
+export default class SettingsTab extends Component{
 
     render = () => (
         <View style={styles.container}>
