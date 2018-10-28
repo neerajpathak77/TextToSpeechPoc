@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Dimensions, FlatList, StyleSheet} from 'react-native';
+import {View, Text, Dimensions, FlatList, StyleSheet} from 'react-native';
 import { connect } from 'react-redux';
 import SpeechCard from './SpeechCard';
 import Header from './Header';
@@ -10,22 +10,28 @@ const { height, width } = Dimensions.get("window");
   render = () => (
       <View>
         <Header title={'SAVED SPEECH'}/>
-        {/* add placeholder for blank list */}
         {this.renderSpeechList()}
       </View>
   )
 
   renderSpeechList = () => (
+    this.props.savedSpeechList.length > 0 
+      ? 
       <FlatList
-          style={styles.listStyle}
-          data={this.props.savedSpeechList}
-          renderItem={({item, index}) => (
-            <View>
-              <SpeechCard item={item}/>
-            </View>
-          )}
-          keyExtractor={item => item.key}
+        style={styles.listStyle}
+        data={this.props.savedSpeechList}
+        renderItem={({item, index}) => (
+          <View>
+            <SpeechCard item={item}/>
+          </View>
+        )}
+        keyExtractor={item => item.key}
       />
+      :
+      <View style={styles.blankListContainer}>
+          <Text style={styles.textStyle}> No speech saved. Please save first.</Text>
+      </View>
+      
   )
 }
 
@@ -70,5 +76,14 @@ const styles = StyleSheet.create({
     listStyle: {
       marginLeft: 10,
       marginRight: 10,
+    },
+    blankListContainer: {
+      width: width,
+      height: height-180,
+      justifyContent:'center'
+    },
+    textStyle: {
+      color: '#3d2e48',
+      alignSelf: 'center'
     }
   });

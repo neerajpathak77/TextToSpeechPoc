@@ -86319,19 +86319,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             fileName: _jsxFileName,
             lineNumber: 12
           }
-        }), _this.props.savedSpeechList.length > 0 ? _react.default.createElement(_reactNative.View, {
-          style: {
-            backgroundColor: 'red'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 14
-          }
-        }) : _this.renderSpeechList());
+        }), _this.renderSpeechList());
       };
 
       _this.renderSpeechList = function () {
-        return _react.default.createElement(_reactNative.FlatList, {
+        return _this.props.savedSpeechList.length > 0 ? _react.default.createElement(_reactNative.FlatList, {
           style: styles.listStyle,
           data: _this.props.savedSpeechList,
           renderItem: function renderItem(_ref) {
@@ -86357,7 +86349,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             fileName: _jsxFileName,
             lineNumber: 20
           }
-        });
+        }) : _react.default.createElement(_reactNative.View, {
+          style: styles.blankListContainer,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.textStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32
+          }
+        }, " We are working hard to make this functional :-)"));
       };
 
       return _this;
@@ -86410,6 +86414,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     listStyle: {
       marginLeft: 10,
       marginRight: 10
+    },
+    blankListContainer: {
+      width: width,
+      height: height - 80,
+      justifyContent: 'center'
+    },
+    textStyle: {
+      color: '#3d2e48',
+      alignSelf: 'center'
     }
   });
 },581,[1,539,19,27,30,33,46,2,553,582,584],"src/components/SpeechListTab.js");
