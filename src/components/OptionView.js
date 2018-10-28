@@ -1,16 +1,12 @@
 import React, {Component } from 'react'
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
-import {copy, share, save, setSavedSpeechList, saveSpeech} from '../actions/globalActions'
+import {copy, share, save, setSavedSpeechList} from '../actions/globalActions'
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import DatabaseLayer from '../localdb/DatabaseLayer'
 import {NOTES_TABLE} from '../Constants'
 
 class OptionView extends Component {
-
-    constructor(props) {
-        super(props)
-    }
 
     copy = () => {
         this.props.copy(this.props.voiceConvertedText)
@@ -26,10 +22,6 @@ class OptionView extends Component {
 
     share = () => {
         this.props.share(this.props.voiceConvertedText)
-    }
-
-    afterItemSave = () => {
-
     }
 
     render = () => (
@@ -66,8 +58,7 @@ function mapStateToProps(state, props) {
         copy: copy,
         save:save,
         share: share,
-        setSavedSpeechList: setSavedSpeechList,
-        saveSpeech: saveSpeech
+        setSavedSpeechList: setSavedSpeechList
       },
       dispatch
     )
