@@ -31,6 +31,24 @@ export default class DatabaseLayer {
         })  
     }
 
+    static removeItemFromList = (key, item) => {
+        return new Promise((resolve, reject)=>{
+            AsyncStorage.getItem(key)
+                .then(req => {
+                    let items = JSON.parse(req)
+                    items = (items ==null || items==undefined) ? [] : items
+                    items.push(item)
+                    AsyncStorage.setItem(key, JSON.stringify(items))
+                        .then(item => {
+                        resolve(items)
+                        this.props.setSavedSpeechList(items)
+                })
+                .catch(error => reject(error))
+            })
+            .catch(error => reject(error));  
+        })  
+    }
+
     static createNoteTemplateModel = (note) => {
         return {
             key: Date.now().toString(),

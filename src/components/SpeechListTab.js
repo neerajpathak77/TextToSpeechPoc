@@ -3,7 +3,8 @@ import { Text, View, Dimensions, FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import SpeechCard from './SpeechCard';
 import Header from './Header';
-import DatabaseLayer from '../localdb/DatabaseLayer';
+import DatabaseLayer from '../localdb/DatabaseLayer'
+import {NOTES_TABLE} from '../Constants'
 
   const { height, width } = Dimensions.get("window");
   class SpeechListTab extends Component {
@@ -16,19 +17,12 @@ import DatabaseLayer from '../localdb/DatabaseLayer';
 
 
     componentWillMount() {
-      DatabaseLayer.getListFromStorage('KEY')
+      DatabaseLayer.getListFromStorage(NOTES_TABLE)
         .then(data=>console.log('DatabaseLayer',data))
 
         
-        let note = DatabaseLayer.createNoteTemplateModel('neeraj ')
 
-        console.log('DatabaseLayer.addItemToList', DatabaseLayer.addItemToList('KEY'))
-        DatabaseLayer.addItemToList('KEY', note)
-        .then(dataSource => {
-          
-          console.log('DatabaseLayer',dataSource)
-          this.setState({dataSource})
-        })
+        
     }
     
   render() {

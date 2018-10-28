@@ -1394,7 +1394,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return AppContainer;
   });
-},0,[1,2,538,588,553,589,46],"index.js");
+},0,[1,2,538,589,553,590,46],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -81826,6 +81826,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./src/localdb/DatabaseLayer"));
 
+  var _Constants = _$$_REQUIRE(_dependencyMap[13], "./src/Constants");
+
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/App.js";
 
   var App = function (_Component) {
@@ -81848,7 +81850,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return _react.default.createElement(_HomeContainer.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 29
+            lineNumber: 30
           }
         });
       };
@@ -81861,7 +81863,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       value: function componentWillMount() {
         var _this2 = this;
 
-        _DatabaseLayer.default.getListFromStorage('KEY').then(function (data) {
+        _DatabaseLayer.default.getListFromStorage(_Constants.NOTES_TABLE).then(function (data) {
           _this2.props.setSavedSpeechList(data);
         });
       }
@@ -81884,7 +81886,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
   exports.default = _default;
-},538,[1,539,19,20,27,30,33,46,540,552,553,568,583],"App.js");
+},538,[1,539,19,20,27,30,33,46,540,552,553,568,578,579],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireWildcard(obj) {
     if (obj && obj.__esModule) {
@@ -82086,7 +82088,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = HomeContainer;
   exports.default = _default2;
-},540,[1,539,19,20,27,30,33,46,181,2,541,547,579,584,585,586,587],"src/components/HomeContainer.js");
+},540,[1,539,19,20,27,30,33,46,181,2,541,547,581,585,586,587,588],"src/components/HomeContainer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -83376,17 +83378,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
 
       _this.onSpeechError = function (voice) {
-        _this.props.setVoiceConvertedText('jaaaazzzz');
+        _this.props.setVoiceConvertedText('');
       };
 
       _this.onSpeechResults = function (voice) {
-        _this.onChange(voice.value[0]);
-      };
-
-      _this.onChange = function (text) {
-        alert(text);
-
-        _this.props.setVoiceConvertedText(text);
+        _this.props.setVoiceConvertedText(voice.value[0]);
       };
 
       _this.openMic = function () {
@@ -83403,18 +83399,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 56
           }
         }, _react.default.createElement(_WaveContainer.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 57
           }
         }), _react.default.createElement(_ScrollableTextView.default, {
           text: _this.props.voiceConvertedText,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 58
           }
         }));
       };
@@ -83792,7 +83788,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       justifyContent: 'flex-end'
     }
   });
-},550,[1,46,2,551,578],"src/components/WaveContainer.js");
+},550,[1,46,2,551,580],"src/components/WaveContainer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -83821,6 +83817,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _redux = _$$_REQUIRE(_dependencyMap[10], "redux");
 
+  var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "../localdb/DatabaseLayer"));
+
+  var _Constants = _$$_REQUIRE(_dependencyMap[12], "../Constants");
+
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/OptionView.js";
 
   var OptionView = function (_Component) {
@@ -83837,53 +83837,33 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
 
       _this.save = function () {
-        _this.props.save(_this.props.voiceConvertedText);
+        var note = _DatabaseLayer.default.createNoteTemplateModel(_this.props.voiceConvertedText);
+
+        _DatabaseLayer.default.addItemToList(_Constants.NOTES_TABLE, note).then(function (items) {
+          _this.props.setSavedSpeechList(items);
+        });
       };
 
       _this.share = function () {
         _this.props.share(_this.props.voiceConvertedText);
       };
 
+      _this.afterItemSave = function () {};
+
       _this.render = function () {
         return _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 36
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.buttonContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 37
           }
         }, _react.default.createElement(_reactNative.TouchableOpacity, {
           onPress: _this.copy,
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 28
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 31
-          }
-        }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
-          onPress: _this.save,
-          style: styles.buttons,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.buttonTextStyle,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 36
-          }
-        }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
-          onPress: _this.share,
           style: styles.buttons,
           __source: {
             fileName: _jsxFileName,
@@ -83894,6 +83874,32 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           __source: {
             fileName: _jsxFileName,
             lineNumber: 41
+          }
+        }, "COPY")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.save,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46
+          }
+        }, "SAVE")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: _this.share,
+          style: styles.buttons,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.buttonTextStyle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
           }
         }, "SHARE"))));
       };
@@ -83914,7 +83920,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return (0, _redux.bindActionCreators)({
       copy: _globalActions.copy,
       save: _globalActions.save,
-      share: _globalActions.share
+      share: _globalActions.share,
+      setSavedSpeechList: _globalActions.setSavedSpeechList,
+      saveSpeech: _globalActions.saveSpeech
     }, dispatch);
   }
 
@@ -83948,12 +83956,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       backgroundColor: '#5d5268'
     }
   });
-},551,[1,539,19,27,30,33,46,2,552,553,568],"src/components/OptionView.js");
+},551,[1,539,19,27,30,33,46,2,552,553,568,578,579],"src/components/OptionView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.setSavedSpeechList = exports.setVoiceConvertedText = exports.share = exports.remove = exports.save = exports.copy = exports.SET_SAVED_SEARCH_LIST = exports.SET_VOICE_CONVERTED_TEXT = exports.REMOVE = exports.SHARE = exports.SAVE = exports.COPY = void 0;
+  exports.deleteSpeech = exports.saveSpeech = exports.setSavedSpeechList = exports.setVoiceConvertedText = exports.share = exports.remove = exports.save = exports.copy = exports.DELETE_SPEECH = exports.SAVE_SPEECH = exports.SET_SAVED_SPEECH_LIST = exports.SET_VOICE_CONVERTED_TEXT = exports.REMOVE = exports.SHARE = exports.SAVE = exports.COPY = void 0;
   var COPY = 'COPY';
   exports.COPY = COPY;
   var SAVE = 'SAVE';
@@ -83964,8 +83972,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.REMOVE = REMOVE;
   var SET_VOICE_CONVERTED_TEXT = 'SET_VOICE_CONVERTED_TEXT';
   exports.SET_VOICE_CONVERTED_TEXT = SET_VOICE_CONVERTED_TEXT;
-  var SET_SAVED_SEARCH_LIST = 'SET_SAVED_SEARCH_LIST';
-  exports.SET_SAVED_SEARCH_LIST = SET_SAVED_SEARCH_LIST;
+  var SET_SAVED_SPEECH_LIST = 'SET_SAVED_SPEECH_LIST';
+  exports.SET_SAVED_SPEECH_LIST = SET_SAVED_SPEECH_LIST;
+  var SAVE_SPEECH = 'SAVE_SPEECH';
+  exports.SAVE_SPEECH = SAVE_SPEECH;
+  var DELETE_SPEECH = 'DELETE_SPEECH';
+  exports.DELETE_SPEECH = DELETE_SPEECH;
 
   var copy = function copy(data) {
     return {
@@ -84014,12 +84026,30 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var setSavedSpeechList = function setSavedSpeechList(data) {
     return {
-      type: SET_SAVED_SEARCH_LIST,
+      type: SET_SAVED_SPEECH_LIST,
       payload: data
     };
   };
 
   exports.setSavedSpeechList = setSavedSpeechList;
+
+  var saveSpeech = function saveSpeech(data) {
+    return {
+      type: SAVE_SPEECH,
+      payload: data
+    };
+  };
+
+  exports.saveSpeech = saveSpeech;
+
+  var deleteSpeech = function deleteSpeech(data) {
+    return {
+      type: DELETE_SPEECH,
+      payload: data
+    };
+  };
+
+  exports.deleteSpeech = deleteSpeech;
 },552,[],"src/actions/globalActions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
@@ -85940,6 +85970,96 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
 
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _this = this;
+
+  var DatabaseLayer = function DatabaseLayer() {
+    (0, _classCallCheck2.default)(this, DatabaseLayer);
+  };
+
+  exports.default = DatabaseLayer;
+
+  DatabaseLayer.addItemToList = function (key, item) {
+    return new Promise(function (resolve, reject) {
+      _reactNative.AsyncStorage.getItem(key).then(function (req) {
+        var items = JSON.parse(req);
+        items = items == null || items == undefined ? [] : items;
+        items.push(item);
+
+        _reactNative.AsyncStorage.setItem(key, JSON.stringify(items)).then(function (item) {
+          resolve(items);
+        }).catch(function (error) {
+          return reject(error);
+        });
+      }).catch(function (error) {
+        return reject(error);
+      });
+    });
+  };
+
+  DatabaseLayer.getListFromStorage = function (key) {
+    return new Promise(function (resolve, reject) {
+      _reactNative.AsyncStorage.getItem(key).then(function (req) {
+        var items = JSON.parse(req);
+        items = items == null || items == undefined ? [] : items;
+        resolve(JSON.parse(req));
+      }).catch(function (error) {
+        return reject(error);
+      });
+    });
+  };
+
+  DatabaseLayer.removeItemFromList = function (key, item) {
+    return new Promise(function (resolve, reject) {
+      _reactNative.AsyncStorage.getItem(key).then(function (req) {
+        var items = JSON.parse(req);
+        items = items == null || items == undefined ? [] : items;
+        items.push(item);
+
+        _reactNative.AsyncStorage.setItem(key, JSON.stringify(items)).then(function (item) {
+          resolve(items);
+
+          _this.props.setSavedSpeechList(items);
+        }).catch(function (error) {
+          return reject(error);
+        });
+      }).catch(function (error) {
+        return reject(error);
+      });
+    });
+  };
+
+  DatabaseLayer.createNoteTemplateModel = function (note) {
+    return {
+      key: Date.now().toString(),
+      note: note,
+      timeStamp: Date.now()
+    };
+  };
+},578,[1,19,2],"src/localdb/DatabaseLayer.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.NOTES_TABLE = exports.SHARE_SUBJECT = exports.SHARE_TITLE = void 0;
+  var SHARE_TITLE = 'Text to speech POC';
+  exports.SHARE_TITLE = SHARE_TITLE;
+  var SHARE_SUBJECT = 'Text shared by text to speech POC App';
+  exports.SHARE_SUBJECT = SHARE_SUBJECT;
+  var NOTES_TABLE = 'NOTES_TABLE';
+  exports.NOTES_TABLE = NOTES_TABLE;
+},579,[],"src/Constants.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
   var _objectSpread2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectSpread"));
 
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
@@ -86124,7 +86244,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     wavePosition: 'both',
     style: {}
   };
-},578,[1,43,19,20,27,30,33,29,46,181,2,63],"node_modules/react-native-wave-view/WaveView.js");
+},580,[1,43,19,20,27,30,33,29,46,181,2,63],"node_modules/react-native-wave-view/WaveView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86158,6 +86278,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Header = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./Header"));
 
   var _DatabaseLayer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "../localdb/DatabaseLayer"));
+
+  var _Constants = _$$_REQUIRE(_dependencyMap[14], "../Constants");
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechListTab.js";
   var _components = {
@@ -86202,13 +86324,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             return _react.default.createElement(_reactNative.View, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 51
+                lineNumber: 45
               }
             }, _react.default.createElement(_SpeechCard.default, {
               item: item,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 52
+                lineNumber: 46
               }
             }));
           },
@@ -86217,7 +86339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 41
           }
         });
       };
@@ -86231,22 +86353,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _createClass2.default)(SpeechListTab, [{
       key: "componentWillMount",
       value: function componentWillMount() {
-        var _this2 = this;
-
-        _DatabaseLayer.default.getListFromStorage('KEY').then(function (data) {
+        _DatabaseLayer.default.getListFromStorage(_Constants.NOTES_TABLE).then(function (data) {
           return console.log('DatabaseLayer', data);
-        });
-
-        var note = _DatabaseLayer.default.createNoteTemplateModel('neeraj ');
-
-        console.log('DatabaseLayer.addItemToList', _DatabaseLayer.default.addItemToList('KEY'));
-
-        _DatabaseLayer.default.addItemToList('KEY', note).then(function (dataSource) {
-          console.log('DatabaseLayer', dataSource);
-
-          _this2.setState({
-            dataSource: dataSource
-          });
         });
       }
     }, {
@@ -86256,13 +86364,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 33
           }
         }, _react.default.createElement(_Header.default, {
           title: 'SAVED SPEECH',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 34
           }
         }), this.renderSpeechList());
       }
@@ -86318,7 +86426,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginRight: 10
     }
   });
-},579,[1,539,19,20,27,30,33,46,181,2,553,580,582,583],"src/components/SpeechListTab.js");
+},581,[1,539,19,20,27,30,33,46,181,2,553,582,584,578,579],"src/components/SpeechListTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86336,7 +86444,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/SpeechCard.js";
 
   var _Dimensions$get = _reactNative.Dimensions.get('window'),
-      height = _Dimensions$get.height,
       width = _Dimensions$get.width;
 
   var _default = SpeechCard = function SpeechCard(props) {
@@ -86345,35 +86452,35 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         style: styles.container,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 13
         }
       }, _react.default.createElement(_reactNative.View, {
         style: styles.textContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 14
         }
       }, _react.default.createElement(_reactNative.Text, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 15
         }
       }, item.note)), _react.default.createElement(_reactNative.View, {
         style: styles.bottomContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 17
         }
       }, _react.default.createElement(_ListOptions.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 18
         }
       })), _react.default.createElement(_reactNative.View, {
         style: styles.separator,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 20
         }
       }));
     };
@@ -86408,7 +86515,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       backgroundColor: 'transparent'
     }
   });
-},580,[1,2,46,581],"src/components/SpeechCard.js");
+},582,[1,2,46,583],"src/components/SpeechCard.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86560,7 +86667,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       height: 20
     }
   });
-},581,[1,539,19,27,30,33,46,2,552,553,568],"src/components/ListOptions.js");
+},583,[1,539,19,27,30,33,46,2,552,553,568],"src/components/ListOptions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86608,63 +86715,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fontSize: 18
     }
   });
-},582,[1,2,46],"src/components/Header.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var DatabaseLayer = function DatabaseLayer() {
-    (0, _classCallCheck2.default)(this, DatabaseLayer);
-  };
-
-  exports.default = DatabaseLayer;
-
-  DatabaseLayer.addItemToList = function (key, item) {
-    return new Promise(function (resolve, reject) {
-      _reactNative.AsyncStorage.getItem(key).then(function (req) {
-        var items = JSON.parse(req);
-        items = items == null || items == undefined ? [] : items;
-        items.push(item);
-
-        _reactNative.AsyncStorage.setItem(key, JSON.stringify(items)).then(function (item) {
-          resolve(items);
-        }).catch(function (error) {
-          return reject(error);
-        });
-      }).catch(function (error) {
-        return reject(error);
-      });
-    });
-  };
-
-  DatabaseLayer.getListFromStorage = function (key) {
-    return new Promise(function (resolve, reject) {
-      _reactNative.AsyncStorage.getItem(key).then(function (req) {
-        var items = JSON.parse(req);
-        items = items == null || items == undefined ? [] : items;
-        resolve(JSON.parse(req));
-      }).catch(function (error) {
-        return reject(error);
-      });
-    });
-  };
-
-  DatabaseLayer.createNoteTemplateModel = function (note) {
-    return {
-      key: Date.now().toString(),
-      note: note,
-      timeStamp: Date.now()
-    };
-  };
-},583,[1,19,2],"src/localdb/DatabaseLayer.js");
+},584,[1,2,46],"src/components/Header.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86740,7 +86791,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       alignSelf: 'center'
     }
   });
-},584,[1,539,19,27,30,33,46,2],"src/components/SettingsTab.js");
+},585,[1,539,19,27,30,33,46,2],"src/components/SettingsTab.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -86752,7 +86803,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "mic",
     "type": "png"
   });
-},585,[176],"assets/mic.png");
+},586,[176],"assets/mic.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -86764,7 +86815,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "searches",
     "type": "png"
   });
-},586,[176],"assets/searches.png");
+},587,[176],"assets/searches.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -86776,13 +86827,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "settings",
     "type": "png"
   });
-},587,[176],"assets/settings.png");
+},588,[176],"assets/settings.png");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "TextToSpeech",
   "displayName": "TextToSpeech"
 };
-},588,[],"app.json");
+},589,[],"app.json");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86806,7 +86857,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var store = (0, _redux.createStore)(_reducers.default, enhancer);
   var _default = store;
   exports.default = _default;
-},589,[1,15,568,590,598],"src/store/appStore.js");
+},590,[1,15,568,591,598],"src/store/appStore.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86824,7 +86875,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
 
   exports.default = _default;
-},590,[1,568,591],"src/reducers/index.js");
+},591,[1,568,592],"src/reducers/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86881,15 +86932,21 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           voiceConvertedText: action.payload
         });
 
-      case _globalActions.SET_SAVED_SEARCH_LIST:
+      case _globalActions.SET_SAVED_SPEECH_LIST:
         return (0, _extends2.default)({}, state, {
           savedSpeechList: action.payload
         });
+
+      case _globalActions.SAVE_SPEECH:
+        break;
+
+      case _globalActions.DELETE_SPEECH:
+        break;
     }
 
     return state;
   }
-},591,[1,8,552,592,2,593,597,583],"src/reducers/globalReducer.js");
+},592,[1,8,552,593,2,594,579,578],"src/reducers/globalReducer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86900,7 +86957,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   var _default = INITIAL_STATE;
   exports.default = _default;
-},592,[],"src/state/initialState.js");
+},593,[],"src/state/initialState.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -87235,7 +87292,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   module.exports.Sheet = _Sheet.default;
   module.exports.Button = _Button.default;
   module.exports.ShareSheet = ShareSheet;
-},593,[1,539,95,8,19,20,27,30,33,46,181,2,594,595,596],"node_modules/react-native-share/index.js");
+},594,[1,539,95,8,19,20,27,30,33,46,181,2,595,596,597],"node_modules/react-native-share/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -87366,7 +87423,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Overlay = _wrapComponent("Overlay")(Overlay);
   var _default2 = Overlay;
   exports.default = _default2;
-},594,[1,539,19,20,27,30,33,46,181,2],"node_modules/react-native-share/components/Overlay.js");
+},595,[1,539,19,20,27,30,33,46,181,2],"node_modules/react-native-share/components/Overlay.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -87462,7 +87519,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = _component;
   exports.default = _default2;
-},595,[1,539,19,20,27,30,33,46,181,2],"node_modules/react-native-share/components/Sheet.js");
+},596,[1,539,19,20,27,30,33,46,181,2],"node_modules/react-native-share/components/Sheet.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
 
@@ -87530,17 +87587,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 
   exports.default = _default;
-},596,[539,46,2],"node_modules/react-native-share/components/Button.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.SHARE_SUBJECT = exports.SHARE_TITLE = void 0;
-  var SHARE_TITLE = 'Text to speech POC';
-  exports.SHARE_TITLE = SHARE_TITLE;
-  var SHARE_SUBJECT = 'Text shared by text to speech POC App';
-  exports.SHARE_SUBJECT = SHARE_SUBJECT;
-},597,[],"src/Constants.js");
+},597,[539,46,2],"node_modules/react-native-share/components/Button.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 

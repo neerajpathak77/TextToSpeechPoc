@@ -8,7 +8,7 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import {setVoiceConvertedText} from '../actions/globalActions'
  
-class RecordingTab extends Component{
+class RecordingTab extends Component {
 
     constructor(props) {
         super(props);
@@ -26,19 +26,20 @@ class RecordingTab extends Component{
 
     }
     onSpeechError = (voice) =>  {
-        this.props.setVoiceConvertedText('jaaaazzzz')
+        this.props.setVoiceConvertedText('')
     }
     onSpeechResults = (voice) =>  {
         //this.setState({ voiceToText: voice.value[0] });
         //this.setState({ convertedTextFromVoice: '' })
-        this.onChange(voice.value[0])
-    }
-    onChange = text => {
-        alert(text)
+        // this.onChange(voice.value[0])
+        this.props.setVoiceConvertedText(voice.value[0])
 
-        //this.setState({convertedTextFromVoice:text})
-        this.props.setVoiceConvertedText(text)
     }
+    // onChange = text => {
+    //     alert(text)
+
+    //     //this.setState({convertedTextFromVoice:text})
+    // }
     openMic = () => {
         Voice.start("en_US")
         Voice.onSpeechStart = this.onSpeechStart

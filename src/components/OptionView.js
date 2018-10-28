@@ -1,8 +1,10 @@
 import React, {Component } from 'react'
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native'
-import {copy, share, save} from '../actions/globalActions'
+import {copy, share, save, setSavedSpeechList, saveSpeech} from '../actions/globalActions'
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
+import DatabaseLayer from '../localdb/DatabaseLayer'
+import {NOTES_TABLE} from '../Constants'
 
 class OptionView extends Component {
 
@@ -15,11 +17,19 @@ class OptionView extends Component {
     }
 
     save = () => {
-        this.props.save(this.props.voiceConvertedText)
+        let note = DatabaseLayer.createNoteTemplateModel(this.props.voiceConvertedText)
+        DatabaseLayer.addItemToList(NOTES_TABLE, note)
+            .then((items) => {
+                this.props.setSavedSpeechList(items)
+            })
     }
 
     share = () => {
         this.props.share(this.props.voiceConvertedText)
+    }
+
+    afterItemSave = () => {
+
     }
 
     render = () => (
@@ -55,7 +65,9 @@ function mapStateToProps(state, props) {
     return bindActionCreators({
         copy: copy,
         save:save,
-        share: share
+        share: share,
+        setSavedSpeechList: setSavedSpeechList,
+        saveSpeech: saveSpeech
       },
       dispatch
     )
