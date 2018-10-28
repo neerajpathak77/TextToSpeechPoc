@@ -82046,17 +82046,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       key: "renderTabIndicator",
       value: function renderTabIndicator() {
         var tabs = [{
-          text: 'Search',
-          iconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/mic.png"),
-          selectedIconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/mic.png")
+          text: 'SPEECHES',
+          iconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/searches.png"),
+          selectedIconSource: _$$_REQUIRE(_dependencyMap[14], "../../assets/searches.png")
         }, {
-          text: 'Mic',
-          iconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/searches.png"),
-          selectedIconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/searches.png")
+          text: null,
+          iconSource: _$$_REQUIRE(_dependencyMap[15], "../../assets/stop-speech.png"),
+          selectedIconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/start-speech.png")
         }, {
-          text: 'Settings',
-          iconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/settings.png"),
-          selectedIconSource: _$$_REQUIRE(_dependencyMap[16], "../../assets/settings.png")
+          text: 'SETTINGS',
+          iconSource: _$$_REQUIRE(_dependencyMap[17], "../../assets/setting.png"),
+          selectedIconSource: _$$_REQUIRE(_dependencyMap[17], "../../assets/setting.png")
         }];
         return _react.default.createElement(_rnViewpager.PagerTabIndicator, {
           tabs: tabs,
@@ -82088,7 +82088,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default2 = HomeContainer;
   exports.default = _default2;
-},540,[1,539,19,20,27,30,33,46,181,2,541,547,581,585,586,587,588],"src/components/HomeContainer.js");
+},540,[1,539,19,20,27,30,33,46,181,2,541,547,581,585,587,609,611,610],"src/components/HomeContainer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -86361,7 +86361,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             fileName: _jsxFileName,
             lineNumber: 32
           }
-        }, " We are working hard to make this functional :-)"));
+        }, " No speech saved. Please save first."));
       };
 
       return _this;
@@ -86417,7 +86417,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     blankListContainer: {
       width: width,
-      height: height - 80,
+      height: height - 180,
       justifyContent: 'center'
     },
     textStyle: {
@@ -86810,38 +86810,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
     "httpServerLocation": "/assets/assets",
-    "width": 300,
-    "height": 294,
+    "width": 99,
+    "height": 99,
     "scales": [1],
-    "hash": "a71000ef4f9eee0548dc9e50a7334405",
-    "name": "mic",
-    "type": "png"
-  });
-},586,[176],"assets/mic.png");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/assets",
-    "width": 300,
-    "height": 294,
-    "scales": [1],
-    "hash": "3c6964939bfab5ad95b133c4e9a50221",
+    "hash": "0a41fd9e3639736897441d98e898122c",
     "name": "searches",
     "type": "png"
   });
 },587,[176],"assets/searches.png");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/assets",
-    "width": 256,
-    "height": 256,
-    "scales": [1],
-    "hash": "6c6a63dd5624746b9ce914f143c5cdab",
-    "name": "settings",
-    "type": "png"
-  });
-},588,[176],"assets/settings.png");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "TextToSpeech",
@@ -88401,6 +88377,42 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   });
 },605,[8],"node_modules/redux-logger/dist/redux-logger.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/assets",
+    "width": 456,
+    "height": 319,
+    "scales": [1],
+    "hash": "7d466e83a244c7bed0adf471fff34b7e",
+    "name": "stop-speech",
+    "type": "png"
+  });
+},609,[176],"assets/stop-speech.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/assets",
+    "width": 99,
+    "height": 99,
+    "scales": [1],
+    "hash": "ffdb0545b28ebe73993b4f69a023352a",
+    "name": "setting",
+    "type": "png"
+  });
+},610,[176],"assets/setting.png");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/assets",
+    "width": 456,
+    "height": 319,
+    "scales": [1],
+    "hash": "92966601f8ead44ef335667e5bdd929c",
+    "name": "start-speech",
+    "type": "png"
+  });
+},611,[176],"assets/start-speech.png");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map

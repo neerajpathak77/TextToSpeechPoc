@@ -29,17 +29,17 @@ export default class HomeContainer extends Component {
 
     renderTabIndicator() {
         let tabs = [{
-                text: 'Search',
-                iconSource: require('../../assets/mic.png'),
-                selectedIconSource: require('../../assets/mic.png'),
-            },{
-                text: 'Mic',
+                text: 'SPEECHES',
                 iconSource: require('../../assets/searches.png'),
-                selectedIconSource: require('../../assets/searches.png')
+                selectedIconSource: require('../../assets/searches.png'),
             },{
-                text: 'Settings',
-                iconSource: require('../../assets/settings.png'),
-                selectedIconSource: require('../../assets/settings.png')
+                text: null,
+                iconSource: require('../../assets/stop-speech.png'),
+                selectedIconSource: require('../../assets/start-speech.png')
+            },{
+                text: 'SETTINGS',
+                iconSource: require('../../assets/setting.png'),
+                selectedIconSource: require('../../assets/setting.png')
         }];
         return <PagerTabIndicator tabs={tabs} 
             itemStyle = {{height:25,width:25}}	
