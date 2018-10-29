@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import DatabaseLayer from './src/localdb/DatabaseLayer'
 import {NOTES_TABLE} from './src/Constants'
+import { BaseNavigator } from './src/navigation/BaseNavigator';
 
 
 type Props = {}
@@ -27,7 +28,14 @@ class App extends Component<Props> {
   //End 
   }
   render = () => (
-      <HomeContainer/>
+      // <HomeContainer/>
+
+
+
+
+
+              <BaseNavigator/>
+
     )
 }
 

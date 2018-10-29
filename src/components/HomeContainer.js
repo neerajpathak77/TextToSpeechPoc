@@ -1,6 +1,6 @@
 import {StyleSheet, View, Text} from 'react-native';
 import React, {Component} from 'react';
-import {PagerTabIndicator, IndicatorViewPager} from 'rn-viewpager';
+// import {PagerTabIndicator, IndicatorViewPager} from 'rn-viewpager';
 import RecordingTab from './RecordingTab';
 import SpeechListTab from './SpeechListTab';
 import SettingsTab from './SettingsTab';
