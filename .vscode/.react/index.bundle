@@ -84036,7 +84036,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _SettingsTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "../components/SettingsTab"));
 
-  var _CustomTabBarBottom = _$$_REQUIRE(_dependencyMap[9], "../components/common/CustomTabBarBottom");
+  var _CustomTabBarBottom = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "../components/common/CustomTabBarBottom"));
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/navigation/HomeContainer.js";
   var HomeContainer = (0, _reactNavigation.createBottomTabNavigator)({
@@ -84093,7 +84093,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     tabsStyle: {},
     tabBarComponent: function tabBarComponent(props) {
-      return _react.default.createElement(_CustomTabBarBottom.CustomTabBarBottom, (0, _extends2.default)({}, props, {
+      return _react.default.createElement(_CustomTabBarBottom.default, (0, _extends2.default)({}, props, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 51
@@ -106183,7 +106183,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.CustomTabBarBottom = void 0;
+  exports.default = void 0;
 
   var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/extends"));
 
@@ -106206,6 +106206,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
 
   var _FontAwesome = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "react-native-vector-icons/FontAwesome"));
+
+  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "react-native-voice"));
+
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[14], "react-redux");
+
+  var _redux = _$$_REQUIRE(_dependencyMap[15], "redux");
+
+  var _globalActions = _$$_REQUIRE(_dependencyMap[16], "../../actions/globalActions");
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/common/CustomTabBarBottom.js";
   var _components = {
@@ -106238,8 +106246,38 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       (0, _classCallCheck2.default)(this, CustomTabBarBottom);
       _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(CustomTabBarBottom).call(this, props));
 
+      _this.onSpeechStart = function (voice) {
+        _this.props.setVoiceConvertedText('Listening...');
+      };
+
+      _this.onSpeechEnd = function (voice) {
+        _this.props.setVoiceConvertedText('Processing...');
+      };
+
+      _this.onSpeechError = function (voice) {
+        _this.props.setVoiceConvertedText('');
+      };
+
+      _this.onSpeechResults = function (voice) {
+        _this.props.setVoiceConvertedText(voice.value[0]);
+
+        var selectedIcon = _this.state.tabIcon != 'microphone' ? 'microphone' : 'microphone-slash';
+
+        _this.setState({
+          tabIcon: selectedIcon
+        });
+      };
+
+      _this.openMic = function () {
+        _reactNativeVoice.default.start("en_US");
+
+        _reactNativeVoice.default.onSpeechStart = _this.onSpeechStart;
+        _reactNativeVoice.default.onSpeechEnd = _this.onSpeechEnd;
+        _reactNativeVoice.default.onSpeechResults = _this.onSpeechResults;
+        _reactNativeVoice.default.onSpeechError = _this.onSpeechError;
+      };
+
       _this.renderChallengeButton = function () {
-        var currentIndex = _this.props.navigation.state.index;
         return _react.default.createElement(_reactNative.TouchableOpacity, {
           style: {
             position: 'absolute',
@@ -106252,9 +106290,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 51
           }
-        }, currentIndex == 1 ? _this.renderButtonIcon() : _this.renderButtonIcon());
+        }, _this.renderButtonIcon());
       };
 
       _this.renderButtonIcon = function () {
@@ -106269,7 +106307,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 60
           }
         }, _react.default.createElement(_FontAwesome.default, {
           name: _this.state.tabIcon,
@@ -106277,7 +106315,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           color: "white",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 68
           }
         }));
       };
@@ -106285,15 +106323,18 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       _this.onPressChallengeTab = function () {
         _this.props.navigation.navigate('RecordingTab');
 
+        var currentIndex = _this.props.navigation.state.index;
         var selectedIcon = _this.state.tabIcon != 'microphone' ? 'microphone' : 'microphone-slash';
 
         _this.setState({
           tabIcon: selectedIcon
-        }, function () {});
+        }, function () {
+          _this.state.tabIcon == 'microphone' ? _this.openMic() : _reactNativeVoice.default.stop();
+        });
       };
 
       _this.state = {
-        tabIcon: 'microphone'
+        tabIcon: 'microphone-slash'
       };
       return _this;
     }
@@ -106305,12 +106346,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 91
           }
         }, _react.default.createElement(_reactNavigationTabs.BottomTabBar, (0, _extends2.default)({}, this.props, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 92
           }
         })), this.renderChallengeButton());
       }
@@ -106318,8 +106359,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return CustomTabBarBottom;
   }(_react.Component);
 
-  exports.CustomTabBarBottom = CustomTabBarBottom;
-  exports.CustomTabBarBottom = CustomTabBarBottom = _wrapComponent("CustomTabBarBottom")(CustomTabBarBottom);
+  CustomTabBarBottom = _wrapComponent("CustomTabBarBottom")(CustomTabBarBottom);
+
+  function mapStateToProps(state, props) {
+    return {
+      voiceConvertedText: state.global.voiceConvertedText
+    };
+  }
+
+  function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)({
+      setVoiceConvertedText: _globalActions.setVoiceConvertedText
+    }, dispatch);
+  }
+
+  var _default2 = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(CustomTabBarBottom);
+
+  exports.default = _default2;
 
   var styles = _reactNative.StyleSheet.create({
     container: {
@@ -106328,10 +106384,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       position: 'absolute',
       bottom: 0,
       justifyContent: 'center',
-      backgroundColor: 'green'
+      backgroundColor: '#d5d5d5'
     }
   });
-},753,[1,539,8,19,20,27,30,33,46,181,656,2,691],"src/components/common/CustomTabBarBottom.js");
+},753,[1,539,8,19,20,27,30,33,46,181,656,2,691,742,541,556,540],"src/components/common/CustomTabBarBottom.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "TextToSpeech",

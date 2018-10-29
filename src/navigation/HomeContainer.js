@@ -5,7 +5,7 @@ import MicButton from "../components/common/MicButton"
 import RecordingTab from '../components/RecordingTab'
 import SpeechListTab from '../components/SpeechListTab';
 import SettingsTab from '../components/SettingsTab';
-import { CustomTabBarBottom } from '../components/common/CustomTabBarBottom';
+import CustomTabBarBottom from '../components/common/CustomTabBarBottom';
 
 
 
