@@ -4,6 +4,6 @@ import { createLogger } from 'redux-logger'
 const loggerMiddleware = createLogger()
 
 export var middleWares=[
-    promiseMiddleware,
-    loggerMiddleware
+    // promiseMiddleware,
+    // loggerMiddleware
 ]

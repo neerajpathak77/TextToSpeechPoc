@@ -84028,15 +84028,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _FontAwesome = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-vector-icons/FontAwesome"));
 
-  var _MicButton = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "../components/common/MicButton"));
+  var _RecordingTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "../components/RecordingTab"));
 
-  var _RecordingTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "../components/RecordingTab"));
+  var _SpeechListTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "../components/SpeechListTab"));
 
-  var _SpeechListTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "../components/SpeechListTab"));
+  var _SettingsTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "../components/SettingsTab"));
 
-  var _SettingsTab = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "../components/SettingsTab"));
-
-  var _CustomTabBarBottom = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "../components/common/CustomTabBarBottom"));
+  var _CustomTabBarBottom = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "../components/common/CustomTabBarBottom"));
 
   var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/navigation/HomeContainer.js";
   var HomeContainer = (0, _reactNavigation.createBottomTabNavigator)({
@@ -84053,28 +84051,27 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           var _navigation$state = navigation.state,
               routeName = _navigation$state.routeName,
               routes = _navigation$state.routes;
-          var params = routes && routes[1] && routes[1].params;
 
           switch (routeName) {
             case "SpeechListTab":
               return _react.default.createElement(_FontAwesome.default, {
-                name: "bookmark",
-                color: 'red',
-                size: 24,
+                name: "folder-open",
+                color: 'gray',
+                size: 32,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 26
+                  lineNumber: 20
                 }
               });
 
             case "SettingsTab":
               return _react.default.createElement(_FontAwesome.default, {
-                name: "bookmark",
-                color: 'yellow',
-                size: 24,
+                name: "cog",
+                color: 'gray',
+                size: 32,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 32
+                  lineNumber: 26
                 }
               });
 
@@ -84086,6 +84083,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     tabBarOptions: {
       showLabel: false,
+      color: 'white',
       style: {
         backgroundColor: 'transparent',
         borderTopWidth: 0
@@ -84096,67 +84094,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _react.default.createElement(_CustomTabBarBottom.default, (0, _extends2.default)({}, props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 44
         }
       }));
     },
-    tabBarPosition: "bottom"
+    tabBarPosition: "bottom",
+    swipeEnabled: true
   });
   exports.HomeContainer = HomeContainer;
-  var HomeContainer1 = (0, _reactNavigation.createBottomTabNavigator)({
-    SpeechList: {
-      screen: _SpeechListTab.default,
-      navigationOptions: function navigationOptions() {
-        return {
-          tabBarIcon: function tabBarIcon(_ref3) {
-            var tintColor = _ref3.tintColor;
-            return _react.default.createElement(_FontAwesome.default, {
-              name: "bookmark",
-              color: tintColor,
-              size: 24,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 68
-              }
-            });
-          }
-        };
-      }
-    },
-    Recording: {
-      screen: _RecordingTab.default
-    },
-    Settings: {
-      screen: _SettingsTab.default,
-      navigationOptions: function navigationOptions() {
-        return {
-          tabBarIcon: function tabBarIcon(_ref4) {
-            var tintColor = _ref4.tintColor;
-            return _react.default.createElement(_FontAwesome.default, {
-              name: "lock",
-              color: tintColor,
-              size: 24,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 84
-              }
-            });
-          }
-        };
-      }
-    }
-  }, {
-    tabBarOptions: {
-      showLabel: false,
-      activeTintColor: '#F8F8F8',
-      inactiveTintColor: '#586589',
-      style: {
-        backgroundColor: '#171F33'
-      },
-      tabStyle: {}
-    }
-  });
-},568,[1,8,46,569,691,741,743,748,752,753],"src/navigation/HomeContainer.js");
+},568,[1,8,46,569,691,743,748,752,753],"src/navigation/HomeContainer.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -104632,198 +104578,6 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
 };
 },740,[],"node_modules/react-native-vector-icons/glyphmaps/FontAwesome.json");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../../node_modules/react-transform-hmr/lib/index.js"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
-
-  var _FontAwesome = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "react-native-vector-icons/FontAwesome"));
-
-  var _reactNativeVoice = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "react-native-voice"));
-
-  var _reactRedux = _$$_REQUIRE(_dependencyMap[12], "react-redux");
-
-  var _redux = _$$_REQUIRE(_dependencyMap[13], "redux");
-
-  var _globalActions = _$$_REQUIRE(_dependencyMap[14], "../../actions/globalActions");
-
-  var _jsxFileName = "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/common/MicButton.js";
-  var _components = {
-    MicButton: {
-      displayName: "MicButton"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/neeraj/Documents/WorkBench/TextToSpeechPoc/src/components/common/MicButton.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var SIZE = 80;
-
-  var MicButton = function (_Component) {
-    (0, _inherits2.default)(MicButton, _Component);
-
-    function MicButton(props) {
-      var _this;
-
-      (0, _classCallCheck2.default)(this, MicButton);
-      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(MicButton).call(this, props));
-      _this.mode = new _reactNative.Animated.Value(0);
-
-      _this.onPressVoiceToTextButton = function () {
-        alert('Hello');
-
-        _this.openMic();
-      };
-
-      _this.onSpeechStart = function (voice) {
-        _this.props.setVoiceConvertedText('Listening...');
-      };
-
-      _this.onSpeechEnd = function (voice) {
-        _this.props.setVoiceConvertedText('Processing...');
-      };
-
-      _this.onSpeechError = function (voice) {
-        _this.props.setVoiceConvertedText('');
-      };
-
-      _this.onSpeechResults = function (voice) {
-        _this.props.setVoiceConvertedText(voice.value[0]);
-      };
-
-      _this.openMic = function () {
-        _reactNativeVoice.default.start("en_US");
-
-        _reactNativeVoice.default.onSpeechStart = _this.onSpeechStart;
-        _reactNativeVoice.default.onSpeechEnd = _this.onSpeechEnd;
-        _reactNativeVoice.default.onSpeechResults = _this.onSpeechResults;
-        _reactNativeVoice.default.onSpeechError = _this.onSpeechError;
-      };
-
-      _this.toggleView = function () {
-        _this.props.navigation.navigate('Recording');
-
-        var selectedIcon = _this.state.tabIcon != 'microphone' ? 'microphone' : 'microphone-slash';
-
-        _this.setState({
-          tabIcon: selectedIcon
-        }, function () {
-          _this.state.tabIcon == 'microphone' ? _this.openMic() : _reactNativeVoice.default.stop();
-        });
-      };
-
-      _this.getIcon = function () {
-        return _this.state.tabIcon != 'microphone' ? 'microphone' : 'microphone-slash';
-      };
-
-      _this.state = {
-        tabIcon: 'microphone'
-      };
-      return _this;
-    }
-
-    (0, _createClass2.default)(MicButton, [{
-      key: "render",
-      value: function render() {
-        var rotation = this.mode.interpolate({
-          inputRange: [0, 1],
-          outputRange: ['0deg', '45deg']
-        });
-        return _react.default.createElement(_reactNative.View, {
-          style: {
-            position: 'absolute',
-            alignItems: 'center'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 84
-          }
-        }, _react.default.createElement(_reactNative.Animated.View, {
-          style: {
-            transform: [{
-              rotate: rotation
-            }],
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: SIZE,
-            height: SIZE,
-            borderRadius: SIZE / 2,
-            backgroundColor: 'red'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 88
-          }
-        }, _react.default.createElement(_reactNative.TouchableOpacity, {
-          onPress: this.toggleView,
-          activeOpacity: 1,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 97
-          }
-        }, _react.default.createElement(_FontAwesome.default, {
-          name: "microphone",
-          size: 40,
-          color: "white",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 100
-          }
-        }))));
-      }
-    }]);
-    return MicButton;
-  }(_react.Component);
-
-  MicButton = _wrapComponent("MicButton")(MicButton);
-
-  function mapStateToProps(state, props) {
-    return {
-      voiceConvertedText: state.global.voiceConvertedText
-    };
-  }
-
-  function mapDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)({
-      setVoiceConvertedText: _globalActions.setVoiceConvertedText
-    }, dispatch);
-  }
-
-  var _default2 = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicButton);
-
-  exports.default = _default2;
-},741,[1,539,19,20,27,30,33,46,181,2,691,742,541,556,540],"src/components/common/MicButton.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
   var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
@@ -106290,7 +106044,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 49
           }
         }, _this.renderButtonIcon());
       };
@@ -106303,11 +106057,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             width: SIZE,
             height: SIZE,
             borderRadius: SIZE / 2,
-            backgroundColor: 'red'
+            backgroundColor: 'red',
+            bottom: 30
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 56
           }
         }, _react.default.createElement(_FontAwesome.default, {
           name: _this.state.tabIcon,
@@ -106315,7 +106070,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           color: "white",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 65
           }
         }));
       };
@@ -106346,12 +106101,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 80
           }
         }, _react.default.createElement(_reactNavigationTabs.BottomTabBar, (0, _extends2.default)({}, this.props, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 81
           }
         })), this.renderChallengeButton());
       }
@@ -106379,7 +106134,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var styles = _reactNative.StyleSheet.create({
     container: {
-      height: 50,
+      height: 40,
       width: '100%',
       position: 'absolute',
       bottom: 0,
@@ -107162,7 +106917,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reduxLogger = _$$_REQUIRE(_dependencyMap[2], "redux-logger");
 
   var loggerMiddleware = (0, _reduxLogger.createLogger)();
-  var middleWares = [_reduxPromise.default, loggerMiddleware];
+  var middleWares = [];
   exports.middleWares = middleWares;
 },763,[1,764,767],"src/middleware/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {

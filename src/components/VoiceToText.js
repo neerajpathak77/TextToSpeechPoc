@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Voice from 'react-native-voice'
 
 type Props = {};
@@ -14,8 +14,7 @@ export default class VoiceToText extends Component<Props> {
         }
     }
     onPressVoiceToTextButton = () => {
-        alert('Hello')
-    }
+     }
     onSpeechStart = (voice) => {
         this.setState({ status: "Listening....." });
     }

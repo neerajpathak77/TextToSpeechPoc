@@ -9,8 +9,7 @@ import { bindActionCreators } from "redux"
 import {setVoiceConvertedText} from '../../actions/globalActions'
 
 class CustomTabBarBottom extends Component {
- 
-
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -19,7 +18,6 @@ class CustomTabBarBottom extends Component {
   }
 
 //Mic work
-
 onSpeechStart = (voice) => {
   this.props.setVoiceConvertedText('Listening...')
 }
@@ -54,36 +52,27 @@ return(
   )
 }
 
-renderButtonIcon = () => {
-
-  return (
-        <View style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: SIZE,
-            height: SIZE,
-            borderRadius: SIZE / 2,
-            backgroundColor: 'red',
-        }}>
+renderButtonIcon = () => (
+    <View style={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: SIZE,
+        height: SIZE,
+        borderRadius: SIZE / 2,
+        backgroundColor: 'red',
+        bottom:30,
+    }}>
         <Icon name= {this.state.tabIcon} size={70} color="white"/>
-</View>
+    </View>
 )
-}
 
 onPressChallengeTab = () => {
   this.props.navigation.navigate('RecordingTab')
   const currentIndex = this.props.navigation.state.index
-
-
   let selectedIcon = (this.state.tabIcon != 'microphone') ? 'microphone' : 'microphone-slash'
   this.setState({tabIcon:selectedIcon}, ()=> {
       (this.state.tabIcon == 'microphone') ? this.openMic() : Voice.stop()
   }) 
-
-
-
-
-
 }
 
   render() {
@@ -95,10 +84,6 @@ onPressChallengeTab = () => {
     )
   }
 }
-
-
-
-
 
 function mapStateToProps(state, props) {
   return {
@@ -124,7 +109,7 @@ export default connect(
 
 const styles = StyleSheet.create({
   container:{
-    height:50,
+    height:40,
     width:'100%',
     position:'absolute',
     bottom:0,
