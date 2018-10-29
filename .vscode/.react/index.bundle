@@ -106237,7 +106237,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
       (0, _classCallCheck2.default)(this, CustomTabBarBottom);
       _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(CustomTabBarBottom).call(this, props));
-      _this.mode = new _reactNative.Animated.Value(0);
 
       _this.renderChallengeButton = function () {
         var currentIndex = _this.props.navigation.state.index;
@@ -106253,47 +106252,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 24
           }
-        }, currentIndex == 1 ? _react.default.createElement(_FontAwesome.default, {
-          name: _this.state.tabIcon,
-          size: 70,
-          color: "white",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 26
-          }
-        }) : _react.default.createElement(_FontAwesome.default, {
-          name: _this.state.tabIcon,
-          size: 70,
-          color: "white",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 26
-          }
-        }));
+        }, currentIndex == 1 ? _this.renderButtonIcon() : _this.renderButtonIcon());
       };
 
       _this.renderButtonIcon = function () {
-        var rotation = _this.mode.interpolate({
-          inputRange: [0, 1],
-          outputRange: ['0deg', '45deg']
-        });
-
         return _react.default.createElement(_reactNative.View, {
           style: {
-            position: 'absolute',
-            alignItems: 'center'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39
-          }
-        }, _react.default.createElement(_reactNative.Animated.View, {
-          style: {
-            transform: [{
-              rotate: rotation
-            }],
             alignItems: 'center',
             justifyContent: 'center',
             width: SIZE,
@@ -106303,7 +106269,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 33
           }
         }, _react.default.createElement(_FontAwesome.default, {
           name: _this.state.tabIcon,
@@ -106311,15 +106277,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           color: "white",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 41
           }
-        })));
+        }));
       };
 
       _this.onPressChallengeTab = function () {
-        alert('I am DON DON DON');
-
-        _this.props.navigation.navigate('Recording');
+        _this.props.navigation.navigate('RecordingTab');
 
         var selectedIcon = _this.state.tabIcon != 'microphone' ? 'microphone' : 'microphone-slash';
 
@@ -106341,12 +106305,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 66
           }
         }, _react.default.createElement(_reactNavigationTabs.BottomTabBar, (0, _extends2.default)({}, this.props, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 67
           }
         })), this.renderChallengeButton());
       }

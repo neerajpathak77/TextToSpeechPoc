@@ -5,8 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const SIZE = 80
 
 export class CustomTabBarBottom extends Component {
-  mode = new Animated.Value(0)
-
+ 
 
   constructor(props) {
     super(props)
@@ -23,25 +22,15 @@ renderChallengeButton = () => {
 
 return(
   <TouchableOpacity style={{position:'absolute',zIndex:999,left:((Dimensions.get('window').width/2)-30),top:4}}  onPress={ () => this.onPressChallengeTab()}>
-{currentIndex==1 ? <Icon name= {this.state.tabIcon} size={70} color="white"/>: <Icon name= {this.state.tabIcon} size={70} color="white"/>}
+{currentIndex==1 ? this.renderButtonIcon() : this.renderButtonIcon()}
    </TouchableOpacity>
   )
 }
 
 renderButtonIcon = () => {
 
-  const rotation = this.mode.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '45deg']
-  })
-
   return (
-    <View style={{
-        position: 'absolute',
-        alignItems: 'center'
-    }}>
-        <Animated.View style={{
-            transform: [{rotate: rotation}],
+        <View style={{
             alignItems: 'center',
             justifyContent: 'center',
             width: SIZE,
@@ -50,16 +39,15 @@ renderButtonIcon = () => {
             backgroundColor: 'red',
         }}>
         <Icon name= {this.state.tabIcon} size={70} color="white"/>
-        </Animated.View>
 </View>
 )
 }
 
 onPressChallengeTab = () => {
 
-  alert('I am DON DON DON')
+  //alert('I am DON DON DON')
 
-  this.props.navigation.navigate('Recording')
+  this.props.navigation.navigate('RecordingTab')
 
 
   let selectedIcon = (this.state.tabIcon != 'microphone') ? 'microphone' : 'microphone-slash'
