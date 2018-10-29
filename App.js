@@ -7,13 +7,12 @@
  */
 
 import React, {Component} from 'react'
-import HomeContainer from './src/components/HomeContainer'
 import {setSavedSpeechList} from './src/actions/globalActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import DatabaseLayer from './src/localdb/DatabaseLayer'
 import {NOTES_TABLE} from './src/Constants'
-import { BaseNavigator } from './src/navigation/BaseNavigator';
+import { HomeContainer } from './src/navigation/HomeContainer';
 
 
 type Props = {}
@@ -28,15 +27,8 @@ class App extends Component<Props> {
   //End 
   }
   render = () => (
-      // <HomeContainer/>
-
-
-
-
-
-              <BaseNavigator/>
-
-    )
+      <HomeContainer/>
+  )
 }
 
 
