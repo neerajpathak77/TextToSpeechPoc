@@ -53,16 +53,8 @@ return(
 }
 
 renderButtonIcon = () => (
-    <View style={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: SIZE,
-        height: SIZE,
-        borderRadius: SIZE / 2,
-        backgroundColor: 'red',
-        bottom:30,
-    }}>
-        <Icon name= {this.state.tabIcon} size={70} color="white"/>
+    <View style={styles.buttonContainer}>
+        <Icon name= {this.state.tabIcon} size={32} color="white"/>
     </View>
 )
 
@@ -115,5 +107,14 @@ const styles = StyleSheet.create({
     bottom:0,
     justifyContent:'center',
     backgroundColor:'#d5d5d5'
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: SIZE,
+    height: SIZE,
+    borderRadius: SIZE / 2,
+    backgroundColor: 'red',
+    bottom:30,
   }
 })
